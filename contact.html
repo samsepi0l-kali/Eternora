@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Double Negative</title>
+  <link rel="icon" type="image/x-icon" href="assets/Favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+  <style>
+    /* Contact Page Specific Styles */
+   .contact-container {
+      padding: 120px 20px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .section-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background-color: #8a2be2;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    /* Cosmic Notes Board Styles */
+    .cosmic-board {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(138, 43, 226, 0.3);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 50px rgba(138, 43, 226, 0.2) inset;
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      min-height: 500px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      backdrop-filter: blur(5px);
+    }
+    
+    .cosmic-board:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='1' fill='%23ffffff33'/%3E%3Ccircle cx='30' cy='40' r='0.5' fill='%23ffffff22'/%3E%3Ccircle cx='50' cy='20' r='0.8' fill='%23ffffff22'/%3E%3Ccircle cx='80' cy='30' r='0.4' fill='%23ffffff33'/%3E%3Ccircle cx='20' cy='80' r='0.7' fill='%23ffffff33'/%3E%3Ccircle cx='65' cy='70' r='0.6' fill='%238a2be233'/%3E%3Ccircle cx='90' cy='90' r='0.5' fill='%238a2be222'/%3E%3C/svg%3E");
+      border-radius: 10px;
+      opacity: 0.5;
+      z-index: 0;
+    }
+    
+    /* Sticky Note Styles */
+    .sticky-note {
+      width: 220px;
+      height: 220px;
+      padding: 25px 20px;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      z-index: 1;
+      cursor: pointer;
+      transform-origin: center;
+      transform: rotate(var(--rotate, 0deg));
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .sticky-note:hover {
+      transform: scale(1.05) rotate(calc(var(--rotate, 0deg) + 1deg));
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6), 0 0 20px var(--glow-color, rgba(138, 43, 226, 0.6));
+      z-index: 5;
+    }
+    
+    .sticky-note:active {
+      transform: scale(0.98) rotate(calc(var(--rotate, 0deg) - 1deg));
+    }
+    
+    .sticky-note:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-width: 0 25px 25px 0;
+      border-style: solid;
+      border-color: transparent rgba(255, 255, 255, 0.1) transparent transparent;
+      border-radius: 0 0 0 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .sticky-note:hover:before {
+      border-width: 0 30px 30px 0;
+    }
+    
+    .sticky-purple {
+      --glow-color: rgba(138, 43, 226, 0.6);
+      border: 1px solid rgba(138, 43, 226, 0.3);
+      --rotate: -3deg;
+    }
+    
+    .sticky-purple:before {
+      border-color: transparent rgba(138, 43, 226, 0.2) transparent transparent;
+    }
+    
+    .sticky-blue {
+      --glow-color: rgba(0, 149, 255, 0.6);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      --rotate: 2deg;
+    }
+    
+    .sticky-blue:before {
+      border-color: transparent rgba(0, 149, 255, 0.2) transparent transparent;
+    }
+    
+    .sticky-teal {
+      --glow-color: rgba(0, 255, 218, 0.6);
+      border: 1px solid rgba(0, 255, 218, 0.3);
+      --rotate: -2deg;
+    }
+    
+    .sticky-teal:before {
+      border-color: transparent rgba(0, 255, 218, 0.2) transparent transparent;
+    }
+    
+    .sticky-pink {
+      --glow-color: rgba(255, 0, 243, 0.6);
+      border: 1px solid rgba(255, 0, 243, 0.3);
+      --rotate: 3deg;
+    }
+    
+    .sticky-pink:before {
+      border-color: transparent rgba(255, 0, 243, 0.2) transparent transparent;
+    }
+    
+    .sticky-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .sticky-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: white;
+    }
+    
+    .sticky-text {
+      font-size: 1.1rem;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Connector line effect */
+    .sticky-note:after {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: var(--glow-color, rgba(138, 43, 226, 0.8));
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--glow-color, rgba(138, 43, 226, 0.8));
+      z-index: 2;
+    }
+    
+    /* Digital connector effect */
+    .digital-connector {
+      position: absolute;
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--glow-color, rgba(138, 43, 226, 0.8)), transparent);
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      opacity: 0.7;
+    }
+    
+    /* Success message for copy */
+    .success-message {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(138, 43, 226, 0.9);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+    }
+    
+    .success-message.show {
+      opacity: 1;
+    }
+
+    /* Extra decoration elements */
+    .decoration {
+      position: absolute;
+      z-index: 1;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+    
+    .circuit-line {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--line-color, rgba(138, 43, 226, 0.8)), transparent);
+      position: absolute;
+    }
+    
+    .circuit-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--dot-color, rgba(138, 43, 226, 0.8));
+      border-radius: 50%;
+      position: absolute;
+      box-shadow: 0 0 8px var(--dot-color, rgba(138, 43, 226, 0.8));
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .cosmic-board {
+        padding: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      
+      .sticky-note {
+        width: 200px;
+        height: 200px;
+        padding: 20px 15px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .contact-container {
+        padding: 100px 15px 40px;
+      }
+      
+      .cosmic-board {
+        padding: 15px;
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Purple Loading Bar -->
+  <div class="loading-bar" id="loadingBar"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="assets/Logo.png" alt="Double Negative Logo" class="logo" />
+      <div class="text">Double Negative</div>
+    </div>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Background Stars -->
+  <div class="stars"></div>
+
+  <!-- Contact Content -->
+  <div class="contact-container">
+    <h2 class="section-title">CONTACT US</h2>
+    
+    <div class="cosmic-board">
+      <!-- Email Sticky Note -->
+      <div class="sticky-note sticky-purple" data-contact="yaminis8750@gmail.com">
+        <div class="digital-connector"></div>
+        <div class="sticky-icon">📧</div>
+        <div class="sticky-title">Email Us</div>
+        <div class="sticky-text"></div>
+      </div>
+      
+      <!-- Phone Sticky Note -->
+      <div class="sticky-note sticky-blue" data-contact="+7 9669345861">
+        <div class="digital-connector"></div>
+        <div class="sticky-icon">📞</div>
+        <div class="sticky-title">Call Us</div>
+        <div class="sticky-text"></div>
+      </div>
+      
+      <!-- Telegram Sticky Note -->
+      <div class="sticky-note sticky-teal" data-type="link" data-contact="https://t.me/yamini_875">
+        <div class="digital-connector"></div>
+        <div class="sticky-icon">💬</div>
+        <div class="sticky-title">Telegram</div>
+        <div class="sticky-text"></div>
+      </div>
+      
+      <!-- WhatsApp Sticky Note -->
+      <div class="sticky-note sticky-pink" data-type="link" data-contact="https://wa.me/79669345861">
+        <div class="digital-connector"></div>
+        <div class="sticky-icon">🟢</div>
+        <div class="sticky-title">WhatsApp</div>
+        <div class="sticky-text"></div>
+      </div>
+      
+      <!-- Decoration Elements -->
+      <div class="decoration circuit-line" style="top: 20%; left: 10%; width: 30%; --line-color: rgba(138, 43, 226, 0.5);"></div>
+      <div class="decoration circuit-line" style="top: 40%; right: 15%; width: 40%; --line-color: rgba(0, 149, 255, 0.5);"></div>
+      <div class="decoration circuit-line" style="bottom: 30%; left: 20%; width: 25%; --line-color: rgba(255, 0, 243, 0.5);"></div>
+      <div class="decoration circuit-dot" style="top: 25%; left: 45%; --dot-color: rgba(138, 43, 226, 0.8);"></div>
+      <div class="decoration circuit-dot" style="top: 65%; right: 30%; --dot-color: rgba(0, 255, 218, 0.8);"></div>
+      <div class="decoration circuit-dot" style="bottom: 15%; left: 35%; --dot-color: rgba(255, 0, 243, 0.8);"></div>
+    </div>
+    
+    <!-- Success Message for Copy -->
+    <div class="success-message" id="successMessage">Contact info copied to clipboard!</div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Double Negative. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // --- Redirect to home with preloader on reload ---
+    if (performance.getEntriesByType("navigation")[0]?.type === "reload" ||
+        performance.navigation?.type === 1) {
+      sessionStorage.setItem('showPreloader', 'true');
+      window.location.href = "index.html";
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Star background effect
+      const starsContainer = document.querySelector('.stars');
+      const numberOfStars = 100;
+      for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        star.style.animationDuration = `${Math.random() * 5 + 5}s`;
+        starsContainer.appendChild(star);
+      }
+
+      // Loading bar animation on navigation
+      const loadingBar = document.getElementById('loadingBar');
+      document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (
+          href &&
+          !href.startsWith('#') &&
+          !link.hasAttribute('target') &&
+          !href.startsWith('mailto:') &&
+          !href.startsWith('tel:') &&
+          !href.startsWith('javascript:')
+        ) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            loadingBar.style.transition = 'none';
+            loadingBar.style.width = '0';
+            loadingBar.style.display = 'block';
+            void loadingBar.offsetWidth;
+            loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+            loadingBar.style.width = '100%';
+            setTimeout(() => {
+              window.location.href = href;
+            }, 850);
+          });
+        }
+      });
+
+      // Animate loading bar on page unload
+      window.addEventListener('beforeunload', function () {
+        loadingBar.style.transition = 'none';
+        loadingBar.style.width = '0';
+        loadingBar.style.display = 'block';
+        void loadingBar.offsetWidth;
+        loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+        loadingBar.style.width = '100%';
+      });
+
+      // Hamburger menu toggle with touch support
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const navLinks = document.querySelector('.nav-links');
+
+      function toggleMenu(e) {
+        e.preventDefault();
+        navLinks.classList.toggle('open');
+      }
+
+      hamburgerBtn.addEventListener('click', toggleMenu);
+      hamburgerBtn.addEventListener('touchstart', toggleMenu);
+      
+      // Sticky Notes Interaction
+      const stickyNotes = document.querySelectorAll('.sticky-note');
+      const successMessage = document.getElementById('successMessage');
+      
+      // Add circuit decoration effects
+      function addCircuitEffects() {
+        const cosmicBoard = document.querySelector('.cosmic-board');
+        
+        // Add more circuit lines
+        for (let i = 0; i < 5; i++) {
+          const line = document.createElement('div');
+          line.classList.add('decoration', 'circuit-line');
+          
+          // Random position, size and color
+          line.style.top = `${Math.random() * 100}%`;
+          line.style.left = `${Math.random() * 50}%`;
+          line.style.width = `${Math.random() * 30 + 10}%`;
+          
+          // Random color from our theme
+          const colors = [
+            'rgba(138, 43, 226, 0.3)', // Purple
+            'rgba(0, 149, 255, 0.3)',  // Blue
+            'rgba(0, 255, 218, 0.3)',  // Teal
+            'rgba(255, 0, 243, 0.3)'   // Pink
+          ];
+          line.style.setProperty('--line-color', colors[Math.floor(Math.random() * colors.length)]);
+          
+          cosmicBoard.appendChild(line);
+        }
+        
+        // Add more dots
+        for (let i = 0; i < 8; i++) {
+          const dot = document.createElement('div');
+          dot.classList.add('decoration', 'circuit-dot');
+          
+          // Random position
+          dot.style.top = `${Math.random() * 100}%`;
+          dot.style.left = `${Math.random() * 100}%`;
+          
+          // Random size
+          const size = Math.random() * 4 + 3;
+          dot.style.width = `${size}px`;
+          dot.style.height = `${size}px`;
+          
+          // Random color from our theme
+          const colors = [
+            'rgba(138, 43, 226, 0.8)', // Purple
+            'rgba(0, 149, 255, 0.8)',  // Blue
+            'rgba(0, 255, 218, 0.8)',  // Teal
+            'rgba(255, 0, 243, 0.8)'   // Pink
+          ];
+          dot.style.setProperty('--dot-color', colors[Math.floor(Math.random() * colors.length)]);
+          
+          cosmicBoard.appendChild(dot);
+        }
+      }
+      
+      // Add subtle mouse move effect for each note
+      stickyNotes.forEach(note => {
+        // Add subtle mouse move effect
+        note.addEventListener('mousemove', function(e) {
+          const bounds = note.getBoundingClientRect();
+          const mouseX = e.clientX - bounds.left;
+          const mouseY = e.clientY - bounds.top;
+          
+          const rotateX = (mouseY / bounds.height - 0.5) * 5;
+          const rotateY = (mouseX / bounds.width - 0.5) * -5;
+          
+          // Increase glow on hover
+          const glowColor = window.getComputedStyle(note).getPropertyValue('--glow-color');
+          
+          note.style.transform = `
+            rotate(var(--rotate))
+            perspective(800px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            scale(1.05)
+          `;
+          note.style.boxShadow = `0 15px 25px rgba(0, 0, 0, 0.6), 0 0 30px ${glowColor}`;
+        });
+        
+        // Reset on mouse leave
+        note.addEventListener('mouseleave', function() {
+          note.style.transform = `rotate(var(--rotate))`;
+          note.style.boxShadow = '';
+        });
+        
+        // Click event to copy or navigate
+        note.addEventListener('click', function() {
+          const contactInfo = this.getAttribute('data-contact');
+          const contactType = this.getAttribute('data-type');
+          
+          // Add digital press effect on click
+          this.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+          
+          if (contactType === 'link') {
+            // Open link in new tab
+            window.open(contactInfo, '_blank');
+          } else {
+            // Copy to clipboard
+            navigator.clipboard.writeText(contactInfo).then(() => {
+              // Show success message
+              successMessage.classList.add('show');
+              setTimeout(() => {
+                successMessage.classList.remove('show');
+              }, 2000);
+            });
+          }
+        });
+      });
+      
+      // Add glowing pulse animation to connector dots
+      function animateConnectors() {
+        const connectors = document.querySelectorAll('.digital-connector');
+        connectors.forEach(connector => {
+          // Set random animation delay
+          connector.style.animationDelay = `${Math.random() * 2}s`;
+          
+          // Add glow pulse animation
+          const keyframes = `
+            @keyframes pulseGlow${Math.random().toString().slice(2, 8)} {
+              0% { opacity: 0.3; height: 30px; }
+              50% { opacity: 0.8; height: 40px; }
+              100% { opacity: 0.3; height: 30px; }
+            }
+          `;
+          
+          // Add the keyframes to the document
+          const style = document.createElement('style');
+          style.innerHTML = keyframes;
+          document.head.appendChild(style);
+          
+          // Apply the animation
+          connector.style.animation = `pulseGlow${Math.random().toString().slice(2, 8)} ${2 + Math.random() * 3}s infinite ease-in-out`;
+        });
+      }
+      
+      // Call the circuit effects function
+      addCircuitEffects();
+      
+      // Call the animation function
+      animateConnectors();
+    });
+  </script>
+</body>
+</html>

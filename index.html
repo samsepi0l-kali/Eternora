@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Double Negative</title>
+  <link rel="icon" type="image/x-icon" href="assets/Favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
+<body>
+  <!-- Stars Background -->
+  <div class="stars"></div>
+
+  <!-- Preloader Overlay -->
+  <div class="preloader-overlay" id="preloaderOverlay">
+    <img src="assets/Logo.png" alt="Double Negative Logo" class="preloader-logo" />
+    <div class="preloader-title"><span id="preloader-typewriter"></span></div>
+  </div>
+
+  <!-- All page content wrapped here -->
+  <div id="pageContent">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="assets/Logo.png" alt="Double Negative Logo" class="logo" />
+        <div class="text">Double Negative</div>
+      </div>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+
+<!-- Here I have added the about us section and updated the header -->
+    <div class="content" id="mainContent">
+  <h1>Welcome to <span class="highlight">Double Negative</span></h1>
+  <div class="intro-text">
+    <p>In a world drowning in digital sameness, Double Negative emerges as your creative rebellion.</p>
+    <p>Born in Moscow from the audacious vision of young Indian entrepreneurs, we transform two wrongs into something brilliantly right—crafting bots that outsmart your competition, videos that stop thumbs mid-scroll, designs that burn into memory, sound that resonates in bones, and images worth more than their thousand words.</p>
+    <p>We don't just deliver services; we engineer digital experiences that turn audiences into advocates and businesses into legends. Double Negative: because in a world of cautious whispers, only the bold echoes remain.</p>
+  </div>
+  </div>
+
+  <!-- Service Section Here I have added the service section -->
+
+    <section class="services-highlight-home">
+  <h2 class="section-title">Our Services</h2>
+  
+  <div class="services-grid">
+    <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="8" y1="16" x2="16" y2="16"></line>
+          <line x1="9" y1="9" x2="9.01" y2="9"></line>
+          <line x1="15" y1="9" x2="15.01" y2="9"></line>
+        </svg>
+      </div>
+      <h3>Bot Development</h3>
+      <p>Bots that engage and streamline your workflow effortlessly.</p>
+    </div>
+
+    <div class="service-item" data-aos="fade-up" data-aos-delay="400">
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="5" width="18" height="12" rx="2" ry="2"></rect>
+          <line x1="8" y1="19" x2="16" y2="19"></line>
+          <line x1="12" y1="17" x2="12" y2="19"></line>
+        </svg>
+      </div>
+      <h3>Web Development</h3>
+      <p>Websites that captivate and drive your online success.</p>
+    </div>
+
+    <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+          <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+          <path d="M2 2l7.586 7.586"></path>
+          <circle cx="11" cy="11" r="2"></circle>
+        </svg>
+      </div>
+      <h3>Graphic Design</h3>
+      <p>Visual content that stands out and leaves a lasting impression.</p>
+    </div>
+
+    <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="48" height="48">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </div>
+    <h3>Optimization</h3>
+    <p>We help optimize your business through SMO | SMM | SEO.</p>
+    </div>
+  </div>
+
+  <div class="cta-container">
+    <a href="services.html" class="cta-button-services">
+      Explore All Services
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+  
+  <!-- Service sections Ends -->
+
+  <!-- Team Section Here  -->
+
+<section class="team-section">
+  <h2 class="section-title">Our Team</h2>
+  
+  <div class="team-container">
+    <div class="team-member" data-animation="fade-right">
+      <div class="member-image">
+        <div class="image-container">
+          <img src="assets/siona.jpg" alt="Siona" class="team-photo" />
+        </div>
+        <div class="image-border"></div>
+      </div>
+      
+      <div class="member-info">
+        <h3>Siona</h3>
+        <h4>Business Development & Operations</h4>
+        <p>With a formal background in business management Siona thrives on building relationships and crafting strategies that grow businesses. She focuses on practical solutions over hype. When things get chaotic, she's the one asking, <em>"What's the simplest way forward?"</em></p>
+        
+        <div class="member-fun-facts">
+          <span>📊 Data Enthusiast</span>
+          <span>✈️ Travel Addict</span>
+          <span>🧠 Strategic Thinker</span>
+        </div>
+        
+        <div class="member-quote">
+          "Elegant solutions are often the simplest ones."
+        </div>
+      </div>
+    </div>
+    
+    <div class="team-member" data-animation="fade-left">
+      <div class="member-image">
+        <div class="image-container">
+          <img src="assets/aditya.jpg" alt="Siona" class="team-photo" />
+        </div>
+        <div class="image-border"></div>
+      </div>
+      
+      <div class="member-info">
+        <h3>Aditya</h3>
+        <h4>Programmer | Hacker</h4>
+        <p>Aditya is a hacker who builds strong and secure systems to protect businesses from real cybersecurity threats. He focuses on practical security solutions that work in everyday situations, rather than just theoretical ideas. His goal is to help companies stay safe with effective and straightforward protections.</p>
+        
+        <div class="member-fun-facts">
+          <span>🔒 Cybersecurity</span>
+          <span>💻 Code Wizard</span>
+        </div>
+        
+        <div class="member-quote">
+          "The weakest link in cybersecurity is often found between the keyboard and the chair."
+        </div>
+      </div>
+    </div>
+    
+    <div class="team-member" data-animation="fade-right">
+      <div class="member-image">
+        <div class="image-container">
+         <img src="assets/yamini.jpg" alt="Yamini" class="team-photo" />
+        </div>
+        <div class="image-border"></div>
+      </div>
+      
+      <div class="member-info">
+        <h3>Yamini</h3>
+        <h4>Web Development & SEO strategist</h4>
+        <p>Yamini builds clean, functional websites that actually rank. She focuses on practical SEO strategies that deliver measurable improvements. Her approach combines technical excellence with user-focused design for websites that both humans and search engines love.</p>
+        
+        <div class="member-fun-facts">
+          <span>🔍 SEO Detective</span>
+          <span>✏️ Design Enthusiast</span>
+          <span>📱 Mobile UX Advocate</span>
+        </div>
+        
+        <div class="member-quote">
+          "If users can't find it and use it easily, then it doesn't matter how pretty the code is."
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Team Section ends here  -->
+
+  <!-- Review section begins  -->
+  <section class="testimonial-section">
+  <h2 class="section-title">What our clients say?</h2>
+  
+  <div class="testimonial-carousel">
+    <div class="testimonial-container">
+      <!-- First review -->
+       <div class="testimonial-slide active">
+        <div class="testimonial-content">
+          <div class="testimonial-rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="testimonial-text">
+            <p>"Working with Double Negative was a breath of fresh air. As the founder of a technical company like SS Engineering, I wasn't expecting a creative team to understand our complex needs so quickly — but they nailed it. The website they developed for us is sleek, functional, and speaks our brand language perfectly..."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <div class="avatar-placeholder">SD</div>
+            </div>
+            <div class="author-info">
+              <h4>Sebastian Dsouza</h4>
+              <p>Founder & CEO, SS Engineering</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Second review , we can add more as well , right now going with two , can be extended further -->
+     <!-- Second Testimonial (you can add more) -->
+      <div class="testimonial-slide">
+        <div class="testimonial-content">
+          <div class="testimonial-rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="testimonial-text">
+            <p>"Double Negative transformed our digital presence completely. Their team understood exactly what we needed and delivered beyond our expectations. The bot they developed has streamlined our customer service operations and saved us countless hours..."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <div class="avatar-placeholder">RK</div>
+            </div>
+            <div class="author-info">
+              <h4>Rahul Kumar</h4>
+              <p>Marketing Director, Horizon Solutions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <div class="carousel-controls">
+      <button class="carousel-control prev" aria-label="Previous testimonial">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <div class="carousel-indicators">
+        <span class="indicator active" data-index="0"></span>
+        <span class="indicator" data-index="1"></span>
+      </div>
+      <button class="carousel-control next" aria-label="Next testimonial">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <div class="testimonial-cta-container">
+    <a href="reviews.html" class="cta-button-testimonials">
+      See all reviews
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+<!-- Review sections ends here -->
+
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Double Negative. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Purple Loading Bar -->
+  <div class="loading-bar" id="loadingBar"></div>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Star background effect
+      const starsContainer = document.querySelector('.stars');
+      const numberOfStars = 100;
+      for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        star.style.animationDuration = `${Math.random() * 5 + 5}s`;
+        starsContainer.appendChild(star);
+      }
+
+      // Preloader logic
+      const preloaderOverlay = document.getElementById('preloaderOverlay');
+      const pageContent = document.getElementById('pageContent');
+      const preloaderTypewriter = document.getElementById('preloader-typewriter');
+
+      function showMainContent() {
+        preloaderOverlay.classList.add('hidden');
+        setTimeout(() => {
+          pageContent.classList.add('visible');
+          // NO centering of navbar here
+        }, 1000);
+      }
+
+      function runPreloader() {
+        const text = "Double Negative";
+        let index = 0;
+        preloaderTypewriter.textContent = "";
+        function type() {
+          if (index < text.length) {
+            preloaderTypewriter.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 100);
+          } else {
+            setTimeout(showMainContent, 700);
+          }
+        }
+        type();
+      }
+
+      // --- Preloader on refresh from any page ---
+      runPreloader();
+
+      // Loading bar animation on navigation
+      const loadingBar = document.getElementById('loadingBar');
+      document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (
+          href &&
+          !href.startsWith('#') &&
+          !link.hasAttribute('target') &&
+          !href.startsWith('mailto:') &&
+          !href.startsWith('tel:') &&
+          !href.startsWith('javascript:')
+        ) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            loadingBar.style.transition = 'none';
+            loadingBar.style.width = '0';
+            loadingBar.style.display = 'block';
+            void loadingBar.offsetWidth;
+            loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+            loadingBar.style.width = '100%';
+            setTimeout(() => {
+              window.location.href = href;
+            }, 850);
+          });
+        }
+      });
+
+      // Animate loading bar on unload (reload/back)
+      window.addEventListener('beforeunload', function () {
+        loadingBar.style.transition = 'none';
+        loadingBar.style.width = '0';
+        loadingBar.style.display = 'block';
+        void loadingBar.offsetWidth;
+        loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+        loadingBar.style.width = '100%';
+      });
+
+      // Hamburger menu toggle with touch support
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const navLinks = document.querySelector('.nav-links');
+
+      function toggleMenu(e) {
+        e.preventDefault();
+        navLinks.classList.toggle('open');
+      }
+
+      hamburgerBtn.addEventListener('click', toggleMenu);
+      hamburgerBtn.addEventListener('touchstart', toggleMenu);
+
+     // Scroll animation function
+function initScrollAnimations() {
+  const serviceItems = document.querySelectorAll('.service-item');
+  
+  // Intersection Observer for animations
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  // Initially set the items to be invisible
+  serviceItems.forEach(item => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(30px)';
+    observer.observe(item);
+  });
+}
+
+// Run after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // All your existing code here...
+  
+  // Add this at the end:
+  initScrollAnimations();
+});
+
+ // Initialize team member animations
+      function initTeamAnimations() {
+        const teamMembers = document.querySelectorAll('.team-member');
+        
+        // Intersection Observer for team members
+        const teamObserverOptions = {
+          threshold: 0.2,
+          rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const teamObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              teamObserver.unobserve(entry.target);
+            }
+          });
+        }, teamObserverOptions);
+        
+        // Observe each team member for animation
+        teamMembers.forEach(member => {
+          teamObserver.observe(member);
+        });
+        
+        // Add hover effects for fun facts
+        const funFactItems = document.querySelectorAll('.member-fun-facts span');
+        funFactItems.forEach(item => {
+          // Randomize initial position for animation
+          const randomDelay = Math.random() * 0.5;
+          item.style.transitionDelay = `${randomDelay}s`;
+          
+          // Apply subtle hover effect
+          item.addEventListener('mouseover', () => {
+            item.style.transform = 'translateY(-5px) scale(1.05)';
+            item.style.background = 'rgba(138, 43, 226, 0.3)';
+          });
+          
+          item.addEventListener('mouseout', () => {
+            item.style.transform = '';
+            item.style.background = '';
+          });
+        });
+      }
+      
+      // Initialize scroll animations
+      initScrollAnimations();
+      
+      // Initialize team animations
+      initTeamAnimations();
+
+    // Java script for Review section
+
+    function initTestimonialCarousel() {
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+        const prevBtn = document.querySelector('.carousel-control.prev');
+        const nextBtn = document.querySelector('.carousel-control.next');
+        
+        let currentIndex = 0;
+        let autoplayInterval;
+        
+        // Initialize autoplay
+        startAutoplay();
+        
+        // Set active slide
+        function setActiveSlide(index) {
+          // Remove active class from all slides and indicators
+          slides.forEach(slide => slide.classList.remove('active'));
+          indicators.forEach(indicator => indicator.classList.remove('active'));
+          
+          // Add active class to current slide and indicator
+          slides[index].classList.add('active');
+          indicators[index].classList.add('active');
+          
+          // Update current index
+          currentIndex = index;
+        }
+
+      // Next slide function
+        function nextSlide() {
+          let nextIndex = currentIndex + 1;
+          if (nextIndex >= slides.length) {
+            nextIndex = 0;
+          }
+          setActiveSlide(nextIndex);
+        }
+        
+        // Previous slide function
+        function prevSlide() {
+          let prevIndex = currentIndex - 1;
+          if (prevIndex < 0) {
+            prevIndex = slides.length - 1;
+          }
+          setActiveSlide(prevIndex);
+        }
+        
+        // Start autoplay
+        function startAutoplay() {
+          stopAutoplay(); // Clear any existing interval
+          autoplayInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
+        }
+        
+        // Stop autoplay
+        function stopAutoplay() {
+          if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+          }
+        }
+        
+        // Event listeners
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            nextSlide();
+            startAutoplay(); // Reset timer after manual navigation
+          });
+        }
+        
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            prevSlide();
+            startAutoplay(); // Reset timer after manual navigation
+          });
+        }
+        
+        // Indicator click events
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener('click', () => {
+            setActiveSlide(index);
+            startAutoplay(); // Reset timer after manual navigation
+          });
+        });
+        
+        // Pause autoplay on hover
+        const carousel = document.querySelector('.testimonial-carousel');
+        if (carousel) {
+          carousel.addEventListener('mouseenter', stopAutoplay);
+          carousel.addEventListener('mouseleave', startAutoplay);
+        }
+        
+        // Touch events for mobile swipe
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        function handleTouchStart(e) {
+          touchStartX = e.touches[0].clientX;
+        }
+        
+        function handleTouchEnd(e) {
+          touchEndX = e.changedTouches[0].clientX;
+          handleSwipe();
+        }
+        
+        function handleSwipe() {
+          const swipeThreshold = 50; // Minimum distance to be considered a swipe
+          
+          if (touchStartX - touchEndX > swipeThreshold) {
+            // Swipe left (next)
+            nextSlide();
+          } else if (touchEndX - touchStartX > swipeThreshold) {
+            // Swipe right (previous)
+            prevSlide();
+          }
+          
+          startAutoplay(); // Reset timer after swipe
+        }
+        
+        if (carousel) {
+          carousel.addEventListener('touchstart', handleTouchStart, false);
+          carousel.addEventListener('touchend', handleTouchEnd, false);
+        }
+      }
+      
+      // Initialize testimonial carousel
+      initTestimonialCarousel();
+    
+    
+    });
+
+    
+  </script>
+
+</body>
+</html>
