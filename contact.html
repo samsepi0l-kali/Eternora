@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact - Eternora</title>
   <link rel="icon" type="image/x-icon" href="assets/Favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
   <style>
@@ -18,7 +18,7 @@
     }
     
     .section-title {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 2.8rem;
       font-weight: 700;
       letter-spacing: 2px;
@@ -84,7 +84,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       z-index: 1;
       cursor: pointer;
       transform-origin: center;
@@ -163,14 +163,16 @@
     }
     
     .sticky-icon {
-      font-size: 3rem;
+      width: 48px;
+      height: 48px;
       margin-bottom: 15px;
       position: relative;
       z-index: 2;
+      object-fit: contain;
     }
     
     .sticky-title {
-      font-size: 1.4rem;
+      font-size: 1.4rem;  
       font-weight: 600;
       margin-bottom: 10px;
       color: white;
@@ -232,6 +234,7 @@
       opacity: 1;
     }
 
+
     /* Extra decoration elements */
     .decoration {
       position: absolute;
@@ -290,12 +293,14 @@
   <!-- Purple Loading Bar -->
   <div class="loading-bar" id="loadingBar"></div>
 
+
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo-container">
       <img src="assets/Logo.png" alt="Eternora Logo" class="logo" />
       <div class="text">Eternora</div>
     </div>
+
 
     <!-- Hamburger Button -->
     <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
@@ -304,26 +309,29 @@
       <span class="bar"></span>
     </button>
 
+
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Our Projects</a></li>
+      <li><a href="services.html">Our Services</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
+
   <!-- Background Stars -->
   <div class="stars"></div>
 
+
   <!-- Contact Content -->
   <div class="contact-container">
-    <h2 class="section-title">CONTACT US</h2>
+    <h2 class="section-title">Contact Us</h2>
     
     <div class="cosmic-board">
       <!-- Email Sticky Note -->
-      <div class="sticky-note sticky-purple" data-contact="dsouzasiona100@gmail.com">
+      <div class="sticky-note sticky-purple" data-contact="contact@eternora.online">
         <div class="digital-connector"></div>
-        <div class="sticky-icon">📧</div>
+        <img src="assets/icons/email.jpg" alt="Email Icon" class="sticky-icon" />
         <div class="sticky-title">Email Us</div>
         <div class="sticky-text"></div>
       </div>
@@ -331,7 +339,7 @@
       <!-- Phone Sticky Note -->
       <div class="sticky-note sticky-blue" data-contact="+91 8793428316">
         <div class="digital-connector"></div>
-        <div class="sticky-icon">📞</div>
+        <img src="assets/icons/phone.jpg" alt="Phone Icon" class="sticky-icon" />
         <div class="sticky-title">Call Us</div>
         <div class="sticky-text"></div>
       </div>
@@ -339,7 +347,7 @@
       <!-- Telegram Sticky Note -->
       <div class="sticky-note sticky-teal" data-type="link" data-contact="https://t.me/sio_1000">
         <div class="digital-connector"></div>
-        <div class="sticky-icon">💬</div>
+        <img src="assets/icons/telegram.jpg" alt="Telegram Icon" class="sticky-icon" />
         <div class="sticky-title">Telegram</div>
         <div class="sticky-text"></div>
       </div>
@@ -347,8 +355,24 @@
       <!-- WhatsApp Sticky Note -->
       <div class="sticky-note sticky-pink" data-type="link" data-contact="wa.me/+918793428316">
         <div class="digital-connector"></div>
-        <div class="sticky-icon">🟢</div>
+        <img src="assets/icons/whatsapp.jpg" alt="WhatsApp Icon" class="sticky-icon" />
         <div class="sticky-title">WhatsApp</div>
+        <div class="sticky-text"></div>
+      </div>
+      
+      <!-- LinkedIn Sticky Note -->
+      <div class="sticky-note sticky-purple" data-type="link" data-contact="https://www.linkedin.com/in/eternora-enterprises-pvt-ltd-923667384/">
+        <div class="digital-connector"></div>
+        <img src="assets/icons/linkedin.png" alt="LinkedIn Icon" class="sticky-icon" />
+        <div class="sticky-title">LinkedIn</div>
+        <div class="sticky-text"></div>
+      </div>
+      
+      <!-- Instagram Sticky Note -->
+      <div class="sticky-note sticky-blue" data-contact="https://www.instagram.com/eternora_enterprises_pvt_ltd?igsh=Y3RnNnV4YnN3dHYx&utm_source=qr">
+        <div class="digital-connector"></div>
+        <img src="assets/icons/instagram.jpg" alt="Instagram Icon" class="sticky-icon" />
+        <div class="sticky-title">Instagram</div>
         <div class="sticky-text"></div>
       </div>
       
@@ -365,10 +389,12 @@
     <div class="success-message" id="successMessage">Contact info copied to clipboard!</div>
   </div>
 
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Eternora Enterprises Pvt. Ltd. All rights reserved.</p>
   </footer>
+
 
   <!-- Scripts -->
   <script>
@@ -378,6 +404,7 @@
       sessionStorage.setItem('showPreloader', 'true');
       window.location.href = "index.html";
     }
+
 
     document.addEventListener('DOMContentLoaded', function () {
       // Star background effect
@@ -392,6 +419,7 @@
         star.style.animationDuration = `${Math.random() * 5 + 5}s`;
         starsContainer.appendChild(star);
       }
+
 
       // Loading bar animation on navigation
       const loadingBar = document.getElementById('loadingBar');
@@ -420,6 +448,7 @@
         }
       });
 
+
       // Animate loading bar on page unload
       window.addEventListener('beforeunload', function () {
         loadingBar.style.transition = 'none';
@@ -430,14 +459,17 @@
         loadingBar.style.width = '100%';
       });
 
+
       // Hamburger menu toggle with touch support
       const hamburgerBtn = document.getElementById('hamburgerBtn');
       const navLinks = document.querySelector('.nav-links');
+
 
       function toggleMenu(e) {
         e.preventDefault();
         navLinks.classList.toggle('open');
       }
+
 
       hamburgerBtn.addEventListener('click', toggleMenu);
       hamburgerBtn.addEventListener('touchstart', toggleMenu);

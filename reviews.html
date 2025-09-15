@@ -5,23 +5,277 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Reviews - Eternora</title>
   <link rel="icon" type="image/x-icon" href="assets/Favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
   <style>
-    .under-construction {
-      font-family: 'Inter', sans-serif;
-      color: #ccc;
-      font-size: 2rem;
+  /* Existing styles */
+  .reviews-section {
+    max-width: 1200px;
+    margin: 150px auto 50px auto;
+    padding: 0 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #ccc;
+  }
+  .section-title {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #8a2be2;
+    text-align: center;
+  }
+  .reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .review-card {
+    background: rgba(30, 20, 60, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+    max-width: 600px;
+    padding: 25px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    min-height: 340px;
+    box-sizing: border-box;
+    flex: 1 1 45%; /* allows two cards side by side on larger screens */
+  }
+  .review-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .review-stars {
+    color: #ffcc00;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  .review-text {
+    font-style: italic;
+    min-height: 100px;
+    margin-bottom: 0;
+  }
+  .review-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #8a2be2;
+  }
+  .author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .author-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #8a2be2;
+  }
+  .author-title {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  /* Team Section style */
+  .team-section {
+    max-width: 1200px;
+    margin: 0 auto 50px auto; /* Removed large top margin */
+    padding: 0 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #ccc;
+  }
+  .team-member {
+    display: flex;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    margin-bottom: 3rem;
+  }
+  .team-member.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .member-image {
+    position: relative;
+    width: 180px;
+    aspect-ratio: 1 / 1; /* Keep square */
+    flex-shrink: 0;
+  }
+  .image-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* make circle */
+    overflow: hidden;
+    border: 4px solid #8a2be2;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+  }
+  .image-border {
+    display: none; /* removed as it causes oval shape */
+  }
+  .member-info {
+    flex: 1;
+  }
+  .member-info h3 {
+    margin: 0 0 0.2rem 0;
+    color: #8a2be2;
+  }
+  .member-info h4 {
+    margin: 0 0 1rem 0;
+    font-weight: 400;
+    color: #aaa;
+  }
+  .member-info p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .member-fun-facts {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .member-fun-facts span {
+    background: rgba(138, 43, 226, 0.3);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: default;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .member-fun-facts span:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(138, 43, 226, 0.6);
+  }
+  .member-quote {
+    font-style: italic;
+    color: #aaa;
+    font-size: 1rem;
+    border-left: 3px solid #8a2be2;
+    padding-left: 1rem;
+  }
+
+  /* Counter styles */
+  .user-counter {
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: 700;
+  }
+  .user-counter .number {
+    font-size: 4rem;
+    color: #8a2be2; /* Purple */
+  }
+  .user-counter .text {
+    font-size: 2rem;
+    color: white;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .team-member {
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      margin-top: 150px;
-      padding: 20px;
+      transform: translateX(0);
     }
+    .member-image {
+      width: 140px;
+      aspect-ratio: 1 / 1;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+    }
+    .image-container {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+    .user-counter .number {
+      font-size: 3rem;
+    }
+    .user-counter .text {
+      font-size: 1.5rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .team-section {
+      padding: 0 10px;
+    }
+    .member-image {
+      width: 120px;
+      aspect-ratio: 1 / 1;
+      margin-bottom: 0.75rem;
+    }
+    .image-container {
+      width: 100%;
+      height: 100%;
+    }
+    .member-info h3 {
+      font-size: 1.2rem;
+    }
+    .member-info h4 {
+      font-size: 1rem;
+    }
+    .member-info p {
+      font-size: 0.9rem;
+    }
+    .user-counter .number {
+      font-size: 2.5rem;
+    }
+    .user-counter .text {
+      font-size: 1.2rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .reviews-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .review-card {
+      max-width: 90%;
+      flex: 1 1 100%;
+      min-height: auto;
+      margin-bottom: 1.5rem;
+    }
+    .team-member {
+      flex-direction: column;
+      transform: translateX(0);
+      opacity: 1;
+    }
+    .member-image {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 1rem auto;
+    }
+    .member-info {
+      text-align: center;
+    }
+  }
   </style>
 </head>
 <body>
-  <!-- Purple Loading Bar -->
-  <div class="loading-bar" id="loadingBar"></div>
+  <!-- Background Stars -->
+  <div class="stars"></div>
 
   <!-- Navigation Bar -->
   <nav class="navbar">
@@ -29,30 +283,78 @@
       <img src="assets/Logo.png" alt="Eternora Logo" class="logo" />
       <div class="text">Eternora</div>
     </div>
-
-    <!-- Hamburger Button -->
     <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Our Projects</a></li>
+      <li><a href="services.html">Our Services</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Background Stars -->
-  <div class="stars"></div>
+  <main class="reviews-section">
+    <!-- Single Team Member Before Reviews -->
+    <section class="team-section" aria-label="Featured Team Member">
+      <div class="team-member" data-animation="fade-right">
+        <div class="member-image">
+          <div class="image-container">
+            <img src="assets/indiaday.png" alt="IndiaDayBot" class="team-photo" />
+          </div>
+          <div class="image-border"></div>
+        </div>
+        <div class="member-info">
+          <h3>India Day Bot</h3>
+          <h4>Developed using Python and hosted on Home Server</h4>
+          <p>The India Day 2025 Telegram Bot served as the official digital companion for the 10th Anniversary Festival held from August 14–17 at Dream Island. It provided real-time updates, personalized schedules, and interactive features, ensuring attendees stayed informed and engaged throughout the event.</p>
+          <div class="member-fun-facts">
+            <span>📅 Event Schedule & Reminders</span>
+            <span>🗺️ Interactive Maps</span>
+            <span>💡 Personalized Recommendations</span>
+            <span>📢 Live Updates</span>
+          </div>
+          <div class="member-quote">
+            "The India Day bot made navigating the festival effortless and kept me updated on everything in real time—it truly enhanced the experience."
+          </div>
+        </div>
+      </div>
+      <!-- Counter Section Added Here -->
+      <div class="user-counter" aria-label="User counter">
+        <span class="number" id="userCount">12900</span> <span class="text">users in 4 days</span>
+      </div>
+    </section>
 
-  <!-- Under Construction Message -->
-  <div class="under-construction">
-    <h1>Page Under Construction</h1>
-    <p>We are working hard to bring you this page. Please check back soon!</p>
-  </div>
+    <h2 class="section-title">What Our Clients Say?</h2>
+
+    <div class="reviews-container">
+      <article class="review-card">
+        <div class="review-stars" aria-label="5 stars rating">★★★★★</div>
+        <p class="review-text">"Working with Eternora was truly a breath of fresh air. As the founder of a technical company like SS Engineering, I honestly wasn’t expecting a creative team to grasp our complex needs so quickly — but they absolutely nailed it. The website they developed for us is not only sleek and functional but also perfectly speaks our brand language with clarity and style. Their understanding of our vision and attention to detail exceeded all expectations, making the entire collaboration smooth and rewarding."</p>
+        <div class="review-author">
+          <div class="author-avatar">
+            <img src="assets/ssengineering.jpg" alt="Sebastian Dsouza" />
+          </div>
+          <div class="author-name">Sebastian Dsouza</div>
+          <div class="author-title">Founder & CEO, SS Engineering</div>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars" aria-label="5 stars rating">★★★★★</div>
+        <p class="review-text">"Working with Eternora transformed India Day Moscow. Their informational bot delivered the full event schedule instantly to thousands of visitors. Guests easily found event details, making their overall experience smooth and interactive. The bot reduced repetitive queries significantly and added a modern, tech-driven touch. Eternora’s solution truly elevated our audience experience."</p>
+        <div class="review-author">
+          <div class="author-avatar">
+            <img src="assets/dasha.jpg" alt="Dasha Kotwani" />
+          </div>
+          <div class="author-name">Dasha Kotwani</div>
+          <div class="author-title">Director, Indian National Culutural Center SITA</div>
+        </div>
+      </article>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -61,76 +363,75 @@
 
   <!-- Scripts -->
   <script>
-    // --- Redirect to home with preloader on reload ---
-    if (performance.getEntriesByType("navigation")[0]?.type === "reload" ||
-        performance.navigation?.type === 1) {
-      sessionStorage.setItem('showPreloader', 'true');
-      window.location.href = "index.html";
+  document.addEventListener('DOMContentLoaded', function () {
+    // Counter animation setup
+    const userCountEl = document.getElementById('userCount');
+    let count = 14950;
+    const target = 15000;
+    const increment = 1;
+    const intervalTime = 20; // milliseconds between increments
+    let countingStarted = false;
+
+    function updateCounter() {
+      if (count < target) {
+        count += increment;
+        userCountEl.textContent = count;
+        setTimeout(updateCounter, intervalTime);
+      }
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-      // Star background effect
-      const starsContainer = document.querySelector('.stars');
-      const numberOfStars = 100;
-      for (let i = 0; i < numberOfStars; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        star.style.left = `${Math.random() * 100}vw`;
-        star.style.top = `${Math.random() * 100}vh`;
-        star.style.animationDelay = `${Math.random() * 5}s`;
-        star.style.animationDuration = `${Math.random() * 5 + 5}s`;
-        starsContainer.appendChild(star);
+    function startCounter() {
+      if (!countingStarted) {
+        countingStarted = true;
+        updateCounter();
       }
+    }
 
-      // Loading bar animation on navigation
-      const loadingBar = document.getElementById('loadingBar');
-      document.querySelectorAll('a[href]').forEach(link => {
-        const href = link.getAttribute('href');
-        if (
-          href &&
-          !href.startsWith('#') &&
-          !link.hasAttribute('target') &&
-          !href.startsWith('mailto:') &&
-          !href.startsWith('tel:') &&
-          !href.startsWith('javascript:')
-        ) {
-          link.addEventListener('click', function (e) {
-            e.preventDefault();
-            loadingBar.style.transition = 'none';
-            loadingBar.style.width = '0';
-            loadingBar.style.display = 'block';
-            void loadingBar.offsetWidth;
-            loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
-            loadingBar.style.width = '100%';
-            setTimeout(() => {
-              window.location.href = href;
-            }, 850);
-          });
+    // Intersection Observer for user counter to start animation when visible
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounter();
+          observer.unobserve(entry.target); // stop observing after start
         }
       });
+    }, { threshold: 0.1 });
 
-      // Animate loading bar on page unload
-      window.addEventListener('beforeunload', function () {
-        loadingBar.style.transition = 'none';
-        loadingBar.style.width = '0';
-        loadingBar.style.display = 'block';
-        void loadingBar.offsetWidth;
-        loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
-        loadingBar.style.width = '100%';
+    if (userCountEl) {
+      counterObserver.observe(userCountEl);
+    }
+
+    // Intersection Observer for team member fade animation
+    const teamMembers = document.querySelectorAll('.team-member');
+    const teamObserverOptions = { threshold: 0.2, rootMargin: '0px 0px -50px 0px' };
+    const teamObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          teamObserver.unobserve(entry.target);
+        }
       });
-
-      // Hamburger menu toggle with touch support
-      const hamburgerBtn = document.getElementById('hamburgerBtn');
-      const navLinks = document.querySelector('.nav-links');
-
-      function toggleMenu(e) {
-        e.preventDefault();
-        navLinks.classList.toggle('open');
-      }
-
-      hamburgerBtn.addEventListener('click', toggleMenu);
-      hamburgerBtn.addEventListener('touchstart', toggleMenu);
+    }, teamObserverOptions);
+    teamMembers.forEach(member => {
+      teamObserver.observe(member);
     });
+
+    // Intersection Observer for review cards fade-in/float-in animation
+    const reviewCards = document.querySelectorAll('.review-card');
+    const reviewObserverOptions = { threshold: 0.2, rootMargin: '0px 0px -100px 0px' };
+    const reviewObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          reviewObserver.unobserve(entry.target);
+        }
+      });
+    }, reviewObserverOptions);
+    reviewCards.forEach(card => {
+      reviewObserver.observe(card);
+    });
+  });
   </script>
+
 </body>
 </html>

@@ -5,16 +5,18 @@
   box-sizing: border-box;
 }
 
+
 /* Body and page layout */
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   background: black;
   color: white;
   overflow-x: hidden;
 }
+
 
 /* Container wrapping all page content */
 #pageContent {
@@ -25,9 +27,11 @@ body {
   transition: opacity 1s ease;
 }
 
+
 #pageContent.visible {
   opacity: 1;
 }
+
 
 /* Footer */
 footer {
@@ -38,6 +42,7 @@ footer {
   color: white;
 }
 
+
 footer .social-links a {
   color: white;
   text-decoration: none;
@@ -46,9 +51,11 @@ footer .social-links a {
   transition: color 0.3s ease;
 }
 
+
 footer .social-links a:hover {
   color: #8a2be2;
 }
+
 
 /* Navbar */
 .navbar {
@@ -63,30 +70,36 @@ footer .social-links a:hover {
   z-index: 1000;
 }
 
+
 .navbar .logo-container {
   display: flex;
   align-items: center;
 }
+
 
 .navbar .logo {
   width: 40px;
   margin-right: 10px;
 }
 
+
 .navbar .text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.5rem;
   color: white;
 }
+
 
 .navbar .nav-links {
   display: flex;
   list-style: none;
 }
 
+
 .navbar .nav-links li {
   margin: 0 15px;
 }
+
 
 .navbar .nav-links a {
   color: white;
@@ -96,9 +109,11 @@ footer .social-links a:hover {
   transition: color 0.3s ease;
 }
 
+
 .navbar .nav-links a:hover {
   color: #8a2be2;
 }
+
 
 /* Stars Effect */
 .stars {
@@ -113,6 +128,7 @@ footer .social-links a:hover {
   background: black;
 }
 
+
 .star {
   position: absolute;
   width: 2px;
@@ -122,6 +138,7 @@ footer .social-links a:hover {
   animation: floatStar 10s linear infinite, blinkStar 2s infinite alternate ease-in-out;
 }
 
+
 @keyframes floatStar {
   0% {
     transform: translateY(0);
@@ -130,6 +147,7 @@ footer .social-links a:hover {
     transform: translateY(100vh);
   }
 }
+
 
 @keyframes blinkStar {
   0% {
@@ -142,6 +160,7 @@ footer .social-links a:hover {
     opacity: 0.5;
   }
 }
+
 
 /* Preloader Overlay Styles */
 .preloader-overlay {
@@ -158,10 +177,12 @@ footer .social-links a:hover {
   pointer-events: all;
 }
 
+
 .preloader-overlay.hidden {
   opacity: 0;
   pointer-events: none;
 }
+
 
 .preloader-logo {
   width: 150px;
@@ -169,8 +190,9 @@ footer .social-links a:hover {
   animation: fadeIn 1.5s ease forwards;
 }
 
+
 .preloader-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 2.5rem;
   color: white;
   margin-top: 20px;
@@ -178,6 +200,7 @@ footer .social-links a:hover {
   border-right: 3px solid white;
   min-height: 3rem;
 }
+
 
 @keyframes fadeIn {
   from {
@@ -190,6 +213,7 @@ footer .social-links a:hover {
   }
 }
 
+
 /* Main content container */
 .content {
   flex: 1;
@@ -201,23 +225,41 @@ footer .social-links a:hover {
   padding: 100px 20px 40px;
 }
 
+
 .content h1 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 3rem;
   margin-bottom: 20px;
 }
+
 
 .content h1 .highlight{
   color: #8a2be2;
 }
 
+
+/* Existing intro-text styles */
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Equal vertical spacing */
+  height: 320px; /* Adjust height to your layout */
+  max-width: 900px; /* Optional for readability on large screens */
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* General paragraph styles for other paragraphs inside .content */
 .content p {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.2rem;
   color: #ccc;
   margin: 5px 0;
 }
 
+
+/* Image container */
 .image-container img {
   width: 100%;
   height: auto;
@@ -239,8 +281,7 @@ footer .social-links a:hover {
 
 /* Services page title without glow */
 .page-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 3rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 600;
   text-align: center;
   color: #fff;
@@ -299,18 +340,16 @@ footer .social-links a:hover {
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: #8a2be2;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .service-description {
   font-size: 1rem;
   color: #ccc;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-
-
-/* Here for the service cards in home page  */
+/* Here for the service cards in home page */
 /* Services section styles for home page */
 
 .services-highlight-home {
@@ -333,7 +372,7 @@ footer .social-links a:hover {
 }
 
 .section-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 2.8rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -530,7 +569,6 @@ footer .social-links a:hover {
 /* Css for services section on home page ends here */
 
 /* Css for team members */
-
 
 .team-section {
   padding: 120px 20px;
@@ -734,6 +772,7 @@ footer .social-links a:hover {
   right: 0;
   bottom: 0;
 }
+
 
 /* Animation variations */
 .team-member[data-animation="fade-right"].visible {
@@ -947,7 +986,23 @@ footer .social-links a:hover {
   margin-right: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border: 2px solid rgba(138, 43, 226, 0.5);
+  position: relative;
 }
+
+.author-avatar img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  display: block;
+}
+
+
 
 .avatar-placeholder {
   width: 100%;

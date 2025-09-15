@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+  .content .intro-text p:first-child {
+    font-size: 2em !important;
+    font-weight: 700 !important;
+    font-style: italic;
+    color: grey !important;
+    margin-bottom: 1em !important;
+  }
+
+  .content .intro-text p {
+    margin: 0 !important;
+    color: #ccc !important;
+    font-size: 1.2rem !important;
+  }
+
+  @media (max-width: 600px) {
+    .content h1 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .content h1 .highlight {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: #8a2be2;
+    }
+
+    .content p {
+      font-size: clamp(0.8rem, 3vw, 1rem);
+      line-height: 1.4;
+    }
+
+    .content .intro-text p {
+      font-size: clamp(0.9rem, 3vw, 1rem) !important;
+      line-height: 1.3;
+    }
+
+    .content .intro-text p:first-child {
+      font-size: clamp(1.3rem, 4vw, 1.6rem) !important;
+      font-weight: 700 !important;
+      font-style: italic !important;
+      color: grey !important;
+      margin-bottom: 1em !important;
+    }
+  }
+</style>
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Eternora</title>
   <link rel="icon" type="image/x-icon" href="assets/Favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
 </head>
@@ -37,7 +83,7 @@
 
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Our Projects</a></li>
+        <li><a href="services.html">Our Services</a></li>
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -49,15 +95,11 @@
     <div class="content" id="mainContent">
   <h1>Welcome to <span class="highlight">Eternora</span></h1>
   <div class="intro-text">
-    <p>We get it — the internet is crowded, noisy, and full of digital clones. That’s exactly why we built Eternora.</p>
-    <p></p>
-    <p>Started in Moscow by a couple of young Indian entrepreneurs who thought “why play safe when we can play bold?”, Eternora is our way of making the online world a little less predictable and a lot more unforgettable.</p>
-    <p></p>
-    <p>What do we actually do? We build bots that give you an unfair edge, design visuals you’ll remember long after you close the tab, craft videos that make people stop mid-scroll, create sound that stays in your head (in a good way), and tell stories that don’t just sell — they stick.</p>
-    <p></p>
-    <p>At the end of the day, we’re not here to “provide services.” We’re here to help you make some noise worth hearing, to turn your audience into a community, and your brand into something people can’t ignore.</p>
-    <p></p>
-    <p>Eternora: because if the world is going to echo, we’d rather make it echo you.</p>
+    <p>Eternora: Where small businesses get big brains — smart tools, smarter growth.</p>
+    <p>The internet is crowded, noisy, and full of digital clones. That’s why we built Eternora.</p>
+    <p>Founded in Moscow by young Indian entrepreneurs who asked, “Why play safe when we can play bold?”, Eternora makes the online world less predictable and far more unforgettable.</p>
+    <p>We create bots that give you an edge, visuals that linger, videos that stop the scroll, sound that stays, and stories that stick. We don’t just deliver services — we help your brand make noise worth hearing, turn audiences into communities, and leave a lasting impression.</p>
+    <p>Eternora: if the world is going to echo, make it echo you.</p>
   </div>
   </div>
 
@@ -118,8 +160,8 @@
   </div>
 
   <div class="cta-container">
-    <a href="projects.html" class="cta-button-services">
-      Explore our projects
+    <a href="services.html" class="cta-button-services">
+      Explore All Services
       <span class="arrow">→</span>
     </a>
   </div>
@@ -136,7 +178,7 @@
     <div class="team-member" data-animation="fade-right">
       <div class="member-image">
         <div class="image-container">
-          <img src="assets/siona.jpg" alt="Siona" class="team-photo" />
+          <img src="assets/team/siona.jpg" alt="Siona" class="team-photo" />
         </div>
         <div class="image-border"></div>
       </div>
@@ -161,7 +203,7 @@
     <div class="team-member" data-animation="fade-left">
       <div class="member-image">
         <div class="image-container">
-          <img src="assets/aditya.jpg" alt="Aditya" class="team-photo" />
+          <img src="assets/team/aditya.jpg" alt="Aditya" class="team-photo" />
         </div>
         <div class="image-border"></div>
       </div>
@@ -185,7 +227,7 @@
     <div class="team-member" data-animation="fade-right">
       <div class="member-image">
         <div class="image-container">
-          <img src="assets/adarsh.jpg" alt="Adarsh" class="team-photo" />
+          <img src="assets/team/adarsh.jpg" alt="Adarsh" class="team-photo" />
         </div>
         <div class="image-border"></div>
       </div>
@@ -230,7 +272,7 @@
           </div>
           <div class="testimonial-author">
             <div class="author-avatar">
-              <div class="avatar-placeholder">SD</div>
+              <img src="/assets/ssengineering.jpg" alt="SS Engineering" />
             </div>
             <div class="author-info">
               <h4>Sebastian Dsouza</h4>
@@ -239,6 +281,31 @@
           </div>
         </div>
       </div>
+  <!-- New second testimonial slide -->
+  <div class="testimonial-slide">
+    <div class="testimonial-content">
+      <div class="testimonial-rating" aria-label="5 stars rating">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+      </div>
+      <div class="testimonial-text">
+        <p>"Working with Eternora significantly improved India Day Moscow. They created a bot that provided the full event schedule instantly to thousands of visitors. It made finding event details easy and interactions smooth. The bot reduced repetitive questions and added a modern tech edge. Eternora’s solution truly boosted how we engaged with our audience."</p>
+      </div>
+      <div class="testimonial-author">
+        <div class="author-avatar">
+          <img src="/assets/dasha.jpg" alt="Dasha Kotwani" />
+        </div>
+        <div class="author-info">
+          <h4>Dasha Kotwani</h4>
+          <p>Director, Indian National Culutural Center SITA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
     <!-- Carousel Controls -->
@@ -467,8 +534,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function initTestimonialCarousel() {
         const slides = document.querySelectorAll('.testimonial-slide');
         const indicators = document.querySelectorAll('.carousel-indicators .indicator');
-        const prevBtn = document.querySelector('.carousel-control.prev');
-        const nextBtn = document.querySelector('.carousel-control.next');
+        document.querySelectorAll('.carousel-control.prev, .carousel-control.next').forEach(button => {
+          button.addEventListener('click', (e) => {
+            if (button.classList.contains('prev')) prevSlide();
+            else if (button.classList.contains('next')) nextSlide();
+          startAutoplay();
+      });
+    });
+
         
         let currentIndex = 0;
         let autoplayInterval;
@@ -511,7 +584,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Start autoplay
         function startAutoplay() {
           stopAutoplay(); // Clear any existing interval
-          autoplayInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
+          autoplayInterval = setInterval(nextSlide, 5000); // Change slide every 6 seconds
         }
         
         // Stop autoplay
@@ -519,21 +592,6 @@ document.addEventListener('DOMContentLoaded', function() {
           if (autoplayInterval) {
             clearInterval(autoplayInterval);
           }
-        }
-        
-        // Event listeners
-        if (nextBtn) {
-          nextBtn.addEventListener('click', () => {
-            nextSlide();
-            startAutoplay(); // Reset timer after manual navigation
-          });
-        }
-        
-        if (prevBtn) {
-          prevBtn.addEventListener('click', () => {
-            prevSlide();
-            startAutoplay(); // Reset timer after manual navigation
-          });
         }
         
         // Indicator click events
@@ -583,15 +641,9 @@ document.addEventListener('DOMContentLoaded', function() {
           carousel.addEventListener('touchend', handleTouchEnd, false);
         }
       }
-      
       // Initialize testimonial carousel
-      initTestimonialCarousel();
-    
-    
+      initTestimonialCarousel();    
     });
-
-    
   </script>
-
 </body>
 </html>
