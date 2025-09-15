@@ -10,6 +10,18 @@
   <link rel="stylesheet" href="mediaqueries.css" />
   <style>
   /* Existing styles */
+  .loading-bar {
+    height: 4px;
+    background-color: #8a2be2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    z-index: 9999;
+    transition: width 0.8s cubic-bezier(.4,0,.2,1);
+    display: none;
+  }
+
   .reviews-section {
     max-width: 1200px;
     margin: 150px auto 50px auto;
@@ -274,6 +286,8 @@
   </style>
 </head>
 <body>
+  <!-- Purple Loading Bar -->
+  <div class="loading-bar" id="loadingBar"></div>
   <!-- Background Stars -->
   <div class="stars"></div>
 
@@ -431,7 +445,44 @@
       reviewObserver.observe(card);
     });
   });
-  </script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navLinks = document.querySelector('.nav-links');
 
+  function toggleMenu(e) {
+    e.preventDefault();
+    navLinks.classList.toggle('open');
+  }
+
+  hamburgerBtn.addEventListener('click', toggleMenu);
+  hamburgerBtn.addEventListener('touchstart', toggleMenu);
+});
+const loadingBar = document.getElementById('loadingBar');
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href && !href.startsWith('#') && !link.hasAttribute('target') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('javascript:')) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      loadingBar.style.transition = 'none';
+      loadingBar.style.width = '0';
+      loadingBar.style.display = 'block';
+      void loadingBar.offsetWidth;
+      loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+      loadingBar.style.width = '100%';
+      setTimeout(() => {
+        window.location.href = href;
+      }, 850);
+    });
+  }
+});
+window.addEventListener('beforeunload', function () {
+  loadingBar.style.transition = 'none';
+  loadingBar.style.width = '0';
+  loadingBar.style.display = 'block';
+  void loadingBar.offsetWidth;
+  loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+  loadingBar.style.width = '100%';
+});
+  </script>
 </body>
 </html>
