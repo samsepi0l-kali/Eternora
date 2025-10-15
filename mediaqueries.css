@@ -7,7 +7,7 @@
   background: transparent;
   padding: 0;
   margin-left: 15px;
-  z-index: 1200; /* Ensure on top */
+  z-index: 1200;
 }
 
 .hamburger .bar {
@@ -23,7 +23,7 @@
   /* Navbar adjustments */
   .navbar {
     padding: 15px 20px;
-    z-index: 1100; /* On top */
+    z-index: 1100;
   }
 
   /* Show hamburger on mobile */
@@ -34,7 +34,7 @@
   /* Hide nav links by default on mobile */
   .navbar .nav-links {
     position: fixed;
-    top: 60px; /* height of navbar */
+    top: 60px;
     right: 0;
     height: calc(100vh - 60px);
     width: 200px;
@@ -55,34 +55,65 @@
   .navbar .nav-links li {
     margin: 15px 0;
   }
+
+  /* Team member layout for mobile */
+  .team-member, 
+  .team-member:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .member-info h3:after,
+  .team-member:nth-child(even) .member-info h3:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .member-info p,
+  .team-member:nth-child(even) .member-info p {
+    text-align: center;
+  }
+  
+  .member-fun-facts,
+  .team-member:nth-child(even) .member-fun-facts {
+    justify-content: center;
+  }
+
+  /* Services grid for mobile */
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+  }
+  
+  .service-item {
+    padding: 30px 20px;
+  }
+
+  /* Testimonial adjustments */
+  .testimonial-carousel {
+    padding: 20px;
+  }
+  
+  .testimonial-cta-container {
+    text-align: center;
+  }
 }
 
-/* Responsive font sizes for index.html content */
-@media (max-width: 600px) {
-  .content h1 {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto 40px;
   }
-
-  .content h1 .highlight {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    color: #8a2be2;
+  
+  .member-fun-facts {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
-
-  .content p {
-    font-size: clamp(0.8rem, 3vw, 1rem);
-    line-height: 1.4;
-  }
-
-  .content .intro-text p {
-    font-size: clamp(0.9rem, 3vw, 1rem) !important;
-    line-height: 1.3;
-  }
-
-  .content .intro-text p:first-child {
-    font-size: clamp(1.3rem, 4vw, 1.6rem) !important;
-    font-weight: 700 !important;
-    font-style: italic !important;
-    color: grey !important;
-    margin-bottom: 1em !important;
+  
+  .carousel-controls {
+    flex-wrap: wrap;
   }
 }

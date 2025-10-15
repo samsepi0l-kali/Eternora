@@ -2,6 +2,21 @@
 <html lang="en">
 <head>
   <style>
+  @font-face {
+    font-family: 'MOKOTO Glitch 1';
+    src: url('fonts/mokoto-mokoto-regular-glitch-mark-2-400.otf') format('opentype'),
+         url('fonts/mokoto-mokoto-regular-glitch-mark-2-400.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  #preloader-typewriter {
+    font-family: 'MOKOTO Glitch 1', monospace, sans-serif;
+    font-size: 3rem;
+    color: white;
+    position: relative;
+  }
+
   .content .intro-text p:first-child {
     font-size: 2em !important;
     font-weight: 700 !important;
@@ -44,8 +59,7 @@
       margin-bottom: 1em !important;
     }
   }
-</style>
-
+  </style>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -91,251 +105,216 @@
 
     <!-- Main Content -->
 
-<!-- Here I have added the about us section and updated the header -->
     <div class="content" id="mainContent">
-  <h1>Welcome to <span class="highlight">Eternora</span></h1>
-  <div class="intro-text">
-    <p>Eternora: Where small businesses get big brains — smart tools, smarter growth.</p>
-    <p>The internet is crowded, noisy, and full of digital clones. That’s why we built Eternora.</p>
-    <p>Founded in Moscow by young Indian entrepreneurs who asked, “Why play safe when we can play bold?”, Eternora makes the online world less predictable and far more unforgettable.</p>
-    <p>We create bots that give you an edge, visuals that linger, videos that stop the scroll, sound that stays, and stories that stick. We don’t just deliver services — we help your brand make noise worth hearing, turn audiences into communities, and leave a lasting impression.</p>
-    <p>Eternora: if the world is going to echo, make it echo you.</p>
-  </div>
-  </div>
+      <h1>Welcome to <span class="highlight">Eternora</span></h1>
+      <div class="intro-text">
+        <p>Eternora: Where small businesses get big brains — smart tools, smarter growth.</p>
+        <p>The internet is crowded, noisy, and full of digital clones. That’s why we built Eternora.</p>
+        <p>Founded in Moscow by young Indian entrepreneurs who asked, “Why play safe when we can play bold?”, Eternora makes the online world less predictable and far more unforgettable.</p>
+        <p>We create bots that give you an edge, visuals that linger, videos that stop the scroll, sound that stays, and stories that stick. We don’t just deliver services — we help your brand make noise worth hearing, turn audiences into communities, and leave a lasting impression.</p>
+        <p>Eternora: if the world is going to echo, make it echo you.</p>
+      </div>
+    </div>
 
-  <!-- Service Section Here I have added the service section -->
+    <!-- Service Section -->
 
     <section class="services-highlight-home">
-  <h2 class="section-title">Our Services</h2>
-  
-  <div class="services-grid">
-    <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-      <div class="service-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="8" y1="16" x2="16" y2="16"></line>
-          <line x1="9" y1="9" x2="9.01" y2="9"></line>
-          <line x1="15" y1="9" x2="15.01" y2="9"></line>
-        </svg>
-      </div>
-      <h3>Bot Development</h3>
-      <p>Bots that engage and streamline your workflow effortlessly.</p>
-    </div>
-
-    <div class="service-item" data-aos="fade-up" data-aos-delay="400">
-      <div class="service-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="5" width="18" height="12" rx="2" ry="2"></rect>
-          <line x1="8" y1="19" x2="16" y2="19"></line>
-          <line x1="12" y1="17" x2="12" y2="19"></line>
-        </svg>
-      </div>
-      <h3>Web Development</h3>
-      <p>Websites that captivate and drive your online success.</p>
-    </div>
-
-    <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-      <div class="service-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-          <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-          <path d="M2 2l7.586 7.586"></path>
-          <circle cx="11" cy="11" r="2"></circle>
-        </svg>
-      </div>
-      <h3>Graphic Design</h3>
-      <p>Visual content that stands out and leaves a lasting impression.</p>
-    </div>
-
-    <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-      <div class="service-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="48" height="48">
-          <circle cx="12" cy="12" r="3"></circle>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-        </svg>
-      </div>
-    <h3>Optimization</h3>
-    <p>We help optimize your business through SMO | SMM | SEO.</p>
-    </div>
-  </div>
-
-  <div class="cta-container">
-    <a href="services.html" class="cta-button-services">
-      Explore All Services
-      <span class="arrow">→</span>
-    </a>
-  </div>
-</section>
-  
-  <!-- Service sections Ends -->
-
-  <!-- Team Section Here  -->
-
-<section class="team-section">
-  <h2 class="section-title">Our Team</h2>
-  
-  <div class="team-container">
-    <div class="team-member" data-animation="fade-right">
-      <div class="member-image">
-        <div class="image-container">
-          <img src="assets/team/siona.jpg" alt="Siona" class="team-photo" />
-        </div>
-        <div class="image-border"></div>
-      </div>
-      
-      <div class="member-info">
-        <h3>Siona</h3>
-        <h4>Business Development & Operations</h4>
-        <p>Siona is a multidisciplinary professional with experience in analytics, project management, consulting, and cross-cultural collaboration across Russia and India. With a background in business management, she focuses on building meaningful networks and strategies that deliver lasting impact. She excels at turning complex challenges into actionable solutions with clarity and precision.</p>
-        
-        <div class="member-fun-facts">
-          <span> Data Enthusiast</span>
-          <span> Cross-Cultural Connector</span>
-          <span> Practical Problem-Solver</span>
-        </div>
-        
-        <div class="member-quote">
-          "Elegant solutions are often the simplest ones."
-        </div>
-      </div>
-    </div>
-    
-    <div class="team-member" data-animation="fade-left">
-      <div class="member-image">
-        <div class="image-container">
-          <img src="assets/team/aditya.jpg" alt="Aditya" class="team-photo" />
-        </div>
-        <div class="image-border"></div>
-      </div>
-      
-      <div class="member-info">
-        <h3>Aditya</h3>
-        <h4>Programmer | Hacker</h4>
-        <p>Aditya is a hacker who builds strong and secure systems to protect businesses from real cybersecurity threats. He focuses on practical security solutions that work in everyday situations, rather than just theoretical ideas. His goal is to help companies stay safe with effective and straightforward protections.</p>
-        
-        <div class="member-fun-facts">
-          <span> Cybersecurity</span>
-          <span> Code Wizard</span>
-        </div>
-        
-        <div class="member-quote">
-          "The weakest link in cybersecurity is often found between the keyboard and the chair."
-        </div>
-      </div>
-    </div>
-  
-    <div class="team-member" data-animation="fade-right">
-      <div class="member-image">
-        <div class="image-container">
-          <img src="assets/team/adarsh.jpg" alt="Adarsh" class="team-photo" />
-        </div>
-        <div class="image-border"></div>
-      </div>
-      
-      <div class="member-info">
-        <h3>Adarsh</h3>
-        <h4>Marketing & Designing</h4>
-        <p>Adarsh drives our marketing and design with a blend of creativity, passion, and expertise. With experience in marketing, public relations, and event management, he brings both strategic insight and hands-on knowledge to every project. His innovative approach, strong communication skills, and eye for design ensure that our brand not only stands out but also connects meaningfully with people.</p>
-        
-        <div class="member-fun-facts">
-          <span> Brand Manager</span>
-          <span> SEO Specialist</span>
-        </div>
-        
-        <div class="member-quote">
-          "Great brands are built where strategy meets creativity, design sparks emotion, and experiences leave lasting impressions."
-        </div>
-      </div>
-    </div>  
-  </div>
-</section>
-  <!-- Team Section ends here  -->
-
-  <!-- Review section begins  -->
-  <section class="testimonial-section">
-  <h2 class="section-title">What our clients say?</h2>
-  
-  <div class="testimonial-carousel">
-    <div class="testimonial-container">
-      <!-- First review -->
-       <div class="testimonial-slide active">
-        <div class="testimonial-content">
-          <div class="testimonial-rating">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="8" y1="16" x2="16" y2="16"></line>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
           </div>
-          <div class="testimonial-text">
-            <p>"Working with Eternora was a breath of fresh air. As the founder of a technical company like SS Engineering, I wasn't expecting a creative team to understand our complex needs so quickly — but they nailed it. The website they developed for us is sleek, functional, and speaks our brand language perfectly..."</p>
+          <h3>Bot Development</h3>
+          <p>Bots that engage and streamline your workflow effortlessly.</p>
+        </div>
+
+        <div class="service-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="12" rx="2" ry="2"></rect>
+              <line x1="8" y1="19" x2="16" y2="19"></line>
+              <line x1="12" y1="17" x2="12" y2="19"></line>
+            </svg>
           </div>
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <img src="/assets/ssengineering.jpg" alt="SS Engineering" />
+          <h3>Web Development</h3>
+          <p>Websites that captivate and drive your online success.</p>
+        </div>
+
+        <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+              <path d="M2 2l7.586 7.586"></path>
+              <circle cx="11" cy="11" r="2"></circle>
+            </svg>
+          </div>
+          <h3>Graphic Design</h3>
+          <p>Visual content that stands out and leaves a lasting impression.</p>
+        </div>
+
+        <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="48" height="48">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </div>
+          <h3>Optimization</h3>
+          <p>We help optimize your business through SMO | SMM | SEO.</p>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <a href="services.html" class="cta-button-services">
+          Explore All Services
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <h2 class="section-title">Our Team</h2>
+
+      <div class="team-container">
+        <div class="team-member" data-animation="fade-right">
+          <div class="member-image">
+            <div class="image-container">
+              <img src="assets/team/siona.jpg" alt="Siona" class="team-photo" />
             </div>
-            <div class="author-info">
-              <h4>Sebastian Dsouza</h4>
-              <p>Founder & CEO, SS Engineering</p>
+            <div class="image-border"></div>
+          </div>
+        
+          <div class="member-info">
+            <h3>Siona</h3>
+            <h4>Business Development & Operations</h4>
+            <p>Siona is a multidisciplinary professional with experience in analytics, project management, consulting, and cross-cultural collaboration across Russia and India. With a background in business management, she focuses on building meaningful networks and strategies that deliver lasting impact. She excels at turning complex challenges into actionable solutions with clarity and precision.</p>
+          
+            <div class="member-fun-facts">
+              <span> Data Enthusiast</span>
+              <span> Cross-Cultural Connector</span>
+              <span> Practical Problem-Solver</span>
+            </div>
+          
+            <div class="member-quote">
+              "Elegant solutions are often the simplest ones."
             </div>
           </div>
         </div>
+      
+        <div class="team-member" data-animation="fade-left">
+          <div class="member-image">
+            <div class="image-container">
+              <img src="assets/team/aditya.jpg" alt="Aditya" class="team-photo" />
+            </div>
+            <div class="image-border"></div>
+          </div>
+        
+          <div class="member-info">
+            <h3>Aditya</h3>
+            <h4>Programmer | Hacker</h4>
+            <p>Aditya is a hacker who builds strong and secure systems to protect businesses from real cybersecurity threats. He focuses on practical security solutions that work in everyday situations, rather than just theoretical ideas. His goal is to help companies stay safe with effective and straightforward protections.</p>
+          
+            <div class="member-fun-facts">
+              <span> Cybersecurity</span>
+              <span> Code Wizard</span>
+            </div>
+          
+            <div class="member-quote">
+              "The weakest link in cybersecurity is often found between the keyboard and the chair."
+            </div>
+          </div>
+        </div>  
       </div>
-  <!-- New second testimonial slide -->
-  <div class="testimonial-slide">
-    <div class="testimonial-content">
-      <div class="testimonial-rating" aria-label="5 stars rating">
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-      </div>
-      <div class="testimonial-text">
-        <p>"Working with Eternora significantly improved India Day Festival Moscow. They created a bot that provided the full event schedule instantly to thousands of visitors. It made finding event details easy and interactions smooth. The bot reduced repetitive questions and added a modern tech edge. Eternora’s solution truly boosted how we engaged with our audience."</p>
-      </div>
-      <div class="testimonial-author">
-        <div class="author-avatar">
-          <img src="/assets/dasha.jpg" alt="Dasha Kotwani" />
+    </section>
+
+    <!-- Review section -->
+    <section class="testimonial-section">
+      <h2 class="section-title">What our clients say?</h2>
+      <div class="testimonial-carousel">
+        <div class="testimonial-container">
+          <!-- First review -->
+          <div class="testimonial-slide active">
+            <div class="testimonial-content">
+              <div class="testimonial-rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="testimonial-text">
+                <p>"Working with Eternora was a breath of fresh air. As the founder of a technical company like SS Engineering, I wasn't expecting a creative team to understand our complex needs so quickly — but they nailed it. The website they developed for us is sleek, functional, and speaks our brand language perfectly..."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <img src="/assets/ssengineering.jpg" alt="SS Engineering" />
+                </div>
+                <div class="author-info">
+                  <h4>Sebastian Dsouza</h4>
+                  <p>Founder & CEO, SS Engineering</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- New second testimonial slide -->
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <div class="testimonial-rating" aria-label="5 stars rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <div class="testimonial-text">
+                <p>"Working with Eternora significantly improved India Day Festival Moscow. They created a bot that provided the full event schedule instantly to thousands of visitors. It made finding event details easy and interactions smooth. The bot reduced repetitive questions and added a modern tech edge. Eternora’s solution truly boosted how we engaged with our audience."</p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <img src="/assets/dasha.jpg" alt="Dasha Kotwani" />
+                </div>
+                <div class="author-info">
+                  <h4>Dasha Kotwani</h4>
+                  <p>Director, Indian National Culutural Center SITA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="carousel-controls">
+            <button class="carousel-control prev" aria-label="Previous testimonial">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="carousel-indicators">
+              <span class="indicator active" data-index="0"></span>
+              <span class="indicator" data-index="1"></span>
+            </div>
+            <button class="carousel-control next" aria-label="Next testimonial">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="author-info">
-          <h4>Dasha Kotwani</h4>
-          <p>Director, Indian National Culutural Center SITA</p>
+
+        <div class="testimonial-cta-container">
+          <a href="reviews.html" class="cta-button-testimonials">
+            See all reviews
+            <span class="arrow">→</span>
+          </a>
         </div>
-      </div>
-    </div>
-  </div>
-
-
-
-    <!-- Carousel Controls -->
-    <div class="carousel-controls">
-      <button class="carousel-control prev" aria-label="Previous testimonial">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-      <div class="carousel-indicators">
-        <span class="indicator active" data-index="0"></span>
-        <span class="indicator" data-index="1"></span>
-      </div>
-      <button class="carousel-control next" aria-label="Next testimonial">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-      </button>
-    </div>
-  </div>
-  
-  <div class="testimonial-cta-container">
-    <a href="reviews.html" class="cta-button-testimonials">
-      See all reviews
-      <span class="arrow">→</span>
-    </a>
-  </div>
-</section>
-<!-- Review sections ends here -->
-
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -377,13 +356,24 @@
 
       function runPreloader() {
         const text = "Eternora";
+        const glitchChars = ['%', '#', '@', '!', '&', '*', '$', '?', '+', '-', '='];
         let index = 0;
         preloaderTypewriter.textContent = "";
+
+        function glitchChar() {
+          return glitchChars[Math.floor(Math.random() * glitchChars.length)];
+        }
+
         function type() {
           if (index < text.length) {
-            preloaderTypewriter.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, 100);
+            // Show glitch first
+            preloaderTypewriter.textContent = preloaderTypewriter.textContent.slice(0, index) + glitchChar();
+            setTimeout(() => {
+              // Replace glitch with correct letter
+              preloaderTypewriter.textContent = preloaderTypewriter.textContent.slice(0, index) + text.charAt(index);
+              index++;
+              setTimeout(type, 150);
+            }, 100);
           } else {
             setTimeout(showMainContent, 700);
           }
@@ -391,7 +381,6 @@
         type();
       }
 
-      // --- Preloader on refresh from any page ---
       runPreloader();
 
       // Loading bar animation on navigation
@@ -443,43 +432,43 @@
       hamburgerBtn.addEventListener('click', toggleMenu);
       hamburgerBtn.addEventListener('touchstart', toggleMenu);
 
-     // Scroll animation function
-function initScrollAnimations() {
-  const serviceItems = document.querySelectorAll('.service-item');
-  
-  // Intersection Observer for animations
-  const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
+      // Scroll animation function
+      function initScrollAnimations() {
+        const serviceItems = document.querySelectorAll('.service-item');
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+          threshold: 0.2,
+          rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        
+        // Initially set the items to be invisible
+        serviceItems.forEach(item => {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(30px)';
+          observer.observe(item);
+        });
       }
-    });
-  }, observerOptions);
-  
-  // Initially set the items to be invisible
-  serviceItems.forEach(item => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(30px)';
-    observer.observe(item);
-  });
-}
 
-// Run after the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // All your existing code here...
-  
-  // Add this at the end:
-  initScrollAnimations();
-});
+      // Run after the DOM is fully loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        // All your existing code here...
+        
+        // Add this at the end:
+        initScrollAnimations();
+      });
 
- // Initialize team member animations
+      // Initialize team member animations
       function initTeamAnimations() {
         const teamMembers = document.querySelectorAll('.team-member');
         
@@ -529,41 +518,35 @@ document.addEventListener('DOMContentLoaded', function() {
       // Initialize team animations
       initTeamAnimations();
 
-    // Java script for Review section
+      // JavaScript for Review section
 
-    function initTestimonialCarousel() {
+      function initTestimonialCarousel() {
         const slides = document.querySelectorAll('.testimonial-slide');
         const indicators = document.querySelectorAll('.carousel-indicators .indicator');
         document.querySelectorAll('.carousel-control.prev, .carousel-control.next').forEach(button => {
           button.addEventListener('click', (e) => {
             if (button.classList.contains('prev')) prevSlide();
             else if (button.classList.contains('next')) nextSlide();
-          startAutoplay();
-      });
-    });
+            startAutoplay();
+          });
+        });
 
-        
         let currentIndex = 0;
         let autoplayInterval;
-        
+
         // Initialize autoplay
         startAutoplay();
-        
+
         // Set active slide
         function setActiveSlide(index) {
-          // Remove active class from all slides and indicators
           slides.forEach(slide => slide.classList.remove('active'));
           indicators.forEach(indicator => indicator.classList.remove('active'));
-          
-          // Add active class to current slide and indicator
+
           slides[index].classList.add('active');
           indicators[index].classList.add('active');
-          
-          // Update current index
           currentIndex = index;
         }
 
-      // Next slide function
         function nextSlide() {
           let nextIndex = currentIndex + 1;
           if (nextIndex >= slides.length) {
@@ -571,8 +554,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           setActiveSlide(nextIndex);
         }
-        
-        // Previous slide function
+
         function prevSlide() {
           let prevIndex = currentIndex - 1;
           if (prevIndex < 0) {
@@ -580,69 +562,59 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           setActiveSlide(prevIndex);
         }
-        
-        // Start autoplay
+
         function startAutoplay() {
-          stopAutoplay(); // Clear any existing interval
-          autoplayInterval = setInterval(nextSlide, 5000); // Change slide every 6 seconds
+          stopAutoplay();
+          autoplayInterval = setInterval(nextSlide, 5000);
         }
-        
-        // Stop autoplay
+
         function stopAutoplay() {
           if (autoplayInterval) {
             clearInterval(autoplayInterval);
           }
         }
-        
-        // Indicator click events
+
         indicators.forEach((indicator, index) => {
           indicator.addEventListener('click', () => {
             setActiveSlide(index);
-            startAutoplay(); // Reset timer after manual navigation
+            startAutoplay();
           });
         });
-        
-        // Pause autoplay on hover
+
         const carousel = document.querySelector('.testimonial-carousel');
         if (carousel) {
           carousel.addEventListener('mouseenter', stopAutoplay);
           carousel.addEventListener('mouseleave', startAutoplay);
         }
-        
-        // Touch events for mobile swipe
+
         let touchStartX = 0;
         let touchEndX = 0;
-        
+
         function handleTouchStart(e) {
           touchStartX = e.touches[0].clientX;
         }
-        
+
         function handleTouchEnd(e) {
           touchEndX = e.changedTouches[0].clientX;
           handleSwipe();
         }
-        
+
         function handleSwipe() {
-          const swipeThreshold = 50; // Minimum distance to be considered a swipe
-          
+          const swipeThreshold = 50;
           if (touchStartX - touchEndX > swipeThreshold) {
-            // Swipe left (next)
             nextSlide();
           } else if (touchEndX - touchStartX > swipeThreshold) {
-            // Swipe right (previous)
             prevSlide();
           }
-          
-          startAutoplay(); // Reset timer after swipe
+          startAutoplay();
         }
-        
+
         if (carousel) {
           carousel.addEventListener('touchstart', handleTouchStart, false);
           carousel.addEventListener('touchend', handleTouchEnd, false);
         }
       }
-      // Initialize testimonial carousel
-      initTestimonialCarousel();    
+      initTestimonialCarousel();
     });
   </script>
 </body>

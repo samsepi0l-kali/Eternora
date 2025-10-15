@@ -346,7 +346,7 @@
     <div class="reviews-container">
       <article class="review-card">
         <div class="review-stars" aria-label="5 stars rating">★★★★★</div>
-        <p class="review-text">"Working with Eternora was truly a breath of fresh air. As the founder of a technical company like SS Engineering, I honestly wasn’t expecting a creative team to grasp our complex needs so quickly — but they absolutely nailed it. The website they developed for us is not only sleek and functional but also perfectly speaks our brand language with clarity and style. Their understanding of our vision and attention to detail exceeded all expectations, making the entire collaboration smooth and rewarding."</p>
+        <p class="review-text">"Working with Eternora was truly a breath of fresh air. As the founder of a technical company like SS Engineering, I honestly wasn't expecting a creative team to grasp our complex needs so quickly — but they absolutely nailed it. The website they developed for us is not only sleek and functional but also perfectly speaks our brand language with clarity and style. Their understanding of our vision and attention to detail exceeded all expectations, making the entire collaboration smooth and rewarding."</p>
         <div class="review-author">
           <div class="author-avatar">
             <img src="assets/ssengineering.jpg" alt="Sebastian Dsouza" />
@@ -358,7 +358,7 @@
 
       <article class="review-card">
         <div class="review-stars" aria-label="5 stars rating">★★★★★</div>
-        <p class="review-text">"Working with Eternora transformed India Day Festival Moscow. Their informational bot delivered the full event schedule instantly to thousands of visitors. Guests easily found event details, making their overall experience smooth and interactive. The bot reduced repetitive queries significantly and added a modern, tech-driven touch. Eternora’s solution truly elevated our audience experience."</p>
+        <p class="review-text">"Working with Eternora transformed India Day Festival Moscow. Their informational bot delivered the full event schedule instantly to thousands of visitors. Guests easily found event details, making their overall experience smooth and interactive. The bot reduced repetitive queries significantly and added a modern, tech-driven touch. Eternora's solution truly elevated our audience experience."</p>
         <div class="review-author">
           <div class="author-avatar">
             <img src="assets/dasha.jpg" alt="Dasha Kotwani" />
@@ -378,6 +378,19 @@
   <!-- Scripts -->
   <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // Star background effect
+    const starsContainer = document.querySelector('.stars');
+    const numberOfStars = 100;
+    for (let i = 0; i < numberOfStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.animationDelay = `${Math.random() * 5}s`;
+      star.style.animationDuration = `${Math.random() * 5 + 5}s`;
+      starsContainer.appendChild(star);
+    }
+
     // Counter animation setup
     const userCountEl = document.getElementById('userCount');
     let count = 14950;
@@ -444,45 +457,49 @@
     reviewCards.forEach(card => {
       reviewObserver.observe(card);
     });
-  });
-  document.addEventListener('DOMContentLoaded', function () {
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const navLinks = document.querySelector('.nav-links');
 
-  function toggleMenu(e) {
-    e.preventDefault();
-    navLinks.classList.toggle('open');
-  }
+    // Hamburger menu functionality
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.querySelector('.nav-links');
 
-  hamburgerBtn.addEventListener('click', toggleMenu);
-  hamburgerBtn.addEventListener('touchstart', toggleMenu);
-});
-const loadingBar = document.getElementById('loadingBar');
-document.querySelectorAll('a[href]').forEach(link => {
-  const href = link.getAttribute('href');
-  if (href && !href.startsWith('#') && !link.hasAttribute('target') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('javascript:')) {
-    link.addEventListener('click', function (e) {
+    function toggleMenu(e) {
       e.preventDefault();
+      navLinks.classList.toggle('open');
+    }
+
+    hamburgerBtn.addEventListener('click', toggleMenu);
+    hamburgerBtn.addEventListener('touchstart', toggleMenu);
+
+    // Loading bar functionality
+    const loadingBar = document.getElementById('loadingBar');
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('#') && !link.hasAttribute('target') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('javascript:')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          loadingBar.style.transition = 'none';
+          loadingBar.style.width = '0';
+          loadingBar.style.display = 'block';
+          void loadingBar.offsetWidth;
+          loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+          loadingBar.style.width = '100%';
+          setTimeout(() => {
+            window.location.href = href;
+          }, 850);
+        });
+      }
+    });
+
+    // Animate loading bar on page unload
+    window.addEventListener('beforeunload', function () {
       loadingBar.style.transition = 'none';
       loadingBar.style.width = '0';
       loadingBar.style.display = 'block';
       void loadingBar.offsetWidth;
       loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
       loadingBar.style.width = '100%';
-      setTimeout(() => {
-        window.location.href = href;
-      }, 850);
     });
-  }
-});
-window.addEventListener('beforeunload', function () {
-  loadingBar.style.transition = 'none';
-  loadingBar.style.width = '0';
-  loadingBar.style.display = 'block';
-  void loadingBar.offsetWidth;
-  loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
-  loadingBar.style.width = '100%';
-});
+  });
   </script>
 </body>
 </html>
