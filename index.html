@@ -1,82 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
-  @font-face {
-    font-family: 'MOKOTO Glitch 1';
-    src: url('fonts/mokoto-mokoto-regular-glitch-mark-2-400.otf') format('opentype'),
-         url('fonts/mokoto-mokoto-regular-glitch-mark-2-400.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  #preloader-typewriter {
-    font-family: 'MOKOTO Glitch 1', monospace, sans-serif;
-    font-size: 2.5rem;
-    color: white;
-    position: relative;
-  }
-
-  .content .intro-text p:first-child {
-    font-size: 2em !important;
-    font-weight: 700 !important;
-    font-style: italic;
-    color: grey !important;
-    margin-bottom: 1em !important;
-  }
-
-  .content .intro-text p {
-    margin: 0 !important;
-    color: #ccc !important;
-    font-size: 1.2rem !important;
-  }
-
-  @media (max-width: 600px) {
-    .content h1 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-    }
-
-    .content h1 .highlight {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      color: #8a2be2;
-    }
-
-    .content p {
-      font-size: clamp(0.8rem, 3vw, 1rem);
-      line-height: 1.4;
-    }
-
-    .content .intro-text p {
-      font-size: clamp(0.9rem, 3vw, 1rem) !important;
-      line-height: 1.3;
-    }
-
-    .content .intro-text p:first-child {
-      font-size: clamp(1.3rem, 4vw, 1.6rem) !important;
-      font-weight: 700 !important;
-      font-style: italic !important;
-      color: grey !important;
-      margin-bottom: 1em !important;
-    }
-  }
-  </style>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Eternora</title>
+  <title>Eternora-Home</title>
+  <meta name="description" content="Eternora delivers cutting-edge tech solutions including bot development, web development, graphic design, and optimization services.">
+  <meta name="keywords" content="tech solutions, bot development, web development, graphic design, cybersecurity, digital innovation">
   <link rel="icon" type="image/x-icon" href="assets/Favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
+  
+  <style>
+    @font-face {
+      font-family: 'MOKOTO Glitch 1';
+      src: url('fonts/mokoto-mokoto-regular-glitch-mark-2-400.otf') format('opentype'),
+           url('fonts/mokoto-mokoto-regular-glitch-mark-2-400.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    #preloader-typewriter {
+      font-family: 'MOKOTO Glitch 1', monospace, sans-serif;
+      font-size: 3.5rem;
+      color: white;
+      position: relative;
+      letter-spacing: 2px;
+    }
+
+    .logo-name {
+      font-family: 'MOKOTO Glitch 1', 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      #preloader-typewriter {
+        font-size: 2.5rem;
+      }
+      
+      .logo-name {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #preloader-typewriter {
+        font-size: 2rem;
+      }
+      
+      .logo-name {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Stars Background -->
+  <!-- Stars Background (Reduced) -->
   <div class="stars"></div>
+  
+  <!-- Mouse Trail Effect -->
+  <div class="mouse-trail"></div>
+  
+  <!-- Purple Loading Bar -->
+  <div class="loading-bar" id="loadingBar"></div>
 
   <!-- Preloader Overlay -->
   <div class="preloader-overlay" id="preloaderOverlay">
-    <img src="assets/Logo.png" alt="Eternora Logo" class="preloader-logo" />
-    <div class="preloader-title"><span id="preloader-typewriter"></span></div>
+    <div class="preloader-content">
+      <img src="assets/Logo.png" alt="Eternora Logo" class="preloader-logo" />
+      <div class="preloader-title">
+        <span id="preloader-typewriter"></span>
+      </div>
+    </div>
   </div>
 
   <!-- All page content wrapped here -->
@@ -85,7 +87,10 @@
     <nav class="navbar">
       <div class="logo-container">
         <img src="assets/Logo.png" alt="Eternora Logo" class="logo" />
-        <div class="text">Eternora</div>
+        <div class="logo-text">
+          <span class="logo-name">Eternora</span>
+          <span class="logo-tagline">Digital Innovation Studio</span>
+        </div>
       </div>
 
       <!-- Hamburger Button -->
@@ -96,274 +101,497 @@
       </button>
 
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Our Services</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="services.html" class="nav-link"><i class="fas fa-code"></i> Our Services</a></li>
+        <li><a href="reviews.html" class="nav-link"><i class="fas fa-star"></i> Reviews</a></li>
+        <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="contact.html#quote" class="nav-cta">Get Quote <i class="fas fa-arrow-right"></i></a></li>
       </ul>
     </nav>
 
     <!-- Main Content -->
-
-    <div class="content" id="mainContent">
-      <h1>Welcome to <span class="highlight">Eternora</span></h1>
-      <div class="intro-text">
-        <p>Eternora: Where small businesses get big brains — smart tools, smarter growth.</p>
-        <p>The internet is crowded, noisy, and full of digital clones. That's why we built Eternora.</p>
-        <p>Founded in Moscow by young Indian entrepreneurs who asked, "Why play safe when we can play bold?", Eternora makes the online world less predictable and far more unforgettable.</p>
-        <p>We create bots that give you an edge, visuals that linger, videos that stop the scroll, sound that stays, and stories that stick. We don't just deliver services — we help your brand make noise worth hearing, turn audiences into communities, and leave a lasting impression.</p>
-        <p>Eternora: if the world is going to echo, make it echo you.</p>
-      </div>
-    </div>
-
-    <!-- Service Section -->
-
-    <section class="services-highlight-home">
-      <h2 class="section-title">Our Services</h2>
-      <div class="services-grid">
-        <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="8" y1="16" x2="16" y2="16"></line>
-              <line x1="9" y1="9" x2="9.01" y2="9"></line>
-              <line x1="15" y1="9" x2="15.01" y2="9"></line>
-            </svg>
-          </div>
-          <h3>Bot Development</h3>
-          <p>Bots that engage and streamline your workflow effortlessly.</p>
-        </div>
-
-        <div class="service-item" data-aos="fade-up" data-aos-delay="400">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="5" width="18" height="12" rx="2" ry="2"></rect>
-              <line x1="8" y1="19" x2="16" y2="19"></line>
-              <line x1="12" y1="17" x2="12" y2="19"></line>
-            </svg>
-          </div>
-          <h3>Web Development</h3>
-          <p>Websites that captivate and drive your online success.</p>
-        </div>
-
-        <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-              <path d="M2 2l7.586 7.586"></path>
-              <circle cx="11" cy="11" r="2"></circle>
-            </svg>
-          </div>
-          <h3>Graphic Design</h3>
-          <p>Visual content that stands out and leaves a lasting impression.</p>
-        </div>
-
-        <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="48" height="48">
-              <circle cx="12" cy="12" r="3"></circle>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-            </svg>
-          </div>
-          <h3>Optimization</h3>
-          <p>We help optimize your business through SMO | SMM | SEO.</p>
-        </div>
-      </div>
-
-      <div class="cta-container">
-        <a href="services.html" class="cta-button-services">
-          Explore All Services
-          <span class="arrow">→</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team-section">
-      <h2 class="section-title">Our Team</h2>
-
-      <div class="team-container">
-        <div class="team-member" data-animation="fade-right">
-          <div class="member-image">
-            <div class="image-container">
-              <img src="assets/team/siona.jpg" alt="Siona" class="team-photo" />
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <!-- Floating Tech Elements -->
+          <div class="floating-elements">
+            <div class="floating-element element-1">
+              <i class="fas fa-robot"></i>
             </div>
-            <div class="image-border"></div>
+            <div class="floating-element element-2">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="floating-element element-3">
+              <i class="fas fa-palette"></i>
+            </div>
+            <div class="floating-element element-4">
+              <i class="fas fa-chart-line"></i>
+            </div>
           </div>
-        
-          <div class="member-info">
-            <h3>Siona</h3>
-            <h4>Business Development & Operations</h4>
-            <p>Siona is a multidisciplinary professional with experience in analytics, project management, consulting, and cross-cultural collaboration across Russia and India. With a background in business management, she focuses on building meaningful networks and strategies that deliver lasting impact. She excels at turning complex challenges into actionable solutions with clarity and precision.</p>
           
-            <div class="member-fun-facts">
-              <span> Data Enthusiast</span>
-              <span> Cross-Cultural Connector</span>
-              <span> Practical Problem-Solver</span>
-            </div>
-          
-            <div class="member-quote">
-              "Elegant solutions are often the simplest ones."
-            </div>
+          <!-- Tech Background Graphic -->
+          <div class="hero-graphic">
+            <div class="tech-circle"></div>
+            <div class="tech-grid"></div>
           </div>
-        </div>
-      
-        <div class="team-member" data-animation="fade-left">
-          <div class="member-image">
-            <div class="image-container">
-              <img src="assets/team/aditya.jpg" alt="Aditya" class="team-photo" />
-            </div>
-            <div class="image-border"></div>
-          </div>
-        
-          <div class="member-info">
-            <h3>Aditya</h3>
-            <h4>Programmer | Hacker</h4>
-            <p>Aditya is a hacker who builds strong and secure systems to protect businesses from real cybersecurity threats. He focuses on practical security solutions that work in everyday situations, rather than just theoretical ideas. His goal is to help companies stay safe with effective and straightforward protections.</p>
           
-            <div class="member-fun-facts">
-              <span> Cybersecurity</span>
-              <span> Code Wizard</span>
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span><i class="fas fa-bolt"></i> Tech Innovation Studio</span>
             </div>
-          
-            <div class="member-quote">
-              "The weakest link in cybersecurity is often found between the keyboard and the chair."
+            <h1 class="hero-title">
+              Where Small Businesses Get <span class="highlight-gradient">Big Brains</span>
+            </h1>
+            <p class="hero-subtitle">
+              Smart tools, smarter growth. We create digital solutions that give you the competitive edge in today's crowded online world.
+            </p>
+            <div class="hero-actions">
+              <a href="services.html" class="hero-btn primary">
+                <span>Explore Services</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="contact.html" class="hero-btn secondary">
+                <span>Start Project</span>
+                <i class="fas fa-rocket"></i>
+              </a>
             </div>
-          </div>
-        </div>  
-      </div>
-    </section>
-
-    <!-- Review section -->
-    <section class="testimonial-section">
-      <h2 class="section-title">What our clients say?</h2>
-      <div class="testimonial-carousel">
-        <div class="testimonial-container">
-          <!-- First review -->
-          <div class="testimonial-slide active">
-            <div class="testimonial-content">
-              <div class="testimonial-rating">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number" data-count="5">0</span>
+                <span class="stat-label">Projects Delivered</span>
               </div>
-              <div class="testimonial-text">
-                <p>"Working with Eternora was a breath of fresh air. As the founder of a technical company like SS Engineering, I wasn't expecting a creative team to understand our complex needs so quickly — but they nailed it. The website they developed for us is sleek, functional, and speaks our brand language perfectly..."</p>
+              <div class="stat-item">
+                <span class="stat-number" data-count="100">0</span>
+                <span class="stat-label">% Client Satisfaction</span>
               </div>
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img src="/assets/ssengineering.jpg" alt="SS Engineering" />
-                </div>
-                <div class="author-info">
-                  <h4>Sebastian Dsouza</h4>
-                  <p>Founder & CEO, SS Engineering</p>
+              <div class="stat-item">
+                <span class="stat-number" data-count="24">0</span>
+                <span class="stat-label">Hour Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Introduction Section -->
+      <section class="intro-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Redefining Digital Presence</h2>
+            <p class="section-subtitle">From young entrepreneurs in Moscow to global impact</p>
+          </div>
+          <div class="intro-content">
+            <p class="intro-lead">
+              The internet is crowded, noisy, and full of digital clones. That's why we built Eternora.
+            </p>
+            <p>
+              Founded in Moscow by young Indian entrepreneurs who asked, "Why play safe when we can play bold?", 
+              Eternora makes the online world less predictable and far more unforgettable.
+            </p>
+            <p>
+              We create bots that give you an edge, visuals that linger, videos that stop the scroll, 
+              sound that stays, and stories that stick. We don't just deliver services — we help your brand 
+              make noise worth hearing, turn audiences into communities, and leave a lasting impression.
+            </p>
+            <div class="intro-highlight">
+              <i class="fas fa-quote-left"></i>
+              <p>If the world is going to echo, make it echo you.</p>
+              <i class="fas fa-quote-right"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Our <span class="highlight">Services</span></h2>
+            <p class="section-subtitle">Comprehensive digital solutions for modern businesses</p>
+          </div>
+          
+          <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+              <div class="service-icon">
+                <div class="icon-background">
+                  <i class="fas fa-robot"></i>
                 </div>
               </div>
+              <h3>Bot Development</h3>
+              <p>Intelligent chatbots and automation systems that engage customers and streamline workflows 24/7.</p>
+              <ul class="service-features">
+                <li><i class="fas fa-check-circle"></i> Custom AI-powered bots</li>
+                <li><i class="fas fa-check-circle"></i> Multi-platform integration</li>
+                <li><i class="fas fa-check-circle"></i> Natural language processing</li>
+              </ul>
+              <a href="services.html#bots" class="service-link">
+                Learn more <i class="fas fa-arrow-right"></i>
+              </a>
             </div>
-          </div>
-          <!-- New second testimonial slide -->
-          <div class="testimonial-slide">
-            <div class="testimonial-content">
-              <div class="testimonial-rating" aria-label="5 stars rating">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-              </div>
-              <div class="testimonial-text">
-                <p>"Working with Eternora significantly improved India Day Festival Moscow. They created a bot that provided the full event schedule instantly to thousands of visitors. It made finding event details easy and interactions smooth. The bot reduced repetitive questions and added a modern tech edge. Eternora's solution truly boosted how we engaged with our audience."</p>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img src="/assets/dasha.jpg" alt="Dasha Kotwani" />
-                </div>
-                <div class="author-info">
-                  <h4>Dasha Kotwani</h4>
-                  <p>Director, Indian National Culutural Center SITA</p>
+            
+            <!-- Service 2 -->
+            <div class="service-card">
+              <div class="service-icon">
+                <div class="icon-background">
+                  <i class="fas fa-code"></i>
                 </div>
               </div>
+              <h3>Web Development</h3>
+              <p>Responsive, high-performance websites and web applications that drive growth and conversions.</p>
+              <ul class="service-features">
+                <li><i class="fas fa-check-circle"></i> Custom CMS development</li>
+                <li><i class="fas fa-check-circle"></i> E-commerce solutions</li>
+                <li><i class="fas fa-check-circle"></i> Progressive Web Apps</li>
+              </ul>
+              <a href="services.html#web" class="service-link">
+                Learn more <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="service-card">
+              <div class="service-icon">
+                <div class="icon-background">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+              </div>
+              <h3>Digital Optimization</h3>
+              <p>Comprehensive SEO, SMO, and SMM strategies to maximize your online visibility and engagement.</p>
+              <ul class="service-features">
+                <li><i class="fas fa-check-circle"></i> SEO optimization</li>
+                <li><i class="fas fa-check-circle"></i> Social media management</li>
+                <li><i class="fas fa-check-circle"></i> Performance analytics</li>
+              </ul>
+              <a href="services.html#optimization" class="service-link">
+                Learn more <i class="fas fa-arrow-right"></i>
+              </a>
             </div>
           </div>
-
-          <!-- Carousel Controls -->
-          <div class="carousel-controls">
-            <button class="carousel-control prev" aria-label="Previous testimonial">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>
-            </button>
-            <div class="carousel-indicators">
-              <span class="indicator active" data-index="0"></span>
-              <span class="indicator" data-index="1"></span>
-            </div>
-            <button class="carousel-control next" aria-label="Next testimonial">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
+          
+          <div class="services-cta">
+            <a href="services.html" class="cta-button">
+              <span>View All Services</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
+      </section>
 
-        <div class="testimonial-cta-container">
-          <a href="reviews.html" class="cta-button-testimonials">
-            See all reviews
-            <span class="arrow">→</span>
-          </a>
+      <!-- Team Section -->
+      <section class="team-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Our <span class="highlight">Team</span></h2>
+            <p class="section-subtitle">The innovative minds behind Eternora</p>
+          </div>
+          
+          <div class="team-container">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+              <div class="member-card">
+                <div class="member-header">
+                  <div class="member-image">
+                    <img src="assets/team/siona.jpg" alt="Siona" class="team-photo" />
+                    <div class="member-overlay">
+                      <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-tags">
+                    <span class="tag">Analytics</span>
+                    <span class="tag">Strategy</span>
+                    <span class="tag">Operations</span>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h3>Siona</h3>
+                  <h4>Business Development & Operations</h4>
+                  <p>Multidisciplinary professional with expertise in analytics, project management, and cross-cultural collaboration across Russia and India. Focuses on building meaningful networks and strategies for lasting impact.</p>
+                  
+                  <div class="member-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Elegant solutions are often the simplest ones.</p>
+                  </div>
+                  
+                  <div class="member-skills">
+                    <div class="skill">
+                      <span class="skill-name">Data Analysis</span>
+                      <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                      </div>
+                    </div>
+                    <div class="skill">
+                      <span class="skill-name">Project Management</span>
+                      <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%"></div>
+                      </div>
+                    </div>
+                    <div class="skill">
+                      <span class="skill-name">Strategic Planning</span>
+                      <div class="skill-bar">
+                        <div class="skill-level" style="width: 88%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="team-member">
+              <div class="member-card">
+                <div class="member-header">
+                  <div class="member-image">
+                    <img src="assets/team/aditya.jpg" alt="Aditya" class="team-photo" />
+                    <div class="member-overlay">
+                      <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-stack-overflow"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-tags">
+                    <span class="tag">Cybersecurity</span>
+                    <span class="tag">Full Stack</span>
+                    <span class="tag">System Architecture</span>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h3>Aditya</h3>
+                  <h4>Programmer | Security Specialist</h4>
+                  <p>Security-focused developer building robust, secure systems to protect businesses from real-world threats. Specializes in practical security solutions that work in everyday situations.</p>
+                  
+                  <div class="member-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>The weakest link in cybersecurity is often found between the keyboard and the chair.</p>
+                  </div>
+                  
+                  <div class="member-skills">
+                    <div class="skill">
+                      <span class="skill-name">Cybersecurity</span>
+                      <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%"></div>
+                      </div>
+                    </div>
+                    <div class="skill">
+                      <span class="skill-name">Full Stack Development</span>
+                      <div class="skill-bar">
+                        <div class="skill-level" style="width: 92%"></div>
+                      </div>
+                    </div>
+                    <div class="skill">
+                      <span class="skill-name">System Architecture</span>
+                      <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Client <span class="highlight">Testimonials</span></h2>
+            <p class="section-subtitle">What businesses say about working with us</p>
+          </div>
+          
+          <div class="testimonials-container">
+            <div class="testimonial-slider" id="testimonialSlider">
+              <!-- Testimonial 1 -->
+              <div class="testimonial-slide active">
+                <div class="testimonial-card">
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"Working with Eternora was a breath of fresh air. As the founder of a technical company like SS Engineering, I wasn't expecting a creative team to understand our complex needs so quickly — but they nailed it. The website they developed for us is sleek, functional, and speaks our brand language perfectly..."</p>
+                  </div>
+                  <div class="testimonial-author">
+                    <img src="assets/ssengineering.jpg" alt="Sebastian Dsouza" class="author-avatar" />
+                    <div class="author-info">
+                      <h4>Sebastian Dsouza</h4>
+                      <p>Founder & CEO, SS Engineering</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Testimonial 2 -->
+              <div class="testimonial-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"Working with Eternora significantly improved India Day Festival Moscow. They created a bot that provided the full event schedule instantly to thousands of visitors. It made finding event details easy and interactions smooth. The bot reduced repetitive questions and added a modern tech edge."</p>
+                  </div>
+                  <div class="testimonial-author">
+                    <img src="assets/dasha.jpg" alt="Dasha Kotwani" class="author-avatar" />
+                    <div class="author-info">
+                      <h4>Dasha Kotwani</h4>
+                      <p>Director, Indian National Cultural Center SITA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="slider-controls">
+              <button class="slider-btn prev-btn" id="prevTestimonial">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+              </div>
+              <button class="slider-btn next-btn" id="nextTestimonial">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div class="testimonials-cta">
+            <a href="reviews.html" class="cta-button secondary">
+              <span>Read All Reviews</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to Transform Your Digital Presence?</h2>
+            <p>Let's build something remarkable together. Get in touch for a free consultation.</p>
+            <div class="cta-buttons">
+              <a href="contact.html" class="cta-button primary large">
+                <span>Start Your Project</span>
+                <i class="fas fa-rocket"></i>
+              </a>
+              <a href="contact.html#quote" class="cta-button secondary large">
+                <span>Get Free Quote</span>
+                <i class="fas fa-file-invoice"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 Eternora Enterprises Pvt. Ltd. All rights reserved.</p>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img src="assets/Logo.png" alt="Eternora Logo" />
+              <div class="footer-logo-text">
+                <h3 class="logo-name">Eternora</h3>
+                <p>Digital Innovation Studio</p>
+              </div>
+            </div>
+            <p class="footer-description">
+              Where small businesses get big brains — smart tools, smarter growth.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html#quote">Get Quote</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html#bots">Bot Development</a></li>
+              <li><a href="services.html#web">Web Development</a></li>
+              <li><a href="services.html#design">Graphic Design</a></li>
+              <li><a href="services.html#optimization">Digital Optimization</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> Moscow, Russia</p>
+              <p><i class="fas fa-envelope"></i> info@eternora.online</p>
+              <p><i class="fas fa-phone"></i> +7 (XXX) XXX-XXXX</p>
+              <p><i class="fas fa-clock"></i> Mon-Fri: 9:00-18:00</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2025 Eternora Enterprises Pvt. Ltd. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
   </div>
 
-  <!-- Purple Loading Bar -->
-  <div class="loading-bar" id="loadingBar"></div>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
-  <!-- Scripts -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Star background effect
-      const starsContainer = document.querySelector('.stars');
-      const numberOfStars = 100;
-      for (let i = 0; i < numberOfStars; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        star.style.left = `${Math.random() * 100}vw`;
-        star.style.top = `${Math.random() * 100}vh`;
-        star.style.animationDelay = `${Math.random() * 5}s`;
-        star.style.animationDuration = `${Math.random() * 5 + 5}s`;
-        starsContainer.appendChild(star);
-      }
-
-      // Preloader logic
+    // ============================================
+    // MAIN SCRIPT
+    // ============================================
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // ============================================
+      // PRELOADER WITH ORIGINAL GLITCH EFFECT
+      // ============================================
       const preloaderOverlay = document.getElementById('preloaderOverlay');
       const pageContent = document.getElementById('pageContent');
       const preloaderTypewriter = document.getElementById('preloader-typewriter');
-
-      function showMainContent() {
-        preloaderOverlay.classList.add('hidden');
-        setTimeout(() => {
-          pageContent.classList.add('visible');
-          // NO centering of navbar here
-        }, 1000);
-      }
-
+      
       function runPreloader() {
         const text = "Eternora";
         const glitchChars = ['%', '#', '@', '!', '&', '*', '$', '?', '+', '-', '='];
         let index = 0;
         preloaderTypewriter.textContent = "";
-
+        
         function glitchChar() {
           return glitchChars[Math.floor(Math.random() * glitchChars.length)];
         }
-
+        
         function type() {
           if (index < text.length) {
             // Show glitch first
@@ -380,241 +608,397 @@
         }
         type();
       }
-
-      runPreloader();
-
-      // Loading bar animation on navigation
+      
+      function showMainContent() {
+        preloaderOverlay.classList.add('hidden');
+        setTimeout(() => {
+          pageContent.classList.add('visible');
+        }, 1000);
+      }
+      
+      // ============================================
+      // LOADING BAR FOR PAGE TRANSITIONS
+      // ============================================
       const loadingBar = document.getElementById('loadingBar');
+      
+      function startLoadingBar() {
+        loadingBar.style.transition = 'none';
+        loadingBar.style.width = '0';
+        loadingBar.style.display = 'block';
+        loadingBar.classList.add('active');
+        
+        // Force reflow
+        void loadingBar.offsetWidth;
+        
+        loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+        loadingBar.style.width = '100%';
+      }
+      
+      // Add loading bar to all internal navigation links
       document.querySelectorAll('a[href]').forEach(link => {
         const href = link.getAttribute('href');
-        if (
-          href &&
-          !href.startsWith('#') &&
-          !link.hasAttribute('target') &&
-          !href.startsWith('mailto:') &&
-          !href.startsWith('tel:') &&
-          !href.startsWith('javascript:')
-        ) {
-          link.addEventListener('click', function (e) {
+        
+        // Only apply to internal links
+        if (href &&
+            !href.startsWith('#') &&
+            !link.hasAttribute('target') &&
+            !href.startsWith('mailto:') &&
+            !href.startsWith('tel:') &&
+            !href.startsWith('javascript:')) {
+          
+          link.addEventListener('click', function(e) {
             e.preventDefault();
-            loadingBar.style.transition = 'none';
-            loadingBar.style.width = '0';
-            loadingBar.style.display = 'block';
-            void loadingBar.offsetWidth;
-            loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
-            loadingBar.style.width = '100%';
+            startLoadingBar();
+            
             setTimeout(() => {
               window.location.href = href;
             }, 850);
           });
         }
       });
-
-      // Animate loading bar on unload (reload/back)
-      window.addEventListener('beforeunload', function () {
-        loadingBar.style.transition = 'none';
-        loadingBar.style.width = '0';
-        loadingBar.style.display = 'block';
-        void loadingBar.offsetWidth;
-        loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
-        loadingBar.style.width = '100%';
+      
+      // Handle browser back/forward buttons
+      window.addEventListener('beforeunload', function() {
+        startLoadingBar();
       });
-
-      // Hamburger menu toggle with touch support
+      
+      // ============================================
+      // NAVIGATION
+      // ============================================
       const hamburgerBtn = document.getElementById('hamburgerBtn');
       const navLinks = document.querySelector('.nav-links');
-
-      function toggleMenu(e) {
-        e.preventDefault();
-        navLinks.classList.toggle('open');
+      const navbar = document.querySelector('.navbar');
+      const backToTop = document.getElementById('backToTop');
+      
+      // Hamburger menu toggle
+      if (hamburgerBtn && navLinks) {
+        function toggleMenu(e) {
+          e.preventDefault();
+          hamburgerBtn.classList.toggle('active');
+          navLinks.classList.toggle('open');
+          document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+        }
+        
+        hamburgerBtn.addEventListener('click', toggleMenu);
+        hamburgerBtn.addEventListener('touchstart', toggleMenu);
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            hamburgerBtn.classList.remove('active');
+            navLinks.classList.remove('open');
+            document.body.style.overflow = '';
+          });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (navLinks.classList.contains('open') && 
+              !hamburgerBtn.contains(e.target) && 
+              !navLinks.contains(e.target)) {
+            
+            hamburgerBtn.classList.remove('active');
+            navLinks.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
       }
-
-      hamburgerBtn.addEventListener('click', toggleMenu);
-      hamburgerBtn.addEventListener('touchstart', toggleMenu);
-
-      // Scroll animation function
-      function initScrollAnimations() {
-        const serviceItems = document.querySelectorAll('.service-item');
+      
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
         
-        // Intersection Observer for animations
-        const observerOptions = {
-          threshold: 0.2,
-          rootMargin: '0px 0px -50px 0px'
-        };
+        // Back to top button
+        if (backToTop) {
+          if (window.scrollY > 300) {
+            backToTop.classList.add('visible');
+          } else {
+            backToTop.classList.remove('visible');
+          }
+        }
+      });
+      
+      // Back to top functionality
+      if (backToTop) {
+        backToTop.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+      
+      // ============================================
+      // MOUSE TRAIL EFFECT
+      // ============================================
+      const mouseTrail = document.querySelector('.mouse-trail');
+      
+      // Only create trail effect on non-touch devices
+      if (!('ontouchstart' in window) && mouseTrail) {
+        let mouseX = 0;
+        let mouseY = 0;
+        let trailX = 0;
+        let trailY = 0;
         
+        document.addEventListener('mousemove', function(e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          mouseTrail.classList.add('active');
+        });
+        
+        function animateTrail() {
+          // Smooth trail movement
+          trailX += (mouseX - trailX) * 0.2;
+          trailY += (mouseY - trailY) * 0.2;
+          
+          mouseTrail.style.left = trailX + 'px';
+          mouseTrail.style.top = trailY + 'px';
+          
+          requestAnimationFrame(animateTrail);
+        }
+        
+        animateTrail();
+        
+        // Hide trail when mouse leaves window
+        document.addEventListener('mouseleave', function() {
+          mouseTrail.classList.remove('active');
+        });
+        
+        document.addEventListener('mouseenter', function() {
+          mouseTrail.classList.add('active');
+        });
+      }
+      
+      // ============================================
+      // STATS COUNTER ANIMATION
+      // ============================================
+      const statNumbers = document.querySelectorAll('.stat-number');
+      
+      function animateStats() {
+        statNumbers.forEach(stat => {
+          const target = parseInt(stat.getAttribute('data-count'));
+          const increment = target / 30;
+          let current = 0;
+          
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            stat.textContent = Math.floor(current);
+          }, 40);
+        });
+      }
+      
+      // Animate stats when hero section is in view
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              entry.target.style.opacity = '1';
-              entry.target.style.transform = 'translateY(0)';
+              animateStats();
               observer.unobserve(entry.target);
             }
           });
-        }, observerOptions);
+        }, { threshold: 0.5 });
         
-        // Initially set the items to be invisible
-        serviceItems.forEach(item => {
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(30px)';
-          observer.observe(item);
+        observer.observe(heroSection);
+      }
+      
+      // ============================================
+      // TESTIMONIAL SLIDER
+      // ============================================
+      const testimonialSlider = document.getElementById('testimonialSlider');
+      const prevTestimonialBtn = document.getElementById('prevTestimonial');
+      const nextTestimonialBtn = document.getElementById('nextTestimonial');
+      const testimonialDots = document.querySelectorAll('.slider-dots .dot');
+      
+      if (testimonialSlider) {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const totalSlides = slides.length;
+        let slideInterval;
+        
+        function showSlide(index) {
+          // Ensure index is within bounds
+          if (index >= totalSlides) index = 0;
+          if (index < 0) index = totalSlides - 1;
+          
+          // Hide all slides
+          slides.forEach(slide => slide.classList.remove('active'));
+          testimonialDots.forEach(dot => dot.classList.remove('active'));
+          
+          // Show current slide
+          slides[index].classList.add('active');
+          testimonialDots[index].classList.add('active');
+          
+          currentSlide = index;
+        }
+        
+        // Next slide function
+        function nextSlide() {
+          showSlide(currentSlide + 1);
+        }
+        
+        // Previous slide function
+        function prevSlide() {
+          showSlide(currentSlide - 1);
+        }
+        
+        // Start auto slide
+        function startAutoplay() {
+          clearInterval(slideInterval);
+          slideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        // Event listeners for buttons
+        if (prevTestimonialBtn) {
+          prevTestimonialBtn.addEventListener('click', () => {
+            prevSlide();
+            startAutoplay();
+          });
+        }
+        
+        if (nextTestimonialBtn) {
+          nextTestimonialBtn.addEventListener('click', () => {
+            nextSlide();
+            startAutoplay();
+          });
+        }
+        
+        // Event listeners for dots
+        testimonialDots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            showSlide(index);
+            startAutoplay();
+          });
+        });
+        
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        testimonialSlider.addEventListener('touchstart', e => {
+          touchStartX = e.touches[0].clientX;
+          clearInterval(slideInterval);
+        });
+        
+        testimonialSlider.addEventListener('touchend', e => {
+          touchEndX = e.changedTouches[0].clientX;
+          handleSwipe();
+          startAutoplay();
+        });
+        
+        function handleSwipe() {
+          const swipeThreshold = 50;
+          
+          if (touchStartX - touchEndX > swipeThreshold) {
+            // Swipe left - next slide
+            nextSlide();
+          } else if (touchEndX - touchStartX > swipeThreshold) {
+            // Swipe right - previous slide
+            prevSlide();
+          }
+        }
+        
+        // Pause autoplay on hover
+        testimonialSlider.addEventListener('mouseenter', () => {
+          clearInterval(slideInterval);
+        });
+        
+        testimonialSlider.addEventListener('mouseleave', startAutoplay);
+        
+        // Start autoplay
+        startAutoplay();
+      }
+      
+      // ============================================
+      // SERVICE CARDS HOVER EFFECT
+      // ============================================
+      const serviceCards = document.querySelectorAll('.service-card');
+      
+      serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+      
+      // ============================================
+      // SKILL BARS ANIMATION
+      // ============================================
+      const skillBars = document.querySelectorAll('.skill-level');
+      
+      function animateSkillBars() {
+        skillBars.forEach(bar => {
+          const width = bar.style.width;
+          bar.style.width = '0';
+          
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 300);
         });
       }
-
-      // Run after the DOM is fully loaded
-      document.addEventListener('DOMContentLoaded', function() {
-        // All your existing code here...
-        
-        // Add this at the end:
-        initScrollAnimations();
-      });
-
-      // Initialize team member animations
-      function initTeamAnimations() {
-        const teamMembers = document.querySelectorAll('.team-member');
-        
-        // Intersection Observer for team members
-        const teamObserverOptions = {
-          threshold: 0.2,
-          rootMargin: '0px 0px -50px 0px'
-        };
-        
+      
+      // Animate skill bars when team section comes into view
+      const teamSection = document.querySelector('.team-section');
+      if (teamSection) {
         const teamObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
+              animateSkillBars();
               teamObserver.unobserve(entry.target);
             }
           });
-        }, teamObserverOptions);
+        }, { threshold: 0.3 });
         
-        // Observe each team member for animation
-        teamMembers.forEach(member => {
-          teamObserver.observe(member);
-        });
-        
-        // Add hover effects for fun facts
-        const funFactItems = document.querySelectorAll('.member-fun-facts span');
-        funFactItems.forEach(item => {
-          // Randomize initial position for animation
-          const randomDelay = Math.random() * 0.5;
-          item.style.transitionDelay = `${randomDelay}s`;
-          
-          // Apply subtle hover effect
-          item.addEventListener('mouseover', () => {
-            item.style.transform = 'translateY(-5px) scale(1.05)';
-            item.style.background = 'rgba(138, 43, 226, 0.3)';
-          });
-          
-          item.addEventListener('mouseout', () => {
-            item.style.transform = '';
-            item.style.background = '';
-          });
-        });
+        teamObserver.observe(teamSection);
       }
       
-      // Initialize scroll animations
-      initScrollAnimations();
+      // ============================================
+      // INITIALIZE EVERYTHING
+      // ============================================
       
-      // Initialize team animations
-      initTeamAnimations();
-
-      // JavaScript for Review section
-
-      function initTestimonialCarousel() {
-        const slides = document.querySelectorAll('.testimonial-slide');
-        const indicators = document.querySelectorAll('.carousel-indicators .indicator');
-        document.querySelectorAll('.carousel-control.prev, .carousel-control.next').forEach(button => {
-          button.addEventListener('click', (e) => {
-            if (button.classList.contains('prev')) prevSlide();
-            else if (button.classList.contains('next')) nextSlide();
-            startAutoplay();
-          });
-        });
-
-        let currentIndex = 0;
-        let autoplayInterval;
-
-        // Initialize autoplay
-        startAutoplay();
-
-        // Set active slide
-        function setActiveSlide(index) {
-          slides.forEach(slide => slide.classList.remove('active'));
-          indicators.forEach(indicator => indicator.classList.remove('active'));
-
-          slides[index].classList.add('active');
-          indicators[index].classList.add('active');
-          currentIndex = index;
-        }
-
-        function nextSlide() {
-          let nextIndex = currentIndex + 1;
-          if (nextIndex >= slides.length) {
-            nextIndex = 0;
-          }
-          setActiveSlide(nextIndex);
-        }
-
-        function prevSlide() {
-          let prevIndex = currentIndex - 1;
-          if (prevIndex < 0) {
-            prevIndex = slides.length - 1;
-          }
-          setActiveSlide(prevIndex);
-        }
-
-        function startAutoplay() {
-          stopAutoplay();
-          autoplayInterval = setInterval(nextSlide, 5000);
-        }
-
-        function stopAutoplay() {
-          if (autoplayInterval) {
-            clearInterval(autoplayInterval);
-          }
-        }
-
-        indicators.forEach((indicator, index) => {
-          indicator.addEventListener('click', () => {
-            setActiveSlide(index);
-            startAutoplay();
-          });
-        });
-
-        const carousel = document.querySelector('.testimonial-carousel');
-        if (carousel) {
-          carousel.addEventListener('mouseenter', stopAutoplay);
-          carousel.addEventListener('mouseleave', startAutoplay);
-        }
-
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        function handleTouchStart(e) {
-          touchStartX = e.touches[0].clientX;
-        }
-
-        function handleTouchEnd(e) {
-          touchEndX = e.changedTouches[0].clientX;
-          handleSwipe();
-        }
-
-        function handleSwipe() {
-          const swipeThreshold = 50;
-          if (touchStartX - touchEndX > swipeThreshold) {
-            nextSlide();
-          } else if (touchEndX - touchStartX > swipeThreshold) {
-            prevSlide();
-          }
-          startAutoplay();
-        }
-
-        if (carousel) {
-          carousel.addEventListener('touchstart', handleTouchStart, false);
-          carousel.addEventListener('touchend', handleTouchEnd, false);
-        }
+      // Start preloader
+      runPreloader();
+      
+      // Set current year in footer
+      const yearElements = document.querySelectorAll('.footer-bottom p');
+      if (yearElements.length > 0) {
+        const currentYear = new Date().getFullYear();
+        yearElements[0].textContent = yearElements[0].textContent.replace('2025', currentYear);
       }
-      initTestimonialCarousel();
+      
+      // Add smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          
+          if (href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
+        });
+      });
+      
+      // Console greeting
+      console.log('%c🚀 Eternora Digital Innovation Studio', 'color: #8a2be2; font-size: 18px; font-weight: bold;');
+      console.log('%c✨ Where small businesses get big brains', 'color: #aaa; font-size: 14px;');
     });
   </script>
 </body>

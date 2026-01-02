@@ -3,26 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Our Services - Eternora</title>
+  <title>Eternora-Services</title>
+  <meta name="description" content="Explore Eternora's comprehensive digital services including bot development, web development, graphic design, cybersecurity, optimization, and business consultancy.">
+  <meta name="keywords" content="bot development, web development, graphic design, cybersecurity, digital optimization, business consultancy">
   <link rel="icon" type="image/x-icon" href="assets/Favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles-services.css" />
+  
   <style>
-    .page-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 600;
-      text-align: center;
-      color: #fff;
-      margin-top: clamp(80px, 10vw, 120px);
-      margin-bottom: clamp(15px, 3vw, 30px);
-      text-shadow: none !important;
-      animation: none !important;
+    @font-face {
+      font-family: 'MOKOTO Glitch 1';
+      src: url('fonts/mokoto-mokoto-regular-glitch-mark-2-400.otf') format('opentype'),
+           url('fonts/mokoto-mokoto-regular-glitch-mark-2-400.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .logo-name {
+      font-family: 'MOKOTO Glitch 1', 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .logo-name {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-name {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Stars Background -->
+  <div class="stars"></div>
+  
+  <!-- Mouse Trail Effect -->
+  <div class="mouse-trail"></div>
+  
   <!-- Purple Loading Bar -->
   <div class="loading-bar" id="loadingBar"></div>
 
@@ -30,7 +59,10 @@
   <nav class="navbar">
     <div class="logo-container">
       <img src="assets/Logo.png" alt="Eternora Logo" class="logo" />
-      <div class="text">Eternora</div>
+      <div class="logo-text">
+        <span class="logo-name">Eternora</span>
+        <span class="logo-tagline">Digital Innovation Studio</span>
+      </div>
     </div>
 
     <!-- Hamburger Button -->
@@ -41,123 +73,825 @@
     </button>
 
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Our Services</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="services.html" class="nav-link active"><i class="fas fa-code"></i> Our Services</a></li>
+      <li><a href="reviews.html" class="nav-link"><i class="fas fa-star"></i> Reviews</a></li>
+      <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="contact.html#quote" class="nav-cta">Get Quote <i class="fas fa-arrow-right"></i></a></li>
     </ul>
   </nav>
 
-  <!-- Background Stars -->
-  <div class="stars"></div>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="services-hero">
+      <div class="container">
+        <!-- Floating Tech Elements -->
+        <div class="floating-elements">
+          <div class="floating-element element-1">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="floating-element element-2">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="floating-element element-3">
+            <i class="fas fa-palette"></i>
+          </div>
+          <div class="floating-element element-4">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="floating-element element-5">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="floating-element element-6">
+            <i class="fas fa-briefcase"></i>
+          </div>
+        </div>
+        
+        <!-- Tech Background Graphic -->
+        <div class="hero-graphic">
+          <div class="tech-circle"></div>
+          <div class="tech-grid"></div>
+        </div>
+        
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span><i class="fas fa-cogs"></i> Comprehensive Solutions</span>
+          </div>
+          <h1 class="hero-title">
+            Our <span class="highlight-gradient">Digital Services</span>
+          </h1>
+          <p class="hero-subtitle">
+            From intelligent bots to secure systems, we provide end-to-end digital solutions that empower your business to thrive in the modern digital landscape.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">6</span>
+              <span class="stat-label">Core Services</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100</span>
+              <span class="stat-label">% Custom Solutions</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Page Title -->
-  <h1 class="page-title">Our Services</h1>
+    <!-- Services Grid Section -->
+    <section class="services-grid-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our <span class="highlight">Expertise</span></h2>
+          <p class="section-subtitle">Comprehensive digital solutions tailored to your business needs</p>
+        </div>
+        
+        <!-- Services Unified Grid -->
+        <div class="services-unified-grid">
+          <!-- Service 1: Bot Development -->
+          <div class="service-item" id="bots">
+            <div class="service-icon-badge">
+              <div class="service-icon-wrapper">
+                <i class="fas fa-robot"></i>
+              </div>
+              <span class="service-badge">AI-Powered</span>
+            </div>
+            
+            <div class="service-content">
+              <div class="service-header">
+                <h3>Bot Development</h3>
+                <div class="service-price-tag">
+                  <span class="price-label">Starting from</span>
+                  <span class="price">₹15000</span>
+                </div>
+              </div>
+              
+              <p class="service-description">
+                Because every business deserves a smart assistant. Our bots manage customer queries, streamline support, and boost sales without extra overhead.
+              </p>
+              
+              <div class="service-details-grid">
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Customer Service Bots</h4>
+                    <p>24/7 automated support that never sleeps</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Educational Bots</h4>
+                    <p>Gamified learning experiences for better engagement</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Sales & Conversion Bots</h4>
+                    <p>Lead generation automation to boost revenue</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="service-tech-stack">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">AI/ML</span>
+                <span class="tech-pill">Dialogflow</span>
+                <span class="tech-pill">Telegram API</span>
+              </div>
+              
+              <a href="contact.html#quote" class="service-action-btn">
+                <span>Start Project</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
 
-  <!-- Services Section -->
-  <div class="services-container">
-    <div class="service-card">
-      <div class="service-title">Bot Development</div>
-      <div class="service-description">Because every business deserves a smart assistant. Our bots manage customer queries, streamline support, and even boost sales without extra overhead. Beyond business, we also create educational bots that gamify learning, spark curiosity, and engage students. Smart, adaptive, and always on — digital teammates that learn fast and grow with you.</div>
-    </div>
-    <div class="service-card">
-      <div class="service-title">Web Development</div>
-      <div class="service-description">Your website is more than a URL — it’s the digital backbone of your business. We build responsive, secure, and scalable platforms designed to last. From sleek layouts to seamless functionality, every element is crafted to impress visitors, drive engagement, and deliver measurable results. A website that evolves as your business grows.</div>
-    </div>
-    <div class="service-card">
-      <div class="service-title">Graphic Designing</div>
-      <div class="service-description">A strong brand begins with powerful visuals. We design logos, campaigns, and digital assets that don’t just look good, but tell a compelling story. Every design blends creativity with strategy, ensuring your brand communicates clearly, connects instantly, and leaves a lasting impression. Visual storytelling that makes your business unforgettable everywhere.</div>
-    </div>
-    <div class="service-card">
-      <div class="service-title">Optimization</div>
-      <div class="service-description">Cut through the endless scroll with strategy that works. We create engaging content, build impactful campaigns, and analyze insights to maximize conversions. Our solutions help SMEs transform likes into loyalty, followers into customers, and posts into measurable growth. Social presence isn’t just maintained — it’s built to scale with impact.</div>
-    </div>
-    <div class="service-card">
-      <div class="service-title">Cybersecurity</div>
-      <div class="service-description">Security isn’t optional — it’s essential. We safeguard your business with advanced solutions that detect, prevent, and respond to threats in real time. From data protection to vulnerability assessments, our services keep you resilient. We also provide expert penetration testing to uncover risks before attackers do, ensuring systems remain secure.</div>
-    </div>
-    <div class="service-card">
-      <div class="service-title">Business Consultancy</div>
-      <div class="service-description">Growing a business takes more than tools — it takes strategy. We help SMEs identify opportunities, streamline operations, and build roadmaps for sustainable growth. From market research to process optimization, our consultancy bridges ideas with execution. Practical, data-driven, and tailored to your vision, we turn challenges into opportunities for success.</div>
-    </div>
-  </div>
+          <!-- Service 2: Web Development -->
+          <div class="service-item" id="web">
+            <div class="service-icon-badge">
+              <div class="service-icon-wrapper">
+                <i class="fas fa-code"></i>
+              </div>
+              <span class="service-badge">Full Stack</span>
+            </div>
+            
+            <div class="service-content">
+              <div class="service-header">
+                <h3>Web Development</h3>
+                <div class="service-price-tag">
+                  <span class="price-label">Starting from</span>
+                  <span class="price">₹10000</span>
+                </div>
+              </div>
+              
+              <p class="service-description">
+                Your website is more than a URL — it's the digital backbone of your business. We build responsive, secure, and scalable platforms designed to last.
+              </p>
+              
+              <div class="service-details-grid">
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Custom Web Applications</h4>
+                    <p>Tailored solutions for your specific needs</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>E-commerce Solutions</h4>
+                    <p>Secure online stores with payment integration</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Progressive Web Apps</h4>
+                    <p>Native-like experience across all devices</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="service-tech-stack">
+                <span class="tech-pill">React.js</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">MongoDB</span>
+                <span class="tech-pill">WordPress</span>
+              </div>
+              
+              <a href="contact.html#quote" class="service-action-btn">
+                <span>Start Project</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 3: Graphic Design -->
+          <div class="service-item" id="design">
+            <div class="service-icon-badge">
+              <div class="service-icon-wrapper">
+                <i class="fas fa-palette"></i>
+              </div>
+              <span class="service-badge">Visual Storytelling</span>
+            </div>
+            
+            <div class="service-content">
+              <div class="service-header">
+                <h3>Graphic Design</h3>
+                <div class="service-price-tag">
+                  <span class="price-label">Starting from</span>
+                  <span class="price">₹5000</span>
+                </div>
+              </div>
+              
+              <p class="service-description">
+                A strong brand begins with powerful visuals. We design logos, campaigns, and digital assets that tell compelling stories and create lasting impressions.
+              </p>
+              
+              <div class="service-details-grid">
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Brand Identity Design</h4>
+                    <p>Complete brand packages that stand out</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>UI/UX Design</h4>
+                    <p>User-centered interfaces for better experiences</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Motion Graphics</h4>
+                    <p>Animated content that captures attention</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="service-tech-stack">
+                <span class="tech-pill">Adobe Creative Suite</span>
+                <span class="tech-pill">Figma</span>
+                <span class="tech-pill">Canva Pro</span>
+                <span class="tech-pill">Blender</span>
+              </div>
+              
+              <a href="contact.html#quote" class="service-action-btn">
+                <span>Start Project</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 4: Digital Optimization -->
+          <div class="service-item" id="optimization">
+            <div class="service-icon-badge">
+              <div class="service-icon-wrapper">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <span class="service-badge">Growth Focused</span>
+            </div>
+            
+            <div class="service-content">
+              <div class="service-header">
+                <h3>Digital Optimization</h3>
+                <div class="service-price-tag">
+                  <span class="price-label">Starting from</span>
+                  <span class="price">₹2000/m</span>
+                </div>
+              </div>
+              
+              <p class="service-description">
+                Cut through the noise with data-driven strategies. We maximize your online visibility, engagement, and conversions through comprehensive optimization.
+              </p>
+              
+              <div class="service-details-grid">
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>SEO Strategy</h4>
+                    <p>Higher search rankings and organic traffic</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Social Media Management</h4>
+                    <p>Consistent engagement across all platforms</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Analytics & Reporting</h4>
+                    <p>Data-driven insights for better decisions</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="service-tech-stack">
+                <span class="tech-pill">Google Analytics</span>
+                <span class="tech-pill">SEMrush</span>
+                <span class="tech-pill">Meta Business</span>
+                <span class="tech-pill">Mailchimp</span>
+              </div>
+              
+              <a href="contact.html#quote" class="service-action-btn">
+                <span>Start Project</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 5: Cybersecurity -->
+          <div class="service-item" id="security">
+            <div class="service-icon-badge">
+              <div class="service-icon-wrapper">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <span class="service-badge">Enterprise Grade</span>
+            </div>
+            
+            <div class="service-content">
+              <div class="service-header">
+                <h3>Cybersecurity</h3>
+                <div class="service-price-tag">
+                  <span class="price-label">Starting from</span>
+                  <span class="price">₹15000</span>
+                </div>
+              </div>
+              
+              <p class="service-description">
+                Security isn't optional — it's essential. We safeguard your business with advanced solutions that detect, prevent, and respond to threats in real time.
+              </p>
+              
+              <div class="service-details-grid">
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Penetration Testing</h4>
+                    <p>Vulnerability assessment and security audits</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Data Protection</h4>
+                    <p>Encryption & backup solutions for peace of mind</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Network Security</h4>
+                    <p>Firewall configuration and threat monitoring</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="service-tech-stack">
+                <span class="tech-pill">Kali Linux</span>
+                <span class="tech-pill">Wireshark</span>
+                <span class="tech-pill">Metasploit</span>
+                <span class="tech-pill">SSL/TLS</span>
+              </div>
+              
+              <a href="contact.html#quote" class="service-action-btn">
+                <span>Start Project</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 6: Business Consultancy -->
+          <div class="service-item" id="consultancy">
+            <div class="service-icon-badge">
+              <div class="service-icon-wrapper">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <span class="service-badge">Strategic Planning</span>
+            </div>
+            
+            <div class="service-content">
+              <div class="service-header">
+                <h3>Business Consultancy</h3>
+                <div class="service-price-tag">
+                  <span class="price-label">Starting from</span>
+                  <span class="price">₹7000</span>
+                </div>
+              </div>
+              
+              <p class="service-description">
+                Growing a business takes more than tools — it takes strategy. We help SMEs identify opportunities, streamline operations, and build roadmaps for sustainable growth.
+              </p>
+              
+              <div class="service-details-grid">
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Digital Transformation</h4>
+                    <p>Modernization strategy for the digital age</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Process Optimization</h4>
+                    <p>Efficiency improvement and cost reduction</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <h4>Growth Strategy</h4>
+                    <p>Scalable business models for expansion</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="service-tech-stack">
+                <span class="tech-pill">SWOT Analysis</span>
+                <span class="tech-pill">Business Modeling</span>
+                <span class="tech-pill">Market Research</span>
+                <span class="tech-pill">Agile Methodology</span>
+              </div>
+              
+              <a href="contact.html#quote" class="service-action-btn">
+                <span>Start Project</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our <span class="highlight">Process</span></h2>
+          <p class="section-subtitle">A structured approach to delivering exceptional results</p>
+        </div>
+        
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">01</div>
+            <div class="step-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>Discovery</h3>
+            <p>We begin by understanding your business goals, challenges, and requirements through detailed consultations.</p>
+          </div>
+          
+          <div class="process-step">
+            <div class="step-number">02</div>
+            <div class="step-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Strategy</h3>
+            <p>Developing a customized plan with clear objectives, timelines, and deliverables tailored to your needs.</p>
+          </div>
+          
+          <div class="process-step">
+            <div class="step-number">03</div>
+            <div class="step-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Develop</h3>
+            <p>Agile implementation with regular updates, ensuring the solution evolves with your feedback.</p>
+          </div>
+          
+          <div class="process-step">
+            <div class="step-number">04</div>
+            <div class="step-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Launch</h3>
+            <p>Deployment with comprehensive testing, documentation, and training for seamless adoption.</p>
+          </div>
+          
+          <div class="process-step">
+            <div class="step-number">05</div>
+            <div class="step-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Support</h3>
+            <p>Ongoing maintenance, updates, and support to ensure your solution continues to perform optimally.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Transform Your Business?</h2>
+          <p>Let's discuss your project requirements and create a custom solution that drives results.</p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="cta-button primary large">
+              <span>Start Your Project</span>
+              <i class="fas fa-rocket"></i>
+            </a>
+            <a href="contact.html#quote" class="cta-button secondary large">
+              <span>Get Free Quote</span>
+              <i class="fas fa-file-invoice"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Eternora Enterprises Pvt. Ltd. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="assets/Logo.png" alt="Eternora Logo" />
+            <div class="footer-logo-text">
+              <h3 class="logo-name">Eternora</h3>
+              <p>Digital Innovation Studio</p>
+            </div>
+          </div>
+          <p class="footer-description">
+            Where small businesses get big brains — smart tools, smarter growth.
+          </p>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html#quote">Get Quote</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#bots">Bot Development</a></li>
+            <li><a href="services.html#web">Web Development</a></li>
+            <li><a href="services.html#design">Graphic Design</a></li>
+            <li><a href="services.html#optimization">Digital Optimization</a></li>
+            <li><a href="services.html#security">Cybersecurity</a></li>
+            <li><a href="services.html#consultancy">Business Consultancy</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Moscow, Russia</p>
+            <p><i class="fas fa-envelope"></i> info@eternora.online</p>
+            <p><i class="fas fa-phone"></i> +7 (XXX) XXX-XXXX</p>
+            <p><i class="fas fa-clock"></i> Mon-Fri: 9:00-18:00</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear">2025</span> Eternora Enterprises Pvt. Ltd. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
   <script>
-    // --- Redirect to home with preloader on reload ---
-    if (performance.getEntriesByType("navigation")[0]?.type === "reload" ||
-        performance.navigation?.type === 1) {
-      sessionStorage.setItem('showPreloader', 'true');
-      window.location.href = "index.html";
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      // Star background effect
-      const starsContainer = document.querySelector('.stars');
-      const numberOfStars = 100;
-      for (let i = 0; i < numberOfStars; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        star.style.left = `${Math.random() * 100}vw`;
-        star.style.top = `${Math.random() * 100}vh`;
-        star.style.animationDelay = `${Math.random() * 5}s`;
-        star.style.animationDuration = `${Math.random() * 5 + 5}s`;
-        starsContainer.appendChild(star);
-      }
-
-      // Loading bar animation on navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      // ============================================
+      // LOADING BAR FOR PAGE TRANSITIONS
+      // ============================================
       const loadingBar = document.getElementById('loadingBar');
+      
+      function startLoadingBar() {
+        loadingBar.style.transition = 'none';
+        loadingBar.style.width = '0';
+        loadingBar.style.display = 'block';
+        loadingBar.classList.add('active');
+        
+        void loadingBar.offsetWidth;
+        
+        loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+        loadingBar.style.width = '100%';
+      }
+      
+      // Add loading bar to all internal navigation links
       document.querySelectorAll('a[href]').forEach(link => {
         const href = link.getAttribute('href');
-        if (
-          href &&
-          !href.startsWith('#') &&
-          !link.hasAttribute('target') &&
-          !href.startsWith('mailto:') &&
-          !href.startsWith('tel:') &&
-          !href.startsWith('javascript:')
-        ) {
-          link.addEventListener('click', function (e) {
+        
+        if (href &&
+            !href.startsWith('#') &&
+            !link.hasAttribute('target') &&
+            !href.startsWith('mailto:') &&
+            !href.startsWith('tel:') &&
+            !href.startsWith('javascript:')) {
+          
+          link.addEventListener('click', function(e) {
             e.preventDefault();
-            loadingBar.style.transition = 'none';
-            loadingBar.style.width = '0';
-            loadingBar.style.display = 'block';
-            void loadingBar.offsetWidth;
-            loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
-            loadingBar.style.width = '100%';
+            startLoadingBar();
+            
             setTimeout(() => {
               window.location.href = href;
             }, 850);
           });
         }
       });
-
-      // Animate loading bar on page unload
-      window.addEventListener('beforeunload', function () {
-        loadingBar.style.transition = 'none';
-        loadingBar.style.width = '0';
-        loadingBar.style.display = 'block';
-        void loadingBar.offsetWidth;
-        loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
-        loadingBar.style.width = '100%';
+      
+      // Handle browser back/forward buttons
+      window.addEventListener('beforeunload', function() {
+        startLoadingBar();
       });
-
-      // Hamburger menu toggle with touch support
+      
+      // ============================================
+      // NAVIGATION
+      // ============================================
       const hamburgerBtn = document.getElementById('hamburgerBtn');
       const navLinks = document.querySelector('.nav-links');
-
-      function toggleMenu(e) {
-        e.preventDefault();
-        navLinks.classList.toggle('open');
+      const navbar = document.querySelector('.navbar');
+      const backToTop = document.getElementById('backToTop');
+      
+      // Hamburger menu toggle
+      if (hamburgerBtn && navLinks) {
+        function toggleMenu(e) {
+          e.preventDefault();
+          hamburgerBtn.classList.toggle('active');
+          navLinks.classList.toggle('open');
+          document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+        }
+        
+        hamburgerBtn.addEventListener('click', toggleMenu);
+        hamburgerBtn.addEventListener('touchstart', toggleMenu);
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            hamburgerBtn.classList.remove('active');
+            navLinks.classList.remove('open');
+            document.body.style.overflow = '';
+          });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (navLinks.classList.contains('open') && 
+              !hamburgerBtn.contains(e.target) && 
+              !navLinks.contains(e.target)) {
+            
+            hamburgerBtn.classList.remove('active');
+            navLinks.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
       }
-
-      hamburgerBtn.addEventListener('click', toggleMenu);
-      hamburgerBtn.addEventListener('touchstart', toggleMenu);
+      
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+        
+        // Back to top button
+        if (backToTop) {
+          if (window.scrollY > 300) {
+            backToTop.classList.add('visible');
+          } else {
+            backToTop.classList.remove('visible');
+          }
+        }
+      });
+      
+      // Back to top functionality
+      if (backToTop) {
+        backToTop.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+      
+      // ============================================
+      // MOUSE TRAIL EFFECT
+      // ============================================
+      const mouseTrail = document.querySelector('.mouse-trail');
+      
+      // Only create trail effect on non-touch devices
+      if (!('ontouchstart' in window) && mouseTrail) {
+        let mouseX = 0;
+        let mouseY = 0;
+        let trailX = 0;
+        let trailY = 0;
+        
+        document.addEventListener('mousemove', function(e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          mouseTrail.classList.add('active');
+        });
+        
+        function animateTrail() {
+          trailX += (mouseX - trailX) * 0.2;
+          trailY += (mouseY - trailY) * 0.2;
+          
+          mouseTrail.style.left = trailX + 'px';
+          mouseTrail.style.top = trailY + 'px';
+          
+          requestAnimationFrame(animateTrail);
+        }
+        
+        animateTrail();
+        
+        // Hide trail when mouse leaves window
+        document.addEventListener('mouseleave', function() {
+          mouseTrail.classList.remove('active');
+        });
+        
+        document.addEventListener('mouseenter', function() {
+          mouseTrail.classList.add('active');
+        });
+      }
+      
+      // ============================================
+      // ANIMATE SERVICE ITEMS ON SCROLL
+      // ============================================
+      const serviceItemsAll = document.querySelectorAll('.service-item');
+      
+      function animateOnScroll() {
+        serviceItemsAll.forEach(item => {
+          const itemPosition = item.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+          
+          if (itemPosition < screenPosition) {
+            item.classList.add('animate');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', animateOnScroll);
+      animateOnScroll(); // Initial check
+      
+      // ============================================
+      // PROCESS STEPS ANIMATION
+      // ============================================
+      const processSteps = document.querySelectorAll('.process-step');
+      
+      function animateProcessSteps() {
+        processSteps.forEach((step, index) => {
+          const stepPosition = step.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.3;
+          
+          if (stepPosition < screenPosition) {
+            setTimeout(() => {
+              step.classList.add('animate');
+            }, index * 200);
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', animateProcessSteps);
+      animateProcessSteps(); // Initial check
+      
+      // ============================================
+      // SET CURRENT YEAR IN FOOTER
+      // ============================================
+      const currentYearSpan = document.getElementById('currentYear');
+      if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+      }
+      
+      // ============================================
+      // SMOOTH SCROLLING FOR ANCHOR LINKS
+      // ============================================
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          
+          if (href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
+        });
+      });
+      
+      // ============================================
+      // CONSOLE GREETING
+      // ============================================
+      console.log('%c🚀 Eternora Services', 'color: #8a2be2; font-size: 18px; font-weight: bold;');
+      console.log('%c✨ Where innovation meets execution', 'color: #aaa; font-size: 14px;');
     });
   </script>
 </body>
