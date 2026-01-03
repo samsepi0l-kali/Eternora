@@ -32,6 +32,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding-top: 0; /* Removed padding for fixed navbar */
 }
 
 /* ============================================
@@ -228,12 +229,10 @@ p {
 }
 
 /* ============================================
-   NAVIGATION
+   NAVIGATION - NOT FIXED
    ============================================ */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative; /* Changed from fixed to relative */
   width: 100%;
   padding: 20px 5%;
   background: rgba(10, 10, 15, 0.95);
@@ -244,11 +243,6 @@ p {
   align-items: center;
   justify-content: space-between;
   transition: all 0.3s ease;
-}
-
-.navbar.scrolled {
-  padding: 15px 5%;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .logo-container {
@@ -375,7 +369,7 @@ p {
    SERVICES HERO SECTION
    ============================================ */
 .services-hero {
-  padding: 180px 0 100px;
+  padding: 100px 0 80px;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -1474,6 +1468,20 @@ p {
 }
 
 /* ============================================
+   PAGE CONTENT ANIMATION
+   ============================================ */
+#pageContent {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#pageContent.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
    RESPONSIVE DESIGN - MOBILE OPTIMIZED
    ============================================ */
 
@@ -1572,7 +1580,7 @@ p {
   }
   
   .services-hero {
-    padding: 140px 0 80px;
+    padding: 60px 0 40px;
   }
   
   .hero-title {
@@ -1924,7 +1932,7 @@ p {
   }
   
   .services-hero {
-    padding: 120px 0 60px;
+    padding: 40px 0 30px;
   }
   
   .hero-title {

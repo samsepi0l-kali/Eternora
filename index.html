@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="audio.js"></script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Eternora-Home</title>
@@ -60,6 +62,23 @@
       }
     }
   </style>
+  
+  <script>
+    // Force scroll to top on page refresh/reload
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+    
+    // Also handle when page is fully loaded
+    window.onload = function() {
+      window.scrollTo(0, 0);
+    };
+    
+    // History API to handle back/forward navigation
+    if (history.scrollRestoration) {
+      history.scrollRestoration = 'manual';
+    }
+  </script>
 </head>
 <body>
   <!-- Stars Background (Reduced) -->
@@ -279,7 +298,7 @@
         </div>
       </section>
 
-      <!-- Team Section -->
+      <!-- Team Section - UPDATED DESIGN -->
       <section class="team-section">
         <div class="container">
           <div class="section-header">
@@ -288,19 +307,20 @@
           </div>
           
           <div class="team-container">
-            <!-- Team Member 1 -->
+            <!-- Team Member 1 - UPDATED WITH PURPLE BACKGROUND -->
             <div class="team-member">
               <div class="member-card">
                 <div class="member-header">
-                  <div class="member-image">
-                    <img src="assets/team/siona.jpg" alt="Siona" class="team-photo" />
+                  <div class="member-image purple-bg">
+                    <img src="assets/team/siona.png" alt="Siona" class="team-photo" />
                     <div class="member-overlay">
                       <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://in.linkedin.com/in/siona-dsouza-698a5a316"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://t.me/sio_1000"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/sionasebastiandsouza?igsh=MTA2azN3cXV3NGttcA=="><i class="fab fa-instagram"></i></a>
                       </div>
                     </div>
+                    <div class="glow-border"></div>
                   </div>
                   <div class="member-tags">
                     <span class="tag">Analytics</span>
@@ -342,29 +362,30 @@
               </div>
             </div>
             
-            <!-- Team Member 2 -->
+            <!-- Team Member 2 - UPDATED WITH PURPLE BACKGROUND -->
             <div class="team-member">
               <div class="member-card">
                 <div class="member-header">
-                  <div class="member-image">
-                    <img src="assets/team/aditya.jpg" alt="Aditya" class="team-photo" />
+                  <div class="member-image purple-bg">
+                    <img src="assets/team/aditya.png" alt="Aditya" class="team-photo" />
                     <div class="member-overlay">
                       <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-stack-overflow"></i></a>
+                        <a href="https://github.com/samsepi0l-kali"><i class="fab fa-github"></i></a>
+                        <a href="https://t.me/pirates0ftware"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/samsepi0l_07?igsh=NGFjaDQ1a3h0djdt&utm_source=qr"><i class="fab fa-instagram"></i></a> 
                       </div>
                     </div>
+                    <div class="glow-border"></div>
                   </div>
                   <div class="member-tags">
                     <span class="tag">Cybersecurity</span>
-                    <span class="tag">Full Stack</span>
+                    <span class="tag">Web Development</span>
                     <span class="tag">System Architecture</span>
                   </div>
                 </div>
                 <div class="member-info">
                   <h3>Aditya</h3>
-                  <h4>Programmer | Security Specialist</h4>
+                  <h4>Programmer | Cybersecurity</h4>
                   <p>Security-focused developer building robust, secure systems to protect businesses from real-world threats. Specializes in practical security solutions that work in everyday situations.</p>
                   
                   <div class="member-quote">
@@ -380,7 +401,7 @@
                       </div>
                     </div>
                     <div class="skill">
-                      <span class="skill-name">Full Stack Development</span>
+                      <span class="skill-name">Web Development</span>
                       <div class="skill-bar">
                         <div class="skill-level" style="width: 92%"></div>
                       </div>
@@ -399,7 +420,7 @@
         </div>
       </section>
 
-      <!-- Testimonials Section -->
+      <!-- Testimonials Section - UPDATED -->
       <section class="testimonials-section">
         <div class="container">
           <div class="section-header">
@@ -423,7 +444,10 @@
                     <p>"Working with Eternora was a breath of fresh air. As the founder of a technical company like SS Engineering, I wasn't expecting a creative team to understand our complex needs so quickly — but they nailed it. The website they developed for us is sleek, functional, and speaks our brand language perfectly..."</p>
                   </div>
                   <div class="testimonial-author">
-                    <img src="assets/ssengineering.jpg" alt="Sebastian Dsouza" class="author-avatar" />
+                    <div class="author-avatar-container purple-bg">
+                      <img src="assets/ssengineering.png" alt="Sebastian Dsouza" class="author-avatar" />
+                      <div class="glow-border"></div>
+                    </div>
                     <div class="author-info">
                       <h4>Sebastian Dsouza</h4>
                       <p>Founder & CEO, SS Engineering</p>
@@ -446,10 +470,39 @@
                     <p>"Working with Eternora significantly improved India Day Festival Moscow. They created a bot that provided the full event schedule instantly to thousands of visitors. It made finding event details easy and interactions smooth. The bot reduced repetitive questions and added a modern tech edge."</p>
                   </div>
                   <div class="testimonial-author">
-                    <img src="assets/dasha.jpg" alt="Dasha Kotwani" class="author-avatar" />
+                    <div class="author-avatar-container purple-bg">
+                      <img src="assets/dasha.png" alt="Dasha Kotwani" class="author-avatar" />
+                      <div class="glow-border"></div>
+                    </div>
                     <div class="author-info">
                       <h4>Dasha Kotwani</h4>
                       <p>Director, Indian National Cultural Center SITA</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Testimonial 3 - NEW ADDITION -->
+              <div class="testimonial-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="testimonial-content">
+                    <p>"Shaping Young Minds was born from the life I have lived and the quiet stories I have carried in my heart for nearly two decades. With experience in clinical psychology, school counseling, and community work, I've witnessed the silent battles children often fight behind their smiles."</p>
+                  </div>
+                  <div class="testimonial-author">
+                    <div class="author-avatar-container purple-bg">
+                      <img src="assets/kanta.png" alt="Kanta Devi" class="author-avatar" />
+                      <div class="glow-border"></div>
+                    </div>
+                    <div class="author-info">
+                      <h4>Mrs. Kanta Devi</h4>
+                      <p>Founder & Mental Health Advocate</p>
                     </div>
                   </div>
                 </div>
@@ -463,6 +516,7 @@
               <div class="slider-dots">
                 <span class="dot active" data-slide="0"></span>
                 <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
               </div>
               <button class="slider-btn next-btn" id="nextTestimonial">
                 <i class="fas fa-chevron-right"></i>
@@ -516,11 +570,11 @@
               Where small businesses get big brains — smart tools, smarter growth.
             </p>
             <div class="social-icons">
-              <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+              <a href="https://www.linkedin.com/in/eternora-enterprises-pvt-ltd-923667384/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/eternora_enterprises_pvt_ltd" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/918793428316" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://t.me/sio_1000" class="social-icon"><i class="fab fa-telegram"></i></a>
+              <a href="mailto:contact@eternora.online" class="social-icon"><i class="fas fa-envelope"></i></a>
             </div>
           </div>
           
@@ -548,9 +602,9 @@
           <div class="footer-section">
             <h4>Contact Info</h4>
             <div class="contact-info">
-              <p><i class="fas fa-map-marker-alt"></i> Moscow, Russia</p>
-              <p><i class="fas fa-envelope"></i> info@eternora.online</p>
-              <p><i class="fas fa-phone"></i> +7 (XXX) XXX-XXXX</p>
+              <p><i class="fas fa-map-marker-alt"></i> Vasai, Maharashtra, India.</p>
+              <p><i class="fas fa-envelope"></i> contact@eternora.online</p>
+              <p><i class="fas fa-phone"></i> +91 87934 28316</p>
               <p><i class="fas fa-clock"></i> Mon-Fri: 9:00-18:00</p>
             </div>
           </div>
@@ -569,437 +623,323 @@
   </button>
 
   <script>
-    // ============================================
-    // MAIN SCRIPT
-    // ============================================
+  document.addEventListener('DOMContentLoaded', function() {
     
-    document.addEventListener('DOMContentLoaded', function() {
+    // Force scroll to top on page load
+    window.scrollTo(0, 0);
+    
+    // ============================================
+    // PRELOADER
+    // ============================================
+    const preloaderOverlay = document.getElementById('preloaderOverlay');
+    const pageContent = document.getElementById('pageContent');
+    const preloaderTypewriter = document.getElementById('preloader-typewriter');
+    
+    function runPreloader() {
+      const text = "Eternora";
+      const glitchChars = ['%', '#', '@', '!', '&', '*', '$', '?', '+', '-', '='];
+      let index = 0;
+      preloaderTypewriter.textContent = "";
       
-      // ============================================
-      // PRELOADER WITH ORIGINAL GLITCH EFFECT
-      // ============================================
-      const preloaderOverlay = document.getElementById('preloaderOverlay');
-      const pageContent = document.getElementById('pageContent');
-      const preloaderTypewriter = document.getElementById('preloader-typewriter');
-      
-      function runPreloader() {
-        const text = "Eternora";
-        const glitchChars = ['%', '#', '@', '!', '&', '*', '$', '?', '+', '-', '='];
-        let index = 0;
-        preloaderTypewriter.textContent = "";
-        
-        function glitchChar() {
-          return glitchChars[Math.floor(Math.random() * glitchChars.length)];
-        }
-        
-        function type() {
-          if (index < text.length) {
-            // Show glitch first
-            preloaderTypewriter.textContent = preloaderTypewriter.textContent.slice(0, index) + glitchChar();
-            setTimeout(() => {
-              // Replace glitch with correct letter
-              preloaderTypewriter.textContent = preloaderTypewriter.textContent.slice(0, index) + text.charAt(index);
-              index++;
-              setTimeout(type, 150);
-            }, 100);
-          } else {
-            setTimeout(showMainContent, 700);
-          }
-        }
-        type();
+      function glitchChar() {
+        return glitchChars[Math.floor(Math.random() * glitchChars.length)];
       }
       
-      function showMainContent() {
-        preloaderOverlay.classList.add('hidden');
-        setTimeout(() => {
-          pageContent.classList.add('visible');
-        }, 1000);
+      function type() {
+        if (index < text.length) {
+          // Show glitch first
+          preloaderTypewriter.textContent = preloaderTypewriter.textContent.slice(0, index) + glitchChar();
+          setTimeout(() => {
+            // Replace glitch with correct letter
+            preloaderTypewriter.textContent = preloaderTypewriter.textContent.slice(0, index) + text.charAt(index);
+            index++;
+            setTimeout(type, 150);
+          }, 100);
+        } else {
+          setTimeout(showMainContent, 700);
+        }
+      }
+      type();
+    }
+    
+    function showMainContent() {
+      preloaderOverlay.classList.add('hidden');
+      setTimeout(() => {
+        pageContent.classList.add('visible');
+        // Animate hero stats immediately when page loads
+        animateStats();
+      }, 1000);
+    }
+    
+    // ============================================
+    // FIXED NAVBAR - SIMPLIFIED
+    // ============================================
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.querySelector('.nav-links');
+    const navbar = document.querySelector('.navbar');
+    const backToTop = document.getElementById('backToTop');
+    
+    // 1. HAMBURGER MENU
+    if (hamburgerBtn && navLinks) {
+      function toggleMenu(e) {
+        e.preventDefault();
+        hamburgerBtn.classList.toggle('active');
+        navLinks.classList.toggle('open');
+        document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
       }
       
-      // ============================================
-      // LOADING BAR FOR PAGE TRANSITIONS
-      // ============================================
-      const loadingBar = document.getElementById('loadingBar');
+      hamburgerBtn.addEventListener('click', toggleMenu);
       
-      function startLoadingBar() {
-        loadingBar.style.transition = 'none';
-        loadingBar.style.width = '0';
-        loadingBar.style.display = 'block';
-        loadingBar.classList.add('active');
-        
-        // Force reflow
-        void loadingBar.offsetWidth;
-        
-        loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
-        loadingBar.style.width = '100%';
-      }
-      
-      // Add loading bar to all internal navigation links
-      document.querySelectorAll('a[href]').forEach(link => {
-        const href = link.getAttribute('href');
-        
-        // Only apply to internal links
-        if (href &&
-            !href.startsWith('#') &&
-            !link.hasAttribute('target') &&
-            !href.startsWith('mailto:') &&
-            !href.startsWith('tel:') &&
-            !href.startsWith('javascript:')) {
-          
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            startLoadingBar();
-            
-            setTimeout(() => {
-              window.location.href = href;
-            }, 850);
-          });
-        }
-      });
-      
-      // Handle browser back/forward buttons
-      window.addEventListener('beforeunload', function() {
-        startLoadingBar();
-      });
-      
-      // ============================================
-      // NAVIGATION
-      // ============================================
-      const hamburgerBtn = document.getElementById('hamburgerBtn');
-      const navLinks = document.querySelector('.nav-links');
-      const navbar = document.querySelector('.navbar');
-      const backToTop = document.getElementById('backToTop');
-      
-      // Hamburger menu toggle
-      if (hamburgerBtn && navLinks) {
-        function toggleMenu(e) {
-          e.preventDefault();
-          hamburgerBtn.classList.toggle('active');
-          navLinks.classList.toggle('open');
-          document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
-        }
-        
-        hamburgerBtn.addEventListener('click', toggleMenu);
-        hamburgerBtn.addEventListener('touchstart', toggleMenu);
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-          link.addEventListener('click', () => {
-            hamburgerBtn.classList.remove('active');
-            navLinks.classList.remove('open');
-            document.body.style.overflow = '';
-          });
+      // Close menu when clicking on a link
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburgerBtn.classList.remove('active');
+          navLinks.classList.remove('open');
+          document.body.style.overflow = '';
         });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-          if (navLinks.classList.contains('open') && 
-              !hamburgerBtn.contains(e.target) && 
-              !navLinks.contains(e.target)) {
-            
-            hamburgerBtn.classList.remove('active');
-            navLinks.classList.remove('open');
-            document.body.style.overflow = '';
-          }
-        });
-      }
-      
-      // Navbar scroll effect
+      });
+    }
+    
+    // 2. NAVBAR SCROLL EFFECT
+    if (navbar) {
       window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
           navbar.classList.add('scrolled');
         } else {
           navbar.classList.remove('scrolled');
         }
-        
-        // Back to top button
-        if (backToTop) {
-          if (window.scrollY > 300) {
-            backToTop.classList.add('visible');
-          } else {
-            backToTop.classList.remove('visible');
-          }
+      });
+    }
+    
+    // 3. BACK TO TOP
+    if (backToTop) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
         }
       });
       
-      // Back to top functionality
-      if (backToTop) {
-        backToTop.addEventListener('click', function() {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+    
+    // ============================================
+    // ORIGINAL FUNCTIONALITY (KEEP THIS)
+    // ============================================
+    const loadingBar = document.getElementById('loadingBar');
+    
+    function startLoadingBar() {
+      loadingBar.style.transition = 'none';
+      loadingBar.style.width = '0';
+      loadingBar.style.display = 'block';
+      loadingBar.classList.add('active');
+      
+      void loadingBar.offsetWidth;
+      
+      loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
+      loadingBar.style.width = '100%';
+    }
+    
+    // Add loading bar to all internal navigation links
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      
+      if (href &&
+          !href.startsWith('#') &&
+          !link.hasAttribute('target') &&
+          !href.startsWith('mailto:') &&
+          !href.startsWith('tel:') &&
+          !href.startsWith('javascript:')) {
+        
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          startLoadingBar();
+          
+          setTimeout(() => {
+            window.location.href = href;
+          }, 850);
         });
       }
+    });
+    
+    window.addEventListener('beforeunload', function() {
+      startLoadingBar();
+    });
+    
+    // Mouse trail effect
+    const mouseTrail = document.querySelector('.mouse-trail');
+    if (!('ontouchstart' in window) && mouseTrail) {
+      let mouseX = 0, mouseY = 0, trailX = 0, trailY = 0;
       
-      // ============================================
-      // MOUSE TRAIL EFFECT
-      // ============================================
-      const mouseTrail = document.querySelector('.mouse-trail');
+      document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        mouseTrail.classList.add('active');
+      });
       
-      // Only create trail effect on non-touch devices
-      if (!('ontouchstart' in window) && mouseTrail) {
-        let mouseX = 0;
-        let mouseY = 0;
-        let trailX = 0;
-        let trailY = 0;
-        
-        document.addEventListener('mousemove', function(e) {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-          mouseTrail.classList.add('active');
-        });
-        
-        function animateTrail() {
-          // Smooth trail movement
-          trailX += (mouseX - trailX) * 0.2;
-          trailY += (mouseY - trailY) * 0.2;
-          
-          mouseTrail.style.left = trailX + 'px';
-          mouseTrail.style.top = trailY + 'px';
-          
-          requestAnimationFrame(animateTrail);
+      function animateTrail() {
+        trailX += (mouseX - trailX) * 0.2;
+        trailY += (mouseY - trailY) * 0.2;
+        mouseTrail.style.left = trailX + 'px';
+        mouseTrail.style.top = trailY + 'px';
+        requestAnimationFrame(animateTrail);
+      }
+      animateTrail();
+      
+      document.addEventListener('mouseleave', function() {
+        mouseTrail.classList.remove('active');
+      });
+      
+      document.addEventListener('mouseenter', function() {
+        mouseTrail.classList.add('active');
+      });
+    }
+    
+    // Stats counter
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const metricNumbers = document.querySelectorAll('.metric-number');
+    
+    function animateNumber(element, target) {
+      const increment = target / 30;
+      let current = 0;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
         }
-        
-        animateTrail();
-        
-        // Hide trail when mouse leaves window
-        document.addEventListener('mouseleave', function() {
-          mouseTrail.classList.remove('active');
-        });
-        
-        document.addEventListener('mouseenter', function() {
-          mouseTrail.classList.add('active');
-        });
-      }
-      
-      // ============================================
-      // STATS COUNTER ANIMATION
-      // ============================================
-      const statNumbers = document.querySelectorAll('.stat-number');
-      
-      function animateStats() {
-        statNumbers.forEach(stat => {
-          const target = parseInt(stat.getAttribute('data-count'));
-          const increment = target / 30;
-          let current = 0;
-          
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              current = target;
-              clearInterval(timer);
-            }
-            stat.textContent = Math.floor(current);
-          }, 40);
-        });
-      }
-      
-      // Animate stats when hero section is in view
-      const heroSection = document.querySelector('.hero-section');
-      if (heroSection) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              animateStats();
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.5 });
-        
-        observer.observe(heroSection);
-      }
-      
-      // ============================================
-      // TESTIMONIAL SLIDER
-      // ============================================
-      const testimonialSlider = document.getElementById('testimonialSlider');
+        element.textContent = Math.floor(current);
+      }, 40);
+    }
+    
+    function animateStats() {
+      statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-count'));
+        animateNumber(stat, target);
+      });
+    }
+    
+    function animateMetrics() {
+      metricNumbers.forEach(metric => {
+        const target = parseInt(metric.getAttribute('data-count'));
+        animateNumber(metric, target);
+      });
+    }
+    
+    // Testimonial slider
+    const testimonialSlider = document.getElementById('testimonialSlider');
+    if (testimonialSlider) {
       const prevTestimonialBtn = document.getElementById('prevTestimonial');
       const nextTestimonialBtn = document.getElementById('nextTestimonial');
       const testimonialDots = document.querySelectorAll('.slider-dots .dot');
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.testimonial-slide');
+      const totalSlides = slides.length;
+      let slideInterval;
       
-      if (testimonialSlider) {
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.testimonial-slide');
-        const totalSlides = slides.length;
-        let slideInterval;
-        
-        function showSlide(index) {
-          // Ensure index is within bounds
-          if (index >= totalSlides) index = 0;
-          if (index < 0) index = totalSlides - 1;
-          
-          // Hide all slides
-          slides.forEach(slide => slide.classList.remove('active'));
-          testimonialDots.forEach(dot => dot.classList.remove('active'));
-          
-          // Show current slide
-          slides[index].classList.add('active');
-          testimonialDots[index].classList.add('active');
-          
-          currentSlide = index;
-        }
-        
-        // Next slide function
-        function nextSlide() {
-          showSlide(currentSlide + 1);
-        }
-        
-        // Previous slide function
-        function prevSlide() {
-          showSlide(currentSlide - 1);
-        }
-        
-        // Start auto slide
-        function startAutoplay() {
-          clearInterval(slideInterval);
-          slideInterval = setInterval(nextSlide, 5000);
-        }
-        
-        // Event listeners for buttons
-        if (prevTestimonialBtn) {
-          prevTestimonialBtn.addEventListener('click', () => {
-            prevSlide();
-            startAutoplay();
-          });
-        }
-        
-        if (nextTestimonialBtn) {
-          nextTestimonialBtn.addEventListener('click', () => {
-            nextSlide();
-            startAutoplay();
-          });
-        }
-        
-        // Event listeners for dots
-        testimonialDots.forEach((dot, index) => {
-          dot.addEventListener('click', () => {
-            showSlide(index);
-            startAutoplay();
-          });
-        });
-        
-        // Touch/swipe support for mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        testimonialSlider.addEventListener('touchstart', e => {
-          touchStartX = e.touches[0].clientX;
-          clearInterval(slideInterval);
-        });
-        
-        testimonialSlider.addEventListener('touchend', e => {
-          touchEndX = e.changedTouches[0].clientX;
-          handleSwipe();
-          startAutoplay();
-        });
-        
-        function handleSwipe() {
-          const swipeThreshold = 50;
-          
-          if (touchStartX - touchEndX > swipeThreshold) {
-            // Swipe left - next slide
-            nextSlide();
-          } else if (touchEndX - touchStartX > swipeThreshold) {
-            // Swipe right - previous slide
-            prevSlide();
-          }
-        }
-        
-        // Pause autoplay on hover
-        testimonialSlider.addEventListener('mouseenter', () => {
-          clearInterval(slideInterval);
-        });
-        
-        testimonialSlider.addEventListener('mouseleave', startAutoplay);
-        
-        // Start autoplay
-        startAutoplay();
+      function showSlide(index) {
+        if (index >= totalSlides) index = 0;
+        if (index < 0) index = totalSlides - 1;
+        slides.forEach(slide => slide.classList.remove('active'));
+        testimonialDots.forEach(dot => dot.classList.remove('active'));
+        slides[index].classList.add('active');
+        testimonialDots[index].classList.add('active');
+        currentSlide = index;
       }
       
-      // ============================================
-      // SERVICE CARDS HOVER EFFECT
-      // ============================================
-      const serviceCards = document.querySelectorAll('.service-card');
+      function nextSlide() { showSlide(currentSlide + 1); }
+      function prevSlide() { showSlide(currentSlide - 1); }
+      function startAutoplay() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+      }
       
-      serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-10px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0)';
-        });
+      if (prevTestimonialBtn) prevTestimonialBtn.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+      if (nextTestimonialBtn) nextTestimonialBtn.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+      
+      testimonialDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => { showSlide(index); startAutoplay(); });
       });
       
-      // ============================================
-      // SKILL BARS ANIMATION
-      // ============================================
-      const skillBars = document.querySelectorAll('.skill-level');
+      let touchStartX = 0, touchEndX = 0;
+      testimonialSlider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; clearInterval(slideInterval); });
+      testimonialSlider.addEventListener('touchend', e => { touchEndX = e.changedTouches[0].clientX; handleSwipe(); startAutoplay(); });
       
-      function animateSkillBars() {
-        skillBars.forEach(bar => {
-          const width = bar.style.width;
-          bar.style.width = '0';
-          
-          setTimeout(() => {
-            bar.style.width = width;
-          }, 300);
-        });
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchStartX - touchEndX > swipeThreshold) nextSlide();
+        else if (touchEndX - touchStartX > swipeThreshold) prevSlide();
       }
       
-      // Animate skill bars when team section comes into view
-      const teamSection = document.querySelector('.team-section');
-      if (teamSection) {
-        const teamObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              animateSkillBars();
-              teamObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.3 });
-        
-        teamObserver.observe(teamSection);
-      }
-      
-      // ============================================
-      // INITIALIZE EVERYTHING
-      // ============================================
-      
-      // Start preloader
-      runPreloader();
-      
-      // Set current year in footer
-      const yearElements = document.querySelectorAll('.footer-bottom p');
-      if (yearElements.length > 0) {
-        const currentYear = new Date().getFullYear();
-        yearElements[0].textContent = yearElements[0].textContent.replace('2025', currentYear);
-      }
-      
-      // Add smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          if (href === '#') return;
-          
-          if (href.startsWith('#')) {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-              target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
-          }
-        });
-      });
-      
-      // Console greeting
-      console.log('%c🚀 Eternora Digital Innovation Studio', 'color: #8a2be2; font-size: 18px; font-weight: bold;');
-      console.log('%c✨ Where small businesses get big brains', 'color: #aaa; font-size: 14px;');
+      testimonialSlider.addEventListener('mouseenter', () => { clearInterval(slideInterval); });
+      testimonialSlider.addEventListener('mouseleave', startAutoplay);
+      startAutoplay();
+    }
+    
+    // Service cards hover
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('mouseenter', function() { this.style.transform = 'translateY(-10px)'; });
+      card.addEventListener('mouseleave', function() { this.style.transform = 'translateY(0)'; });
     });
+    
+    // Skill bars animation
+    const skillBars = document.querySelectorAll('.skill-level');
+    function animateSkillBars() {
+      skillBars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => { bar.style.width = width; }, 300);
+      });
+    }
+    
+    const teamSection = document.querySelector('.team-section');
+    if (teamSection) {
+      const teamObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateMetrics();
+            animateSkillBars();
+            teamObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      teamObserver.observe(teamSection);
+    }
+    
+    // Initialize everything
+    runPreloader();
+    
+    // Set current year in footer
+    const yearElements = document.querySelectorAll('.footer-bottom p');
+    if (yearElements.length > 0) {
+      const currentYear = new Date().getFullYear();
+      yearElements[0].textContent = yearElements[0].textContent.replace('2025', currentYear);
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+    
+    console.log('%c🚀 Eternora Digital Innovation Studio', 'color: #8a2be2; font-size: 18px; font-weight: bold;');
+    console.log('%c✨ Where small businesses get big brains', 'color: #aaa; font-size: 14px;');
+  });
   </script>
 </body>
 </html>

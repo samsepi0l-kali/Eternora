@@ -292,7 +292,7 @@ p {
 }
 
 /* ============================================
-   NAVIGATION
+   NAVIGATION - FIXED FOR ALL DEVICES
    ============================================ */
 .navbar {
   position: fixed;
@@ -308,6 +308,7 @@ p {
   align-items: center;
   justify-content: space-between;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .navbar.scrolled {
@@ -439,7 +440,7 @@ p {
    HERO SECTION WITH FLOATING ANIMATIONS
    ============================================ */
 .hero-section {
-  padding: 150px 0 100px;
+  padding: 200px 0 100px !important; /* Increased top padding for fixed navbar */
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -1025,7 +1026,7 @@ p {
 }
 
 /* ============================================
-   TEAM SECTION
+   UPDATED TEAM SECTION STYLES
    ============================================ */
 .team-section {
   padding: 100px 0;
@@ -1111,33 +1112,70 @@ p {
   background: linear-gradient(90deg, #8a2be2, #4a0082);
 }
 
-.member-image {
+/* Purple background for team images */
+.member-image.purple-bg {
   position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 20px;
-  border: 3px solid rgba(138, 43, 226, 0.3);
-  transition: all 0.3s ease;
-}
-
-.member-card:hover .member-image {
-  transform: scale(1.05);
-  border-color: #8a2be2;
+  background: linear-gradient(135deg, #8a2be2, #4a0082);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .team-photo {
-  width: 100%;
-  height: 100%;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  border-radius: 50%;
+  border: 3px solid white;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
 }
 
 .member-card:hover .team-photo {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
+/* Glow border effect */
+.glow-border {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, 
+    #8a2be2, 
+    #4a0082, 
+    #8a2be2, 
+    #4a0082);
+  z-index: 1;
+  opacity: 0.7;
+  filter: blur(5px);
+  animation: borderGlow 3s linear infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.member-card:hover .glow-border {
+  animation: borderGlow 1.5s linear infinite;
+}
+
+/* Update member overlay for purple background */
 .member-overlay {
   position: absolute;
   top: 0;
@@ -1150,12 +1188,15 @@ p {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 3;
+  border-radius: 50%;
 }
 
 .member-image:hover .member-overlay {
   opacity: 1;
 }
 
+/* Ensure social links are visible on overlay */
 .social-links {
   display: flex;
   gap: 15px;
@@ -1273,6 +1314,37 @@ p {
   margin: 0;
   padding: 0 30px;
   font-style: italic;
+}
+
+/* Team metrics */
+.member-metrics {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(138, 43, 226, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.metric-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #8a2be2;
+  margin-bottom: 5px;
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: #888;
 }
 
 .member-skills {
@@ -1488,29 +1560,52 @@ p {
   right: -20px;
 }
 
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.author-avatar {
+/* Purple background for testimonial avatars */
+.author-avatar-container.purple-bg {
+  position: relative;
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #8a2be2, #4a0082);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.author-avatar {
+  width: 55px;
+  height: 55px;
   object-fit: cover;
-  border: 2px solid #8a2be2;
+  border-radius: 50%;
+  border: 2px solid white;
+  position: relative;
+  z-index: 2;
   transition: all 0.3s ease;
 }
 
 .testimonial-card:hover .author-avatar {
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+}
+
+.author-avatar-container.purple-bg .glow-border {
+  width: 70px;
+  height: 70px;
+  top: -5px;
+  left: -5px;
+}
+
+/* Update testimonial author layout */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .author-info {
   text-align: left;
+  flex: 1;
 }
 
 .author-info h4 {
@@ -1521,6 +1616,12 @@ p {
 
 .testimonial-card:hover .author-info h4 {
   color: #8a2be2;
+}
+
+.author-info p {
+  color: #888;
+  margin-bottom: 0;
+  font-size: 0.9rem;
 }
 
 .slider-controls {
@@ -1568,6 +1669,7 @@ p {
   transform: scale(1.1);
 }
 
+/* Update slider dots for 3 testimonials */
 .slider-dots {
   display: flex;
   gap: 10px;
@@ -2087,7 +2189,7 @@ p {
 /* Tablet Landscape (1024px and below) */
 @media (max-width: 1024px) {
   .navbar {
-    padding: 15px 5%;
+    padding: 15px 5% !important;
   }
   
   .nav-links {
@@ -2181,36 +2283,66 @@ p {
   #preloader-typewriter {
     font-size: 3rem;
   }
+  
+  /* Team responsive */
+  .member-metrics {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .metric-item {
+    margin-bottom: 10px;
+  }
+  
+  /* Hero padding adjustment for fixed navbar */
+  .hero-section {
+    padding-top: 180px !important;
+  }
 }
 
 /* Tablet Portrait (768px and below) */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2.2rem; /* Reduced from 2.8rem */
+    font-size: 2.2rem;
   }
   
   h2 {
-    font-size: 1.8rem; /* Reduced from 2.2rem */
+    font-size: 1.8rem;
   }
   
   h3 {
-    font-size: 1.4rem; /* Reduced from 1.6rem */
+    font-size: 1.4rem;
   }
   
   p {
-    font-size: 0.95rem; /* Reduced font size for paragraphs */
+    font-size: 0.95rem;
   }
   
+  /* Navbar mobile fixes - KEEP IT FIXED */
+  .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    padding: 15px 5% !important;
+  }
+  
+  .navbar.scrolled {
+    padding: 15px 5% !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  /* Adjust hero section padding to account for fixed navbar */
   .hero-section {
-    padding: 120px 0 80px;
+    padding-top: 160px !important;
   }
   
   .hero-title {
-    font-size: 2.2rem; /* Reduced from 2.5rem */
+    font-size: 2.2rem;
   }
   
   .hero-subtitle {
-    font-size: 1rem; /* Reduced from 1.1rem */
+    font-size: 1rem;
   }
   
   .hero-graphic {
@@ -2305,6 +2437,7 @@ p {
     font-size: 25px;
   }
   
+  /* Team Section Mobile Optimization */
   .member-card {
     grid-template-columns: 1fr;
   }
@@ -2313,9 +2446,14 @@ p {
     padding: 20px;
   }
   
-  .member-image {
+  .member-image.purple-bg {
     width: 160px;
     height: 160px;
+  }
+  
+  .team-photo {
+    width: 150px;
+    height: 150px;
   }
   
   .member-info {
@@ -2331,12 +2469,60 @@ p {
     font-size: 1rem;
   }
   
+  .member-metrics {
+    flex-direction: row;
+    gap: 10px;
+    padding: 12px;
+  }
+  
+  .metric-number {
+    font-size: 1.4rem;
+  }
+  
+  .metric-label {
+    font-size: 0.7rem;
+  }
+  
   .member-skills {
     text-align: center;
   }
   
   .skill {
     text-align: left;
+  }
+  
+  /* Testimonials Mobile Optimization */
+  .testimonial-card {
+    padding: 25px 20px;
+  }
+  
+  .testimonial-content p {
+    font-size: 1rem;
+  }
+  
+  .testimonial-author {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .author-info {
+    text-align: center;
+  }
+  
+  .author-avatar-container.purple-bg {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .author-avatar {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .author-avatar-container.purple-bg .glow-border {
+    width: 80px;
+    height: 80px;
   }
   
   .cta-content h2 {
@@ -2363,24 +2549,6 @@ p {
   .cta-button.large {
     padding: 14px 30px;
     font-size: 1rem;
-  }
-  
-  .testimonial-card {
-    padding: 25px 20px;
-  }
-  
-  .testimonial-content p {
-    font-size: 1rem;
-  }
-  
-  .testimonial-author {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-  
-  .author-info {
-    text-align: center;
   }
   
   .footer-content {
@@ -2431,27 +2599,36 @@ p {
 /* Mobile (480px and below) */
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.9rem; /* Further reduced */
+    font-size: 1.9rem;
   }
   
   h2 {
-    font-size: 1.6rem; /* Further reduced */
+    font-size: 1.6rem;
   }
   
   h3 {
-    font-size: 1.2rem; /* Further reduced */
+    font-size: 1.2rem;
   }
   
   .container {
     padding: 0 15px;
   }
   
+  /* Hero section adjustments */
+  .hero-section {
+    padding-top: 150px !important;
+  }
+  
+  .navbar {
+    padding: 15px 5% !important;
+  }
+  
   .hero-title {
-    font-size: 1.8rem; /* Further reduced */
+    font-size: 1.8rem;
   }
   
   .hero-subtitle {
-    font-size: 0.9rem; /* Further reduced */
+    font-size: 0.9rem;
     line-height: 1.5;
   }
   
@@ -2502,9 +2679,15 @@ p {
     font-size: 22px;
   }
   
-  .member-image {
+  /* Team Mobile */
+  .member-image.purple-bg {
     width: 140px;
     height: 140px;
+  }
+  
+  .team-photo {
+    width: 130px;
+    height: 130px;
   }
   
   .member-card {
@@ -2518,6 +2701,19 @@ p {
   
   .member-info h3 {
     font-size: 1.3rem;
+  }
+  
+  .member-metrics {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .metric-number {
+    font-size: 1.6rem;
+  }
+  
+  .metric-label {
+    font-size: 0.75rem;
   }
   
   .intro-highlight {
@@ -2555,6 +2751,18 @@ p {
 
 /* Small Mobile (360px and below) */
 @media (max-width: 360px) {
+  .hero-section {
+    padding-top: 140px !important;
+  }
+  
+  .navbar {
+    padding: 12px 5% !important;
+  }
+  
+  .logo-name {
+    font-size: 1.2rem !important;
+  }
+  
   .hero-title {
     font-size: 1.6rem;
   }
@@ -2581,9 +2789,23 @@ p {
     font-size: 1.1rem;
   }
   
-  .member-image {
+  /* Team Small Mobile */
+  .member-image.purple-bg {
     width: 120px;
     height: 120px;
+  }
+  
+  .team-photo {
+    width: 110px;
+    height: 110px;
+  }
+  
+  .member-metrics {
+    padding: 10px;
+  }
+  
+  .metric-number {
+    font-size: 1.4rem;
   }
   
   .footer-content {
@@ -2606,11 +2828,15 @@ p {
 /* Landscape Mode for Tablets and Mobiles */
 @media (max-height: 600px) and (orientation: landscape) {
   .navbar {
-    padding: 10px 5%;
+    padding: 10px 5% !important;
+  }
+  
+  .navbar {
+    position: fixed !important;
   }
   
   .hero-section {
-    padding: 100px 0 60px;
+    padding-top: 130px !important;
   }
   
   .hero-title {
@@ -2644,6 +2870,11 @@ p {
   #preloader-typewriter {
     font-size: 2.2rem;
   }
+  
+  /* Team Landscape */
+  .member-metrics {
+    flex-direction: row;
+  }
 }
 
 /* For very small screens in landscape */
@@ -2658,6 +2889,11 @@ p {
   
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Team Landscape Small */
+  .member-card {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2693,8 +2929,16 @@ p {
   .tech-grid,
   .skill-bar:after,
   .testimonial-rating i,
-  .footer-bottom i {
+  .footer-bottom i,
+  .glow-border,
+  .member-quote i,
+  .quoteFloat {
     animation: none !important;
+  }
+  
+  .service-card:hover .icon-background,
+  .process-step:hover .step-icon {
+    transform: none !important;
   }
 }
 
@@ -2754,5 +2998,19 @@ p {
     color: black !important;
     background: none !important;
     -webkit-text-fill-color: black !important;
+  }
+  
+  /* Team print styles */
+  .member-image.purple-bg {
+    background: white !important;
+    border: 2px solid #ddd !important;
+  }
+  
+  .team-photo {
+    border-color: #ddd !important;
+  }
+  
+  .glow-border {
+    display: none !important;
   }
 }

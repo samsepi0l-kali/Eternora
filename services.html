@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="audio.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Eternora-Services</title>
@@ -55,607 +56,610 @@
   <!-- Purple Loading Bar -->
   <div class="loading-bar" id="loadingBar"></div>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo-container">
-      <img src="assets/Logo.png" alt="Eternora Logo" class="logo" />
-      <div class="logo-text">
-        <span class="logo-name">Eternora</span>
-        <span class="logo-tagline">Digital Innovation Studio</span>
-      </div>
-    </div>
-
-    <!-- Hamburger Button -->
-    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-
-    <ul class="nav-links">
-      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="services.html" class="nav-link active"><i class="fas fa-code"></i> Our Services</a></li>
-      <li><a href="reviews.html" class="nav-link"><i class="fas fa-star"></i> Reviews</a></li>
-      <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
-      <li><a href="contact.html#quote" class="nav-cta">Get Quote <i class="fas fa-arrow-right"></i></a></li>
-    </ul>
-  </nav>
-
-  <!-- Main Content -->
-  <main class="main-content">
-    <!-- Hero Section -->
-    <section class="services-hero">
-      <div class="container">
-        <!-- Floating Tech Elements -->
-        <div class="floating-elements">
-          <div class="floating-element element-1">
-            <i class="fas fa-robot"></i>
-          </div>
-          <div class="floating-element element-2">
-            <i class="fas fa-code"></i>
-          </div>
-          <div class="floating-element element-3">
-            <i class="fas fa-palette"></i>
-          </div>
-          <div class="floating-element element-4">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <div class="floating-element element-5">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div class="floating-element element-6">
-            <i class="fas fa-briefcase"></i>
-          </div>
-        </div>
-        
-        <!-- Tech Background Graphic -->
-        <div class="hero-graphic">
-          <div class="tech-circle"></div>
-          <div class="tech-grid"></div>
-        </div>
-        
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span><i class="fas fa-cogs"></i> Comprehensive Solutions</span>
-          </div>
-          <h1 class="hero-title">
-            Our <span class="highlight-gradient">Digital Services</span>
-          </h1>
-          <p class="hero-subtitle">
-            From intelligent bots to secure systems, we provide end-to-end digital solutions that empower your business to thrive in the modern digital landscape.
-          </p>
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-number">6</span>
-              <span class="stat-label">Core Services</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">100</span>
-              <span class="stat-label">% Custom Solutions</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">24/7</span>
-              <span class="stat-label">Support</span>
-            </div>
-          </div>
+  <!-- All page content wrapped here -->
+  <div id="pageContent">
+    <!-- Navigation Bar - NOT FIXED -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="assets/Logo.png" alt="Eternora Logo" class="logo" />
+        <div class="logo-text">
+          <span class="logo-name">Eternora</span>
+          <span class="logo-tagline">Digital Innovation Studio</span>
         </div>
       </div>
-    </section>
 
-    <!-- Services Grid Section -->
-    <section class="services-grid-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Our <span class="highlight">Expertise</span></h2>
-          <p class="section-subtitle">Comprehensive digital solutions tailored to your business needs</p>
-        </div>
-        
-        <!-- Services Unified Grid -->
-        <div class="services-unified-grid">
-          <!-- Service 1: Bot Development -->
-          <div class="service-item" id="bots">
-            <div class="service-icon-badge">
-              <div class="service-icon-wrapper">
-                <i class="fas fa-robot"></i>
-              </div>
-              <span class="service-badge">AI-Powered</span>
-            </div>
-            
-            <div class="service-content">
-              <div class="service-header">
-                <h3>Bot Development</h3>
-                <div class="service-price-tag">
-                  <span class="price-label">Starting from</span>
-                  <span class="price">₹15000</span>
-                </div>
-              </div>
-              
-              <p class="service-description">
-                Because every business deserves a smart assistant. Our bots manage customer queries, streamline support, and boost sales without extra overhead.
-              </p>
-              
-              <div class="service-details-grid">
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Customer Service Bots</h4>
-                    <p>24/7 automated support that never sleeps</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Educational Bots</h4>
-                    <p>Gamified learning experiences for better engagement</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Sales & Conversion Bots</h4>
-                    <p>Lead generation automation to boost revenue</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="service-tech-stack">
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">AI/ML</span>
-                <span class="tech-pill">Dialogflow</span>
-                <span class="tech-pill">Telegram API</span>
-              </div>
-              
-              <a href="contact.html#quote" class="service-action-btn">
-                <span>Start Project</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
+      <!-- Hamburger Button -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
 
-          <!-- Service 2: Web Development -->
-          <div class="service-item" id="web">
-            <div class="service-icon-badge">
-              <div class="service-icon-wrapper">
-                <i class="fas fa-code"></i>
-              </div>
-              <span class="service-badge">Full Stack</span>
-            </div>
-            
-            <div class="service-content">
-              <div class="service-header">
-                <h3>Web Development</h3>
-                <div class="service-price-tag">
-                  <span class="price-label">Starting from</span>
-                  <span class="price">₹10000</span>
-                </div>
-              </div>
-              
-              <p class="service-description">
-                Your website is more than a URL — it's the digital backbone of your business. We build responsive, secure, and scalable platforms designed to last.
-              </p>
-              
-              <div class="service-details-grid">
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Custom Web Applications</h4>
-                    <p>Tailored solutions for your specific needs</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>E-commerce Solutions</h4>
-                    <p>Secure online stores with payment integration</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Progressive Web Apps</h4>
-                    <p>Native-like experience across all devices</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="service-tech-stack">
-                <span class="tech-pill">React.js</span>
-                <span class="tech-pill">Node.js</span>
-                <span class="tech-pill">MongoDB</span>
-                <span class="tech-pill">WordPress</span>
-              </div>
-              
-              <a href="contact.html#quote" class="service-action-btn">
-                <span>Start Project</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="services.html" class="nav-link active"><i class="fas fa-code"></i> Our Services</a></li>
+        <li><a href="reviews.html" class="nav-link"><i class="fas fa-star"></i> Reviews</a></li>
+        <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="contact.html#quote" class="nav-cta">Get Quote <i class="fas fa-arrow-right"></i></a></li>
+      </ul>
+    </nav>
 
-          <!-- Service 3: Graphic Design -->
-          <div class="service-item" id="design">
-            <div class="service-icon-badge">
-              <div class="service-icon-wrapper">
-                <i class="fas fa-palette"></i>
-              </div>
-              <span class="service-badge">Visual Storytelling</span>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="services-hero">
+        <div class="container">
+          <!-- Floating Tech Elements -->
+          <div class="floating-elements">
+            <div class="floating-element element-1">
+              <i class="fas fa-robot"></i>
             </div>
-            
-            <div class="service-content">
-              <div class="service-header">
-                <h3>Graphic Design</h3>
-                <div class="service-price-tag">
-                  <span class="price-label">Starting from</span>
-                  <span class="price">₹5000</span>
-                </div>
-              </div>
-              
-              <p class="service-description">
-                A strong brand begins with powerful visuals. We design logos, campaigns, and digital assets that tell compelling stories and create lasting impressions.
-              </p>
-              
-              <div class="service-details-grid">
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Brand Identity Design</h4>
-                    <p>Complete brand packages that stand out</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>UI/UX Design</h4>
-                    <p>User-centered interfaces for better experiences</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Motion Graphics</h4>
-                    <p>Animated content that captures attention</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="service-tech-stack">
-                <span class="tech-pill">Adobe Creative Suite</span>
-                <span class="tech-pill">Figma</span>
-                <span class="tech-pill">Canva Pro</span>
-                <span class="tech-pill">Blender</span>
-              </div>
-              
-              <a href="contact.html#quote" class="service-action-btn">
-                <span>Start Project</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Service 4: Digital Optimization -->
-          <div class="service-item" id="optimization">
-            <div class="service-icon-badge">
-              <div class="service-icon-wrapper">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <span class="service-badge">Growth Focused</span>
-            </div>
-            
-            <div class="service-content">
-              <div class="service-header">
-                <h3>Digital Optimization</h3>
-                <div class="service-price-tag">
-                  <span class="price-label">Starting from</span>
-                  <span class="price">₹2000/m</span>
-                </div>
-              </div>
-              
-              <p class="service-description">
-                Cut through the noise with data-driven strategies. We maximize your online visibility, engagement, and conversions through comprehensive optimization.
-              </p>
-              
-              <div class="service-details-grid">
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>SEO Strategy</h4>
-                    <p>Higher search rankings and organic traffic</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Social Media Management</h4>
-                    <p>Consistent engagement across all platforms</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Analytics & Reporting</h4>
-                    <p>Data-driven insights for better decisions</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="service-tech-stack">
-                <span class="tech-pill">Google Analytics</span>
-                <span class="tech-pill">SEMrush</span>
-                <span class="tech-pill">Meta Business</span>
-                <span class="tech-pill">Mailchimp</span>
-              </div>
-              
-              <a href="contact.html#quote" class="service-action-btn">
-                <span>Start Project</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Service 5: Cybersecurity -->
-          <div class="service-item" id="security">
-            <div class="service-icon-badge">
-              <div class="service-icon-wrapper">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <span class="service-badge">Enterprise Grade</span>
-            </div>
-            
-            <div class="service-content">
-              <div class="service-header">
-                <h3>Cybersecurity</h3>
-                <div class="service-price-tag">
-                  <span class="price-label">Starting from</span>
-                  <span class="price">₹15000</span>
-                </div>
-              </div>
-              
-              <p class="service-description">
-                Security isn't optional — it's essential. We safeguard your business with advanced solutions that detect, prevent, and respond to threats in real time.
-              </p>
-              
-              <div class="service-details-grid">
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Penetration Testing</h4>
-                    <p>Vulnerability assessment and security audits</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Data Protection</h4>
-                    <p>Encryption & backup solutions for peace of mind</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Network Security</h4>
-                    <p>Firewall configuration and threat monitoring</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="service-tech-stack">
-                <span class="tech-pill">Kali Linux</span>
-                <span class="tech-pill">Wireshark</span>
-                <span class="tech-pill">Metasploit</span>
-                <span class="tech-pill">SSL/TLS</span>
-              </div>
-              
-              <a href="contact.html#quote" class="service-action-btn">
-                <span>Start Project</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Service 6: Business Consultancy -->
-          <div class="service-item" id="consultancy">
-            <div class="service-icon-badge">
-              <div class="service-icon-wrapper">
-                <i class="fas fa-briefcase"></i>
-              </div>
-              <span class="service-badge">Strategic Planning</span>
-            </div>
-            
-            <div class="service-content">
-              <div class="service-header">
-                <h3>Business Consultancy</h3>
-                <div class="service-price-tag">
-                  <span class="price-label">Starting from</span>
-                  <span class="price">₹7000</span>
-                </div>
-              </div>
-              
-              <p class="service-description">
-                Growing a business takes more than tools — it takes strategy. We help SMEs identify opportunities, streamline operations, and build roadmaps for sustainable growth.
-              </p>
-              
-              <div class="service-details-grid">
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Digital Transformation</h4>
-                    <p>Modernization strategy for the digital age</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Process Optimization</h4>
-                    <p>Efficiency improvement and cost reduction</p>
-                  </div>
-                </div>
-                <div class="detail-item">
-                  <i class="fas fa-check-circle"></i>
-                  <div>
-                    <h4>Growth Strategy</h4>
-                    <p>Scalable business models for expansion</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="service-tech-stack">
-                <span class="tech-pill">SWOT Analysis</span>
-                <span class="tech-pill">Business Modeling</span>
-                <span class="tech-pill">Market Research</span>
-                <span class="tech-pill">Agile Methodology</span>
-              </div>
-              
-              <a href="contact.html#quote" class="service-action-btn">
-                <span>Start Project</span>
-                <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Our <span class="highlight">Process</span></h2>
-          <p class="section-subtitle">A structured approach to delivering exceptional results</p>
-        </div>
-        
-        <div class="process-steps">
-          <div class="process-step">
-            <div class="step-number">01</div>
-            <div class="step-icon">
-              <i class="fas fa-search"></i>
-            </div>
-            <h3>Discovery</h3>
-            <p>We begin by understanding your business goals, challenges, and requirements through detailed consultations.</p>
-          </div>
-          
-          <div class="process-step">
-            <div class="step-number">02</div>
-            <div class="step-icon">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <h3>Strategy</h3>
-            <p>Developing a customized plan with clear objectives, timelines, and deliverables tailored to your needs.</p>
-          </div>
-          
-          <div class="process-step">
-            <div class="step-number">03</div>
-            <div class="step-icon">
+            <div class="floating-element element-2">
               <i class="fas fa-code"></i>
             </div>
-            <h3>Develop</h3>
-            <p>Agile implementation with regular updates, ensuring the solution evolves with your feedback.</p>
+            <div class="floating-element element-3">
+              <i class="fas fa-palette"></i>
+            </div>
+            <div class="floating-element element-4">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="floating-element element-5">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="floating-element element-6">
+              <i class="fas fa-briefcase"></i>
+            </div>
           </div>
           
-          <div class="process-step">
-            <div class="step-number">04</div>
-            <div class="step-icon">
-              <i class="fas fa-rocket"></i>
-            </div>
-            <h3>Launch</h3>
-            <p>Deployment with comprehensive testing, documentation, and training for seamless adoption.</p>
+          <!-- Tech Background Graphic -->
+          <div class="hero-graphic">
+            <div class="tech-circle"></div>
+            <div class="tech-grid"></div>
           </div>
           
-          <div class="process-step">
-            <div class="step-number">05</div>
-            <div class="step-icon">
-              <i class="fas fa-headset"></i>
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span><i class="fas fa-cogs"></i> Comprehensive Solutions</span>
             </div>
-            <h3>Support</h3>
-            <p>Ongoing maintenance, updates, and support to ensure your solution continues to perform optimally.</p>
+            <h1 class="hero-title">
+              Our <span class="highlight-gradient">Digital Services</span>
+            </h1>
+            <p class="hero-subtitle">
+              From intelligent bots to secure systems, we provide end-to-end digital solutions that empower your business to thrive in the modern digital landscape.
+            </p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Core Services</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">100</span>
+                <span class="stat-label">% Custom Solutions</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Support</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+      <!-- Services Grid Section -->
+      <section class="services-grid-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Our <span class="highlight">Expertise</span></h2>
+            <p class="section-subtitle">Comprehensive digital solutions tailored to your business needs</p>
+          </div>
+          
+          <!-- Services Unified Grid -->
+          <div class="services-unified-grid">
+            <!-- Service 1: Bot Development -->
+            <div class="service-item" id="bots">
+              <div class="service-icon-badge">
+                <div class="service-icon-wrapper">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <span class="service-badge">AI-Powered</span>
+              </div>
+              
+              <div class="service-content">
+                <div class="service-header">
+                  <h3>Bot Development</h3>
+                  <div class="service-price-tag">
+                    <span class="price-label">Starting from</span>
+                    <span class="price">₹15000</span>
+                  </div>
+                </div>
+                
+                <p class="service-description">
+                  Because every business deserves a smart assistant. Our bots manage customer queries, streamline support, and boost sales without extra overhead.
+                </p>
+                
+                <div class="service-details-grid">
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Customer Service Bots</h4>
+                      <p>24/7 automated support that never sleeps</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Educational Bots</h4>
+                      <p>Gamified learning experiences for better engagement</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Sales & Conversion Bots</h4>
+                      <p>Lead generation automation to boost revenue</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="service-tech-stack">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">AI/ML</span>
+                  <span class="tech-pill">Dialogflow</span>
+                  <span class="tech-pill">Telegram API</span>
+                </div>
+                
+                <a href="contact.html#quote" class="service-action-btn">
+                  <span>Start Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Service 2: Web Development -->
+            <div class="service-item" id="web">
+              <div class="service-icon-badge">
+                <div class="service-icon-wrapper">
+                  <i class="fas fa-code"></i>
+                </div>
+                <span class="service-badge">Full Stack</span>
+              </div>
+              
+              <div class="service-content">
+                <div class="service-header">
+                  <h3>Web Development</h3>
+                  <div class="service-price-tag">
+                    <span class="price-label">Starting from</span>
+                    <span class="price">₹10000</span>
+                  </div>
+                </div>
+                
+                <p class="service-description">
+                  Your website is more than a URL — it's the digital backbone of your business. We build responsive, secure, and scalable platforms designed to last.
+                </p>
+                
+                <div class="service-details-grid">
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Custom Web Applications</h4>
+                      <p>Tailored solutions for your specific needs</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>E-commerce Solutions</h4>
+                      <p>Secure online stores with payment integration</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Progressive Web Apps</h4>
+                      <p>Native-like experience across all devices</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="service-tech-stack">
+                  <span class="tech-pill">React.js</span>
+                  <span class="tech-pill">Node.js</span>
+                  <span class="tech-pill">MongoDB</span>
+                  <span class="tech-pill">WordPress</span>
+                </div>
+                
+                <a href="contact.html#quote" class="service-action-btn">
+                  <span>Start Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Service 3: Graphic Design -->
+            <div class="service-item" id="design">
+              <div class="service-icon-badge">
+                <div class="service-icon-wrapper">
+                  <i class="fas fa-palette"></i>
+                </div>
+                <span class="service-badge">Visual Storytelling</span>
+              </div>
+              
+              <div class="service-content">
+                <div class="service-header">
+                  <h3>Graphic Design</h3>
+                  <div class="service-price-tag">
+                    <span class="price-label">Starting from</span>
+                    <span class="price">₹5000</span>
+                  </div>
+                </div>
+                
+                <p class="service-description">
+                  A strong brand begins with powerful visuals. We design logos, campaigns, and digital assets that tell compelling stories and create lasting impressions.
+                </p>
+                
+                <div class="service-details-grid">
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Brand Identity Design</h4>
+                      <p>Complete brand packages that stand out</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>UI/UX Design</h4>
+                      <p>User-centered interfaces for better experiences</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Motion Graphics</h4>
+                      <p>Animated content that captures attention</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="service-tech-stack">
+                  <span class="tech-pill">Adobe Creative Suite</span>
+                  <span class="tech-pill">Figma</span>
+                  <span class="tech-pill">Canva Pro</span>
+                  <span class="tech-pill">Blender</span>
+                </div>
+                
+                <a href="contact.html#quote" class="service-action-btn">
+                  <span>Start Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Service 4: Digital Optimization -->
+            <div class="service-item" id="optimization">
+              <div class="service-icon-badge">
+                <div class="service-icon-wrapper">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <span class="service-badge">Growth Focused</span>
+              </div>
+              
+              <div class="service-content">
+                <div class="service-header">
+                  <h3>Digital Optimization</h3>
+                  <div class="service-price-tag">
+                    <span class="price-label">Starting from</span>
+                    <span class="price">₹2000/m</span>
+                  </div>
+                </div>
+                
+                <p class="service-description">
+                  Cut through the noise with data-driven strategies. We maximize your online visibility, engagement, and conversions through comprehensive optimization.
+                </p>
+                
+                <div class="service-details-grid">
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>SEO Strategy</h4>
+                      <p>Higher search rankings and organic traffic</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Social Media Management</h4>
+                      <p>Consistent engagement across all platforms</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Analytics & Reporting</h4>
+                      <p>Data-driven insights for better decisions</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="service-tech-stack">
+                  <span class="tech-pill">Google Analytics</span>
+                  <span class="tech-pill">SEMrush</span>
+                  <span class="tech-pill">Meta Business</span>
+                  <span class="tech-pill">Mailchimp</span>
+                </div>
+                
+                <a href="contact.html#quote" class="service-action-btn">
+                  <span>Start Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Service 5: Cybersecurity -->
+            <div class="service-item" id="security">
+              <div class="service-icon-badge">
+                <div class="service-icon-wrapper">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <span class="service-badge">Enterprise Grade</span>
+              </div>
+              
+              <div class="service-content">
+                <div class="service-header">
+                  <h3>Cybersecurity</h3>
+                  <div class="service-price-tag">
+                    <span class="price-label">Starting from</span>
+                    <span class="price">₹15000</span>
+                  </div>
+                </div>
+                
+                <p class="service-description">
+                  Security isn't optional — it's essential. We safeguard your business with advanced solutions that detect, prevent, and respond to threats in real time.
+                </p>
+                
+                <div class="service-details-grid">
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Penetration Testing</h4>
+                      <p>Vulnerability assessment and security audits</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Data Protection</h4>
+                      <p>Encryption & backup solutions for peace of mind</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Network Security</h4>
+                      <p>Firewall configuration and threat monitoring</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="service-tech-stack">
+                  <span class="tech-pill">Kali Linux</span>
+                  <span class="tech-pill">Wireshark</span>
+                  <span class="tech-pill">Metasploit</span>
+                  <span class="tech-pill">SSL/TLS</span>
+                </div>
+                
+                <a href="contact.html#quote" class="service-action-btn">
+                  <span>Start Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Service 6: Business Consultancy -->
+            <div class="service-item" id="consultancy">
+              <div class="service-icon-badge">
+                <div class="service-icon-wrapper">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <span class="service-badge">Strategic Planning</span>
+              </div>
+              
+              <div class="service-content">
+                <div class="service-header">
+                  <h3>Business Consultancy</h3>
+                  <div class="service-price-tag">
+                    <span class="price-label">Starting from</span>
+                    <span class="price">₹7000</span>
+                  </div>
+                </div>
+                
+                <p class="service-description">
+                  Growing a business takes more than tools — it takes strategy. We help SMEs identify opportunities, streamline operations, and build roadmaps for sustainable growth.
+                </p>
+                
+                <div class="service-details-grid">
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Digital Transformation</h4>
+                      <p>Modernization strategy for the digital age</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Process Optimization</h4>
+                      <p>Efficiency improvement and cost reduction</p>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                      <h4>Growth Strategy</h4>
+                      <p>Scalable business models for expansion</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="service-tech-stack">
+                  <span class="tech-pill">SWOT Analysis</span>
+                  <span class="tech-pill">Business Modeling</span>
+                  <span class="tech-pill">Market Research</span>
+                  <span class="tech-pill">Agile Methodology</span>
+                </div>
+                
+                <a href="contact.html#quote" class="service-action-btn">
+                  <span>Start Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process Section -->
+      <section class="process-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Our <span class="highlight">Process</span></h2>
+            <p class="section-subtitle">A structured approach to delivering exceptional results</p>
+          </div>
+          
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-number">01</div>
+              <div class="step-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <h3>Discovery</h3>
+              <p>We begin by understanding your business goals, challenges, and requirements through detailed consultations.</p>
+            </div>
+            
+            <div class="process-step">
+              <div class="step-number">02</div>
+              <div class="step-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3>Strategy</h3>
+              <p>Developing a customized plan with clear objectives, timelines, and deliverables tailored to your needs.</p>
+            </div>
+            
+            <div class="process-step">
+              <div class="step-number">03</div>
+              <div class="step-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Develop</h3>
+              <p>Agile implementation with regular updates, ensuring the solution evolves with your feedback.</p>
+            </div>
+            
+            <div class="process-step">
+              <div class="step-number">04</div>
+              <div class="step-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>Launch</h3>
+              <p>Deployment with comprehensive testing, documentation, and training for seamless adoption.</p>
+            </div>
+            
+            <div class="process-step">
+              <div class="step-number">05</div>
+              <div class="step-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h3>Support</h3>
+              <p>Ongoing maintenance, updates, and support to ensure your solution continues to perform optimally.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's discuss your project requirements and create a custom solution that drives results.</p>
+            <div class="cta-buttons">
+              <a href="contact.html" class="cta-button primary large">
+                <span>Start Your Project</span>
+                <i class="fas fa-rocket"></i>
+              </a>
+              <a href="contact.html#quote" class="cta-button secondary large">
+                <span>Get Free Quote</span>
+                <i class="fas fa-file-invoice"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
       <div class="container">
-        <div class="cta-content">
-          <h2>Ready to Transform Your Business?</h2>
-          <p>Let's discuss your project requirements and create a custom solution that drives results.</p>
-          <div class="cta-buttons">
-            <a href="contact.html" class="cta-button primary large">
-              <span>Start Your Project</span>
-              <i class="fas fa-rocket"></i>
-            </a>
-            <a href="contact.html#quote" class="cta-button secondary large">
-              <span>Get Free Quote</span>
-              <i class="fas fa-file-invoice"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <div class="footer-logo">
-            <img src="assets/Logo.png" alt="Eternora Logo" />
-            <div class="footer-logo-text">
-              <h3 class="logo-name">Eternora</h3>
-              <p>Digital Innovation Studio</p>
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img src="assets/Logo.png" alt="Eternora Logo" />
+              <div class="footer-logo-text">
+                <h3 class="logo-name">Eternora</h3>
+                <p>Digital Innovation Studio</p>
+              </div>
+            </div>
+            <p class="footer-description">
+              Where small businesses get big brains — smart tools, smarter growth.
+            </p>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/eternora-enterprises-pvt-ltd-923667384/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/eternora_enterprises_pvt_ltd" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/918793428316" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://t.me/sio_1000" class="social-icon"><i class="fab fa-telegram"></i></a>
+              <a href="mailto:contact@eternora.online" class="social-icon"><i class="fas fa-envelope"></i></a>
             </div>
           </div>
-          <p class="footer-description">
-            Where small businesses get big brains — smart tools, smarter growth.
-          </p>
-          <div class="social-icons">
-            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+          
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="reviews.html">Reviews</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html#quote">Get Quote</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html#bots">Bot Development</a></li>
+              <li><a href="services.html#web">Web Development</a></li>
+              <li><a href="services.html#design">Graphic Design</a></li>
+              <li><a href="services.html#optimization">Digital Optimization</a></li>
+              <li><a href="services.html#security">Cybersecurity</a></li>
+              <li><a href="services.html#consultancy">Business Consultancy</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-info">
+              <p><i class="fas fa-map-marker-alt"></i> Vasai, Maharashtra, India.</p>
+              <p><i class="fas fa-envelope"></i> contact@eternora.online</p>
+              <p><i class="fas fa-phone"></i> +91 87934 28316</p>
+              <p><i class="fas fa-clock"></i> Mon-Fri: 9:00-18:00</p>
+            </div>
           </div>
         </div>
         
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="contact.html#quote">Get Quote</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Services</h4>
-          <ul class="footer-links">
-            <li><a href="services.html#bots">Bot Development</a></li>
-            <li><a href="services.html#web">Web Development</a></li>
-            <li><a href="services.html#design">Graphic Design</a></li>
-            <li><a href="services.html#optimization">Digital Optimization</a></li>
-            <li><a href="services.html#security">Cybersecurity</a></li>
-            <li><a href="services.html#consultancy">Business Consultancy</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Contact Info</h4>
-          <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> Moscow, Russia</p>
-            <p><i class="fas fa-envelope"></i> info@eternora.online</p>
-            <p><i class="fas fa-phone"></i> +7 (XXX) XXX-XXXX</p>
-            <p><i class="fas fa-clock"></i> Mon-Fri: 9:00-18:00</p>
-          </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="currentYear">2025</span> Eternora Enterprises Pvt. Ltd. All rights reserved.</p>
         </div>
       </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; <span id="currentYear">2025</span> Eternora Enterprises Pvt. Ltd. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <!-- Back to Top Button -->
   <button class="back-to-top" id="backToTop">
@@ -664,6 +668,10 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Show main content immediately
+      const pageContent = document.getElementById('pageContent');
+      pageContent.classList.add('visible');
+      
       // ============================================
       // LOADING BAR FOR PAGE TRANSITIONS
       // ============================================
@@ -709,11 +717,10 @@
       });
       
       // ============================================
-      // NAVIGATION
+      // NAVIGATION - NOT FIXED
       // ============================================
       const hamburgerBtn = document.getElementById('hamburgerBtn');
       const navLinks = document.querySelector('.nav-links');
-      const navbar = document.querySelector('.navbar');
       const backToTop = document.getElementById('backToTop');
       
       // Hamburger menu toggle
@@ -726,7 +733,6 @@
         }
         
         hamburgerBtn.addEventListener('click', toggleMenu);
-        hamburgerBtn.addEventListener('touchstart', toggleMenu);
         
         // Close menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -750,26 +756,16 @@
         });
       }
       
-      // Navbar scroll effect
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-        
-        // Back to top button
-        if (backToTop) {
+      // Back to top functionality
+      if (backToTop) {
+        window.addEventListener('scroll', function() {
           if (window.scrollY > 300) {
             backToTop.classList.add('visible');
           } else {
             backToTop.classList.remove('visible');
           }
-        }
-      });
-      
-      // Back to top functionality
-      if (backToTop) {
+        });
+        
         backToTop.addEventListener('click', function() {
           window.scrollTo({
             top: 0,

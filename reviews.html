@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <script src="audio.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Client Reviews - Eternora</title>
-  <meta name="description" content="Read what our clients say about working with Eternora. Case studies and testimonials from real projects.">
+  <meta name="description"
+    content="Read what our clients say about working with Eternora. Case studies and testimonials from real projects.">
   <meta name="keywords" content="client reviews, testimonials, case studies, project success stories, Eternora reviews">
   <link rel="icon" type="image/x-icon" href="assets/Favicon.ico" />
-  
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="styles-reviews.css" />
-  
+
   <style>
     @font-face {
       font-family: 'MOKOTO Glitch 1';
       src: url('fonts/mokoto-mokoto-regular-glitch-mark-2-400.otf') format('opentype'),
-           url('fonts/mokoto-mokoto-regular-glitch-mark-2-400.ttf') format('truetype');
+        url('fonts/mokoto-mokoto-regular-glitch-mark-2-400.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
     }
@@ -44,15 +49,80 @@
         font-size: 1.3rem;
       }
     }
+
+    /* UPDATED: Larger client avatar container - REMOVED EXTRA CIRCLE */
+    .avatar-container.purple-bg {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #8a2be2, #4a0082);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar-container.purple-bg img {
+      width: 85%;
+      height: 85%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .avatar-container.purple-bg .glow-border {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 50%;
+      background: linear-gradient(45deg,
+          #8a2be2,
+          #4a0082,
+          #8a2be2,
+          #4a0082);
+      z-index: 1;
+      opacity: 0.7;
+      filter: blur(5px);
+      animation: borderGlow 3s linear infinite;
+    }
+
+    @keyframes borderGlow {
+
+      0%,
+      100% {
+        opacity: 0.5;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scale(1.02);
+      }
+    }
+
+    .avatar-container.purple-bg:hover img {
+      transform: scale(1.1);
+    }
+
+    .avatar-container.purple-bg:hover .glow-border {
+      animation: borderGlow 1.5s linear infinite;
+    }
   </style>
 </head>
+
 <body>
   <!-- Stars Background -->
   <div class="stars"></div>
-  
-  <!-- Mouse Trail Effect -->
+
+  <!-- Mouse Trail Effect - FIXED: Ensure it's present -->
   <div class="mouse-trail"></div>
-  
+
   <!-- Purple Loading Bar -->
   <div class="loading-bar" id="loadingBar"></div>
 
@@ -97,7 +167,8 @@
               Where Our <span class="highlight-gradient">Work Speaks</span>
             </h1>
             <p class="hero-subtitle">
-              Discover how we've helped businesses transform their digital presence through innovative solutions and exceptional service.
+              Discover how we've helped businesses transform their digital presence through innovative solutions and
+              exceptional service.
             </p>
             <div class="stats-grid">
               <div class="stat-card">
@@ -105,7 +176,7 @@
                   <i class="fas fa-smile"></i>
                 </div>
                 <div class="stat-content">
-                  <span class="stat-number" data-count="100">100</span>
+                  <span class="stat-number" data-count="100">0</span>
                   <span class="stat-label">% Satisfaction</span>
                 </div>
               </div>
@@ -114,7 +185,7 @@
                   <i class="fas fa-project-diagram"></i>
                 </div>
                 <div class="stat-content">
-                  <span class="stat-number" data-count="7">7</span>
+                  <span class="stat-number" data-count="5">0</span>
                   <span class="stat-label">Projects Delivered</span>
                 </div>
               </div>
@@ -139,7 +210,7 @@
             <h2>Featured <span class="highlight">Projects</span></h2>
             <p class="section-subtitle">Discover our most impactful work and the stories behind them</p>
           </div>
-          
+
           <div class="projects-container">
             <!-- Project 1: India Day Bot -->
             <div class="project-card india-day">
@@ -159,27 +230,24 @@
                   </span>
                 </div>
               </div>
-              
+
               <div class="project-content">
-                <div class="project-image">
-                  <img src="assets/indiaday.png" alt="India Day Bot Interface" />
-                  <div class="image-overlay">
-                    <div class="tech-stack">
-                      <span>Python</span>
-                      <span>Telegram API</span>
-                      <span>Home Server</span>
-                    </div>
-                  </div>
-                </div>
-                
                 <div class="project-details">
                   <h3>India Day 2025 Telegram Bot</h3>
                   <h4>Official Digital Companion for the 10th Anniversary Festival</h4>
-                  
+
+                  <!-- UPDATED: Full-size image with white background -->
+                  <div class="full-image-container white-bg">
+                    <img src="assets/indiaday.png" alt="India Day Bot Interface" />
+                  </div>
+
                   <p class="project-description">
-                    The India Day 2025 Telegram Bot served as the official digital companion for the 10th Anniversary Festival held from August 14–17 at Dream Island. It provided real-time updates, personalized schedules, and interactive features, ensuring attendees stayed informed and engaged throughout the event.
+                    The India Day 2025 Telegram Bot served as the official digital companion for the 10th Anniversary
+                    Festival held from August 14–17 at Dream Island. It provided real-time updates, personalized
+                    schedules, and interactive features, ensuring attendees stayed informed and engaged throughout the
+                    event.
                   </p>
-                  
+
                   <div class="project-features">
                     <div class="feature">
                       <i class="fas fa-calendar-check"></i>
@@ -198,7 +266,7 @@
                       <span>Live Updates</span>
                     </div>
                   </div>
-                  
+
                   <div class="project-impact">
                     <h5>Impact Achieved:</h5>
                     <ul>
@@ -209,21 +277,109 @@
                     </ul>
                   </div>
 
-                  <!-- Action Buttons for India Day Bot -->
+                  <!-- Client Quote Section -->
+                  <div class="client-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Working with Eternora significantly improved India Day Festival Moscow. They created a bot that
+                      provided the full event schedule instantly to thousands of visitors. It made finding event details
+                      easy and interactions smooth. The bot reduced repetitive questions and added a modern tech edge."
+                    </p>
+                    <div class="quote-author">
+                      <div class="author-avatar">
+                        <div class="avatar-container purple-bg">
+                          <img src="assets/dasha.png" alt="Dasha Kotwani" />
+                          <div class="glow-border"></div>
+                        </div>
+                      </div>
+                      <div class="author-details">
+                        <strong>Dasha Kotwani</strong>
+                        <span>Director, Indian National Cultural Center SITA</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Action Buttons -->
                   <div class="project-actions">
                     <a href="https://t.me/india_day_bot" class="project-btn primary" target="_blank">
                       <i class="fab fa-telegram"></i>
                       <span>Try India Day Bot</span>
                     </a>
-                    <a href="https://t.me/india_day_bot" class="project-btn secondary" target="_blank">
+                    <a href="https://indiaday.ru" class="project-btn secondary" target="_blank">
                       <i class="fas fa-external-link-alt"></i>
-                      <span>Open in Telegram</span>
+                      <span>Visit India Day Website</span>
                     </a>
+                  </div>
+                </div>
+
+                <!-- Tech Stack & Implementation -->
+                <div class="project-implementation">
+                  <h5>Technical Implementation:</h5>
+                  <div class="tech-stack-detailed">
+                    <div class="tech-item">
+                      <i class="fab fa-python"></i>
+                      <span>Python Backend</span>
+                      <p>Robust and scalable architecture</p>
+                    </div>
+                    <div class="tech-item">
+                      <i class="fas fa-server"></i>
+                      <span>Home Server Hosting</span>
+                      <p>Secure and reliable deployment</p>
+                    </div>
+                    <div class="tech-item">
+                      <i class="fab fa-telegram"></i>
+                      <span>Telegram Bot API</span>
+                      <p>Seamless platform integration</p>
+                    </div>
+                    <div class="tech-item">
+                      <i class="fas fa-database"></i>
+                      <span>Dynamic Database</span>
+                      <p>Real-time data management</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline">
+                    <h5>Project Timeline:</h5>
+                    <div class="timeline-item">
+                      <div class="timeline-marker">
+                        <i class="fas fa-play-circle"></i>
+                      </div>
+                      <div class="timeline-content">
+                        <h6>Planning & Design</h6>
+                        <span>3 days - Requirements gathering and UI design</span>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-marker">
+                        <i class="fas fa-code"></i>
+                      </div>
+                      <div class="timeline-content">
+                        <h6>Development</h6>
+                        <span>4 days - Core functionality implementation</span>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-marker">
+                        <i class="fas fa-bug"></i>
+                      </div>
+                      <div class="timeline-content">
+                        <h6>Testing & Deployment</h6>
+                        <span>2 days - Quality assurance and launch</span>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-marker">
+                        <i class="fas fa-chart-line"></i>
+                      </div>
+                      <div class="timeline-content">
+                        <h6>Post-Launch Support</h6>
+                        <span>Ongoing maintenance and optimization</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             <!-- Project 2: Shaping Young Minds -->
             <div class="project-card shaping-minds">
               <div class="project-header">
@@ -242,128 +398,175 @@
                   </span>
                 </div>
               </div>
-              
+
               <div class="project-content">
                 <div class="project-details">
                   <h3>Shaping Young Minds (SYM)</h3>
                   <h4>A movement built on empathy, knowledge, and emotional wellbeing</h4>
-                  
+
+                  <!-- UPDATED: Full-size image with white background -->
+                  <div class="full-image-container white-bg">
+                    <img src="assets/symlogo.png" alt="Shaping Young Minds Platform" />
+                  </div>
+
                   <p class="project-description">
-                    Shaping Young Minds is a movement dedicated to nurturing emotional wellbeing from the earliest stages. We walk with families through challenging moments, helping children navigate their emotions and parents support them with confidence. Our approach is about guiding, supporting, and creating safe spaces where children feel understood and parents feel empowered.
+                    Shaping Young Minds is a movement dedicated to nurturing emotional wellbeing from the earliest
+                    stages. We walk with families through challenging moments, helping children navigate their emotions
+                    and parents support them with confidence. Our approach is about guiding, supporting, and creating
+                    safe spaces where children feel understood and parents feel empowered.
                   </p>
-                  
+
                   <div class="mission-vision">
                     <div class="mission">
                       <div class="icon-title">
                         <i class="fas fa-bullseye"></i>
                         <h5>Our Mission</h5>
                       </div>
-                      <p>To empower parents and support children by making conversations about mental health natural and accessible.</p>
+                      <p>To empower parents and support children by making conversations about mental health natural and
+                        accessible.</p>
                     </div>
                     <div class="vision">
                       <div class="icon-title">
                         <i class="fas fa-eye"></i>
                         <h5>Our Vision</h5>
                       </div>
-                      <p>To build a future where childhood is truly a time of joy and growth, free from lingering traumas.</p>
+                      <p>To build a future where childhood is truly a time of joy and growth, free from lingering
+                        traumas.</p>
                     </div>
                   </div>
-                  
-                  <div class="core-values">
-                    <h5>Core Values:</h5>
-                    <div class="values-grid">
-                      <div class="value">
-                        <i class="fas fa-hands-helping"></i>
-                        <span>Compassion First</span>
-                      </div>
-                      <div class="value">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Safe Spaces</span>
-                      </div>
-                      <div class="value">
-                        <i class="fas fa-seedling"></i>
-                        <span>Early Intervention</span>
-                      </div>
-                      <div class="value">
-                        <i class="fas fa-home"></i>
-                        <span>Family-Centered</span>
-                      </div>
-                    </div>
+
+                  <div class="project-impact">
+                    <h5>Platform Features:</h5>
+                    <ul>
+                      <li>Educational resources for parents and educators</li>
+                      <li>Safe space support for children's emotional needs</li>
+                      <li>Mental health awareness campaigns and workshops</li>
+                      <li>Expert mentorship and guidance programs</li>
+                    </ul>
                   </div>
-                  
-                  <div class="services-offered">
-                    <h5>What We Offer:</h5>
-                    <div class="services-grid">
-                      <div class="service">
-                        <i class="fas fa-book"></i>
-                        <span>Educational Resources</span>
+
+                  <!-- Client Quote Section -->
+                  <div class="client-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Eternora's approach to our mental health platform was both professional and deeply empathetic.
+                      They understood our mission to help children and families, creating a digital space that feels
+                      safe, welcoming, and truly supportive."</p>
+                    <div class="quote-author">
+                      <div class="author-avatar">
+                        <div class="avatar-container purple-bg">
+                          <img src="assets/kanta.png" alt="Mrs. Kanta Devi" />
+                          <div class="glow-border"></div>
+                        </div>
                       </div>
-                      <div class="service">
-                        <i class="fas fa-comments"></i>
-                        <span>Safe Space Support</span>
-                      </div>
-                      <div class="service">
-                        <i class="fas fa-brain"></i>
-                        <span>Mental Health Awareness</span>
-                      </div>
-                      <div class="service">
-                        <i class="fas fa-user-graduate"></i>
-                        <span>Expert Mentorship</span>
-                      </div>
-                      <div class="service">
-                        <i class="fas fa-blog"></i>
-                        <span>Blog & Articles</span>
-                      </div>
-                      <div class="service">
-                        <i class="fas fa-users"></i>
-                        <span>Community Workshops</span>
+                      <div class="author-details">
+                        <strong>Mrs. Kanta Devi</strong>
+                        <span>Founder & Mental Health Advocate</span>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Action Buttons for Shaping Young Minds -->
+                  <!-- Action Buttons -->
                   <div class="project-actions">
                     <a href="https://shapingyoungminds.in" class="project-btn primary" target="_blank">
                       <i class="fas fa-globe"></i>
                       <span>Visit SYM Website</span>
                     </a>
-                    <a href="https://shapingyoungminds.in" class="project-btn secondary" target="_blank">
+                    <a href="https://shapingyoungminds.in/contact.html#contact-form" class="project-btn secondary" target="_blank">
                       <i class="fas fa-heart"></i>
-                      <span>Join Our Community</span>
+                      <span>Join Their Community</span>
                     </a>
                   </div>
                 </div>
-                
-                <div class="founder-section">
-                  <div class="founder-header">
-                    <div class="founder-image">
-                      <img src="assets/kanta1.png" alt="Mrs. Kanta Devi" />
+
+                <!-- Services & Impact -->
+                <div class="project-implementation">
+                  <h5>Services Offered:</h5>
+                  <div class="services-grid-detailed">
+                    <div class="service-item">
+                      <i class="fas fa-book"></i>
+                      <span>Educational Resources</span>
+                      <p>Comprehensive guides and materials</p>
                     </div>
-                    <div class="founder-title">
-                      <h5>Mrs. Kanta Devi</h5>
-                      <span>Founder & Mental Health Advocate</span>
+                    <div class="service-item">
+                      <i class="fas fa-comments"></i>
+                      <span>Safe Space Support</span>
+                      <p>Confidential counseling sessions</p>
+                    </div>
+                    <div class="service-item">
+                      <i class="fas fa-brain"></i>
+                      <span>Mental Health Awareness</span>
+                      <p>Workshops and seminars</p>
+                    </div>
+                    <div class="service-item">
+                      <i class="fas fa-user-graduate"></i>
+                      <span>Expert Mentorship</span>
+                      <p>Professional guidance programs</p>
                     </div>
                   </div>
-                  
-                  <blockquote class="founder-quote">
-                    <i class="fas fa-quote-left"></i>
-                    <p>"Shaping Young Minds was born from the life I have lived and the quiet stories I have carried in my heart for nearly two decades. With experience in clinical psychology, school counseling, and community work, I've witnessed the silent battles children often fight behind their smiles."</p>
-                    <i class="fas fa-quote-right"></i>
-                  </blockquote>
-                  
-                  <div class="founder-impact">
-                    <h6>Our Impact Goals:</h6>
-                    <ul>
-                      <li><i class="fas fa-sync-alt"></i> Breaking generational cycles</li>
-                      <li><i class="fas fa-shield-alt"></i> Building resilience in children</li>
-                      <li><i class="fas fa-home-heart"></i> Strengthening family bonds</li>
-                      <li><i class="fas fa-bullhorn"></i> Raising mental health awareness</li>
-                    </ul>
+
+                  <div class="impact-metrics">
+                    <h5>Impact Metrics:</h5>
+                    <div class="metrics-grid">
+                      <div class="metric-item">
+                        <i class="fas fa-sync-alt"></i>
+                        <div class="metric-text">
+                          <span class="metric-title">Generational Cycles</span>
+                          <span class="metric-desc">Breaking negative patterns</span>
+                        </div>
+                      </div>
+                      <div class="metric-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="metric-text">
+                          <span class="metric-title">Child Resilience</span>
+                          <span class="metric-desc">Building emotional strength</span>
+                        </div>
+                      </div>
+                      <div class="metric-item">
+                        <i class="fas fa-heart"></i>
+                        <div class="metric-text">
+                          <span class="metric-title">Family Bonds</span>
+                          <span class="metric-desc">Strengthening relationships</span>
+                        </div>
+                      </div>
+                      <div class="metric-item">
+                        <i class="fas fa-bullhorn"></i>
+                        <div class="metric-text">
+                          <span class="metric-title">Awareness</span>
+                          <span class="metric-desc">Spreading mental health knowledge</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="core-values-detailed">
+                    <h5>Core Values:</h5>
+                    <div class="values-list">
+                      <div class="value-item">
+                        <i class="fas fa-hands-helping"></i>
+                        <span>Compassion First</span>
+                        <p>Every interaction begins with empathy</p>
+                      </div>
+                      <div class="value-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Safe Spaces</span>
+                        <p>Creating environments of trust</p>
+                      </div>
+                      <div class="value-item">
+                        <i class="fas fa-seedling"></i>
+                        <span>Early Intervention</span>
+                        <p>Addressing issues before they grow</p>
+                      </div>
+                      <div class="value-item">
+                        <i class="fas fa-home"></i>
+                        <span>Family-Centered</span>
+                        <p>Involving the entire support system</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             <!-- Project 3: SS Engineering -->
             <div class="project-card ss-engineering">
               <div class="project-header">
@@ -382,28 +585,23 @@
                   </span>
                 </div>
               </div>
-              
+
               <div class="project-content">
-                <div class="project-image">
-                  <img src="assets/ssengineering.jpg" alt="SS Engineering Website" />
-                  <div class="image-overlay">
-                    <div class="tech-stack">
-                      <span>HTML5</span>
-                      <span>CSS3</span>
-                      <span>JavaScript</span>
-                      <span>Responsive Design</span>
-                    </div>
-                  </div>
-                </div>
-                
                 <div class="project-details">
                   <h3>SS Engineering Website</h3>
                   <h4>Modern Digital Presence for Technical Solutions Company</h4>
-                  
+
+                  <!-- UPDATED: Full-size image with white background -->
+                  <div class="full-image-container white-bg">
+                    <img src="assets/ssengineeringlogo.jpg" alt="SS Engineering Website" />
+                  </div>
+
                   <p class="project-description">
-                    A sleek, functional website that perfectly captures the brand language of a technical engineering company. The site combines clarity, style, and technical precision to showcase SS Engineering's expertise and capabilities.
+                    A sleek, functional website that perfectly captures the brand language of a technical engineering
+                    company. The site combines clarity, style, and technical precision to showcase SS Engineering's
+                    expertise and capabilities while providing an optimal user experience across all devices.
                   </p>
-                  
+
                   <div class="project-features">
                     <div class="feature">
                       <i class="fas fa-palette"></i>
@@ -422,99 +620,152 @@
                       <span>Easy Maintenance</span>
                     </div>
                   </div>
-                  
+
+                  <div class="project-impact">
+                    <h5>Key Achievements:</h5>
+                    <ul>
+                      <li>Improved page load speed by 60%</li>
+                      <li>Enhanced mobile user experience</li>
+                      <li>Increased organic search traffic</li>
+                      <li>Streamlined content management</li>
+                    </ul>
+                  </div>
+
+                  <!-- Client Quote Section -->
                   <div class="client-quote">
                     <i class="fas fa-quote-left"></i>
-                    <p>"Working with Eternora was truly a breath of fresh air. As the founder of a technical company like SS Engineering, I honestly wasn't expecting a creative team to grasp our complex needs so quickly — but they absolutely nailed it."</p>
+                    <p>"Working with Eternora was truly a breath of fresh air. As the founder of a technical company
+                      like SS Engineering, I honestly wasn't expecting a creative team to grasp our complex needs so
+                      quickly — but they absolutely nailed it. The website they developed for us is sleek, functional,
+                      and speaks our brand language perfectly."</p>
                     <div class="quote-author">
-                      <strong>Sebastian Dsouza</strong>
-                      <span>Founder & CEO, SS Engineering</span>
+                      <div class="author-avatar">
+                        <div class="avatar-container purple-bg">
+                          <img src="assets/ssengineering.png" alt="Sebastian Dsouza" />
+                          <div class="glow-border"></div>
+                        </div>
+                      </div>
+                      <div class="author-details">
+                        <strong>Sebastian Dsouza</strong>
+                        <span>Founder & CEO, SS Engineering</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Testimonials Section -->
-      <section class="client-testimonials">
-        <div class="container">
-          <div class="section-header">
-            <h2>Client <span class="highlight">Testimonials</span></h2>
-            <p class="section-subtitle">Direct feedback from the businesses we've helped transform</p>
-          </div>
-          
-          <div class="testimonials-grid">
-            <!-- Testimonial 1 -->
-            <div class="testimonial-card">
-              <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <div class="testimonial-content">
-                <p>"Working with Eternora was a breath of fresh air. As the founder of a technical company like SS Engineering, I wasn't expecting a creative team to understand our complex needs so quickly — but they nailed it. The website they developed for us is sleek, functional, and speaks our brand language perfectly..."</p>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img src="assets/ssengineering.jpg" alt="Sebastian Dsouza" />
+                  <!-- Action Buttons -->
+                  <div class="project-actions">
+                    <a href="https://ssengineering.online" class="project-btn primary">
+                      <i class="fas fa-globe"></i>
+                      <span>Visit SS-Eng Website</span>
+                    </a>
+                    <a href="contact.html" class="project-btn secondary">
+                      <i class="fas fa-rocket"></i>
+                      <span>Start Your Project</span>
+                    </a>
+                  </div>
                 </div>
-                <div class="author-info">
-                  <h4>Sebastian Dsouza</h4>
-                  <p>Founder & CEO, SS Engineering</p>
-                  <span class="author-project">Web Development Project</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Testimonial 2 -->
-            <div class="testimonial-card">
-              <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <div class="testimonial-content">
-                <p>"Working with Eternora significantly improved India Day Festival Moscow. They created a bot that provided the full event schedule instantly to thousands of visitors. It made finding event details easy and interactions smooth. The bot reduced repetitive questions and added a modern tech edge."</p>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img src="assets/dasha.jpg" alt="Dasha Kotwani" />
-                </div>
-                <div class="author-info">
-                  <h4>Dasha Kotwani</h4>
-                  <p>Director, Indian National Cultural Center SITA</p>
-                  <span class="author-project">Telegram Bot Development</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Testimonial 3 -->
-            <div class="testimonial-card">
-              <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <div class="testimonial-content">
-                <p>"Eternora's approach to our mental health platform was both professional and deeply empathetic. They understood our mission to help children and families, creating a digital space that feels safe, welcoming, and truly supportive."</p>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <img src="assets/kanta1.png" alt="Mrs. Kanta Devi" />
-                </div>
-                <div class="author-info">
-                  <h4>Mrs. Kanta Devi</h4>
-                  <p>Founder, Shaping Young Minds</p>
-                  <span class="author-project">Platform Development</span>
+
+                <!-- Technical Details -->
+                <div class="project-implementation">
+                  <h5>Technical Stack:</h5>
+                  <div class="tech-stack-detailed">
+                    <div class="tech-item">
+                      <i class="fab fa-html5"></i>
+                      <span>HTML5</span>
+                      <p>Semantic and accessible markup</p>
+                    </div>
+                    <div class="tech-item">
+                      <i class="fab fa-css3-alt"></i>
+                      <span>CSS3</span>
+                      <p>Modern styling and animations</p>
+                    </div>
+                    <div class="tech-item">
+                      <i class="fab fa-js"></i>
+                      <span>JavaScript</span>
+                      <p>Interactive functionality</p>
+                    </div>
+                    <div class="tech-item">
+                      <i class="fas fa-mobile-alt"></i>
+                      <span>Responsive Design</span>
+                      <p>Optimized for all devices</p>
+                    </div>
+                  </div>
+
+                  <div class="performance-metrics">
+                    <h5>Performance Metrics:</h5>
+                    <div class="metrics-bars">
+                      <div class="metric-bar">
+                        <span>Page Speed Score</span>
+                        <div class="bar-container">
+                          <div class="bar-fill" style="width: 95%"></div>
+                        </div>
+                        <span class="metric-value">95/100</span>
+                      </div>
+                      <div class="metric-bar">
+                        <span>Mobile Optimization</span>
+                        <div class="bar-container">
+                          <div class="bar-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="metric-value">100%</span>
+                      </div>
+                      <div class="metric-bar">
+                        <span>SEO Score</span>
+                        <div class="bar-container">
+                          <div class="bar-fill" style="width: 92%"></div>
+                        </div>
+                        <span class="metric-value">92/100</span>
+                      </div>
+                      <div class="metric-bar">
+                        <span>User Satisfaction</span>
+                        <div class="bar-container">
+                          <div class="bar-fill" style="width: 98%"></div>
+                        </div>
+                        <span class="metric-value">98%</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="development-process">
+                    <h5>Development Process:</h5>
+                    <div class="process-steps">
+                      <div class="step">
+                        <div class="step-icon">
+                          <i class="fas fa-search"></i>
+                        </div>
+                        <div class="step-content">
+                          <h6>Discovery & Research</h6>
+                          <p>Understanding brand identity and user needs</p>
+                        </div>
+                      </div>
+                      <div class="step">
+                        <div class="step-icon">
+                          <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <div class="step-content">
+                          <h6>Design & Prototyping</h6>
+                          <p>Creating wireframes and visual designs</p>
+                        </div>
+                      </div>
+                      <div class="step">
+                        <div class="step-icon">
+                          <i class="fas fa-code"></i>
+                        </div>
+                        <div class="step-content">
+                          <h6>Development & Testing</h6>
+                          <p>Building and quality assurance</p>
+                        </div>
+                      </div>
+                      <div class="step">
+                        <div class="step-icon">
+                          <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="step-content">
+                          <h6>Launch & Optimization</h6>
+                          <p>Deployment and performance monitoring</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -529,7 +780,7 @@
             <h2>Our <span class="highlight">Impact</span> in Numbers</h2>
             <p class="section-subtitle">Quantifying the value we've delivered to our clients</p>
           </div>
-          
+
           <div class="metrics-grid">
             <div class="metric-card">
               <div class="metric-icon">
@@ -543,20 +794,20 @@
                 Through our digital solutions
               </div>
             </div>
-            
+
             <div class="metric-card">
               <div class="metric-icon">
                 <i class="fas fa-project-diagram"></i>
               </div>
               <div class="metric-content">
-                <span class="metric-number" data-count="7">0</span>
+                <span class="metric-number" data-count="5">0</span>
                 <span class="metric-label">Projects Completed</span>
               </div>
               <div class="metric-description">
                 With 100% satisfaction rate
               </div>
             </div>
-            
+
             <div class="metric-card">
               <div class="metric-icon">
                 <i class="fas fa-clock"></i>
@@ -569,7 +820,7 @@
                 Round-the-clock assistance
               </div>
             </div>
-            
+
             <div class="metric-card">
               <div class="metric-icon">
                 <i class="fas fa-rocket"></i>
@@ -623,14 +874,16 @@
               Where small businesses get big brains — smart tools, smarter growth.
             </p>
             <div class="social-icons">
-              <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-              <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+              <a href="https://www.linkedin.com/in/eternora-enterprises-pvt-ltd-923667384/" class="social-icon"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/eternora_enterprises_pvt_ltd" class="social-icon"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/918793428316" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://t.me/sio_1000" class="social-icon"><i class="fab fa-telegram"></i></a>
+              <a href="mailto:contact@eternora.online" class="social-icon"><i class="fas fa-envelope"></i></a>
             </div>
           </div>
-          
+
           <div class="footer-section">
             <h4>Quick Links</h4>
             <ul class="footer-links">
@@ -641,7 +894,7 @@
               <li><a href="contact.html#quote">Get Quote</a></li>
             </ul>
           </div>
-          
+
           <div class="footer-section">
             <h4>Services</h4>
             <ul class="footer-links">
@@ -651,18 +904,18 @@
               <li><a href="services.html#optimization">Digital Optimization</a></li>
             </ul>
           </div>
-          
+
           <div class="footer-section">
             <h4>Contact Info</h4>
             <div class="contact-info">
-              <p><i class="fas fa-map-marker-alt"></i> Moscow, Russia</p>
-              <p><i class="fas fa-envelope"></i> info@eternora.online</p>
-              <p><i class="fas fa-phone"></i> +7 (XXX) XXX-XXXX</p>
+              <p><i class="fas fa-map-marker-alt"></i> Vasai, Maharashtra, India.</p>
+              <p><i class="fas fa-envelope"></i> contact@eternora.online</p>
+              <p><i class="fas fa-phone"></i> +91 87934 28316</p>
               <p><i class="fas fa-clock"></i> Mon-Fri: 9:00-18:00</p>
             </div>
           </div>
         </div>
-        
+
         <div class="footer-bottom">
           <p>&copy; 2025 Eternora Enterprises Pvt. Ltd. All rights reserved.</p>
         </div>
@@ -677,46 +930,93 @@
 
   <script>
     // ============================================
-    // REVIEWS PAGE SCRIPT
+    // REVIEWS PAGE SCRIPT - FIXED COUNTER ANIMATIONS
     // ============================================
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('DOM loaded - initializing animations');
+
+      // ============================================
+      // MOUSE TRAIL EFFECT
+      // ============================================
+      const mouseTrail = document.querySelector('.mouse-trail');
+      if (mouseTrail) {
+        let mouseX = 0, mouseY = 0, trailX = 0, trailY = 0;
+        let isMouseMoving = false;
+        let mouseTrailTimeout;
+
+        function updateMouseTrail() {
+          trailX += (mouseX - trailX) * 0.2;
+          trailY += (mouseY - trailY) * 0.2;
+          mouseTrail.style.left = trailX + 'px';
+          mouseTrail.style.top = trailY + 'px';
+
+          if (isMouseMoving) {
+            mouseTrail.classList.add('active');
+            clearTimeout(mouseTrailTimeout);
+            mouseTrailTimeout = setTimeout(() => {
+              isMouseMoving = false;
+              mouseTrail.classList.remove('active');
+            }, 1000);
+          }
+
+          requestAnimationFrame(updateMouseTrail);
+        }
+
+        document.addEventListener('mousemove', function (e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          isMouseMoving = true;
+        });
+
+        document.addEventListener('mouseleave', function () {
+          isMouseMoving = false;
+          mouseTrail.classList.remove('active');
+        });
+
+        document.addEventListener('mouseenter', function () {
+          isMouseMoving = true;
+        });
+
+        updateMouseTrail();
+      }
+
       // ============================================
       // LOADING BAR FOR PAGE TRANSITIONS
       // ============================================
       const loadingBar = document.getElementById('loadingBar');
-      
+
       function startLoadingBar() {
         if (!loadingBar) return;
         loadingBar.style.transition = 'none';
         loadingBar.style.width = '0';
         loadingBar.style.display = 'block';
         loadingBar.classList.add('active');
-        
+
         // Force reflow
         void loadingBar.offsetWidth;
-        
+
         loadingBar.style.transition = 'width 0.8s cubic-bezier(.4,0,.2,1)';
         loadingBar.style.width = '100%';
       }
-      
+
       // Add loading bar to all internal navigation links
       document.querySelectorAll('a[href]').forEach(link => {
         const href = link.getAttribute('href');
-        
+
         // Only apply to internal links
         if (href &&
-            !href.startsWith('#') &&
-            !link.hasAttribute('target') &&
-            !href.startsWith('mailto:') &&
-            !href.startsWith('tel:') &&
-            !href.startsWith('javascript:')) {
-          
-          link.addEventListener('click', function(e) {
+          !href.startsWith('#') &&
+          !link.hasAttribute('target') &&
+          !href.startsWith('mailto:') &&
+          !href.startsWith('tel:') &&
+          !href.startsWith('javascript:')) {
+
+          link.addEventListener('click', function (e) {
             // Don't intercept links to external URLs
             if (!href.includes('t.me') && !href.includes('shapingyoungminds.in')) {
               e.preventDefault();
               startLoadingBar();
-              
+
               setTimeout(() => {
                 window.location.href = href;
               }, 850);
@@ -724,12 +1024,12 @@
           });
         }
       });
-      
+
       // Handle browser back/forward buttons
-      window.addEventListener('beforeunload', function() {
+      window.addEventListener('beforeunload', function () {
         startLoadingBar();
       });
-      
+
       // ============================================
       // NAVIGATION
       // ============================================
@@ -737,7 +1037,7 @@
       const navLinks = document.querySelector('.nav-links');
       const navbar = document.querySelector('.navbar');
       const backToTop = document.getElementById('backToTop');
-      
+
       // Hamburger menu toggle
       if (hamburgerBtn && navLinks) {
         function toggleMenu(e) {
@@ -746,10 +1046,10 @@
           navLinks.classList.toggle('open');
           document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
         }
-        
+
         hamburgerBtn.addEventListener('click', toggleMenu);
         hamburgerBtn.addEventListener('touchstart', toggleMenu);
-        
+
         // Close menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
           link.addEventListener('click', () => {
@@ -758,28 +1058,28 @@
             document.body.style.overflow = '';
           });
         });
-        
+
         // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-          if (navLinks.classList.contains('open') && 
-              !hamburgerBtn.contains(e.target) && 
-              !navLinks.contains(e.target)) {
-            
+        document.addEventListener('click', function (e) {
+          if (navLinks.classList.contains('open') &&
+            !hamburgerBtn.contains(e.target) &&
+            !navLinks.contains(e.target)) {
+
             hamburgerBtn.classList.remove('active');
             navLinks.classList.remove('open');
             document.body.style.overflow = '';
           }
         });
       }
-      
+
       // Navbar scroll effect
-      window.addEventListener('scroll', function() {
+      window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
           navbar.classList.add('scrolled');
         } else {
           navbar.classList.remove('scrolled');
         }
-        
+
         // Back to top button
         if (backToTop) {
           if (window.scrollY > 300) {
@@ -789,59 +1089,135 @@
           }
         }
       });
-      
+
       // Back to top functionality
       if (backToTop) {
-        backToTop.addEventListener('click', function() {
+        backToTop.addEventListener('click', function () {
           window.scrollTo({
             top: 0,
             behavior: 'smooth'
           });
         });
       }
-      
+
       // ============================================
-      // STATS COUNTER ANIMATION
+      // FIXED: STATS COUNTER ANIMATION FUNCTION
       // ============================================
-      const statNumbers = document.querySelectorAll('.stat-number, .metric-number, .count');
+      let animationTriggered = false;
       
-      function animateStats() {
-        statNumbers.forEach(stat => {
-          const target = parseInt(stat.getAttribute('data-count')) || parseInt(stat.textContent);
-          const increment = target / 30;
-          let current = 0;
+      function animateCounter(element, targetValue) {
+        const duration = 2000; // 2 seconds
+        const increment = targetValue / (duration / 16); // 60fps
+        let current = 0;
+        let startTime = null;
+        
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const elapsed = timestamp - startTime;
+          const progress = Math.min(elapsed / duration, 1);
           
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              current = target;
-              clearInterval(timer);
-            }
-            stat.textContent = Math.floor(current);
-          }, 40);
+          // Easing function for smooth animation
+          const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+          current = Math.floor(targetValue * easeOutQuart);
+          
+          element.textContent = current.toLocaleString();
+          
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            element.textContent = targetValue.toLocaleString();
+          }
+        }
+        
+        requestAnimationFrame(step);
+      }
+      
+      function animateAllStats() {
+        if (animationTriggered) return;
+        animationTriggered = true;
+        console.log('Animating all counters...');
+        
+        // Get all counter elements
+        const allCounters = document.querySelectorAll('.stat-number, .metric-number, .count');
+        console.log(`Found ${allCounters.length} counter elements`);
+        
+        allCounters.forEach((counter, index) => {
+          const dataCount = counter.getAttribute('data-count');
+          if (dataCount) {
+            const targetValue = parseInt(dataCount);
+            console.log(`Counter ${index + 1}: animating from 0 to ${targetValue}`);
+            
+            // Add a slight delay for staggered animation
+            setTimeout(() => {
+              animateCounter(counter, targetValue);
+            }, index * 150);
+          }
         });
       }
+
+      // ============================================
+      // FIXED: MULTIPLE TRIGGER METHODS FOR COUNTERS
+      // ============================================
       
-      // Animate stats when hero section is in view
+      // Method 1: On page load (with slight delay)
+      setTimeout(() => {
+        console.log('Page load trigger - checking if counters should animate');
+        // Only animate if page is near the top
+        if (window.scrollY < 300) {
+          animateAllStats();
+        }
+      }, 1500);
+      
+      // Method 2: Intersection Observer for hero section
       const heroSection = document.querySelector('.reviews-hero');
       if (heroSection) {
-        const observer = new IntersectionObserver((entries) => {
+        const heroObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              animateStats();
-              observer.unobserve(entry.target);
+            if (entry.isIntersecting && !animationTriggered) {
+              console.log('Hero section in view - triggering counters');
+              animateAllStats();
             }
           });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.3 }); // Lower threshold for earlier trigger
         
-        observer.observe(heroSection);
+        heroObserver.observe(heroSection);
       }
       
+      // Method 3: Intersection Observer for metrics section
+      const metricsSection = document.querySelector('.metrics-section');
+      if (metricsSection) {
+        const metricsObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !animationTriggered) {
+              console.log('Metrics section in view - triggering counters');
+              animateAllStats();
+            }
+          });
+        }, { threshold: 0.2 });
+        
+        metricsObserver.observe(metricsSection);
+      }
+      
+      // Method 4: Scroll trigger (fallback)
+      let scrollTriggered = false;
+      window.addEventListener('scroll', () => {
+        if (!scrollTriggered && !animationTriggered) {
+          const scrollPosition = window.scrollY + window.innerHeight;
+          const metricsPosition = metricsSection ? metricsSection.offsetTop : 0;
+          
+          if (scrollPosition > metricsPosition - 200) {
+            console.log('Scroll trigger - counters in view');
+            animateAllStats();
+            scrollTriggered = true;
+          }
+        }
+      });
+
       // ============================================
       // PROJECT CARD ANIMATIONS
       // ============================================
       const projectCards = document.querySelectorAll('.project-card');
-      
+
       if (projectCards.length > 0) {
         const projectObserver = new IntersectionObserver((entries) => {
           entries.forEach((entry, index) => {
@@ -853,35 +1229,15 @@
             }
           });
         }, { threshold: 0.1 });
-        
+
         projectCards.forEach(card => projectObserver.observe(card));
       }
-      
-      // ============================================
-      // TESTIMONIAL CARD ANIMATIONS
-      // ============================================
-      const testimonialCards = document.querySelectorAll('.testimonial-card');
-      
-      if (testimonialCards.length > 0) {
-        const testimonialObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-              setTimeout(() => {
-                entry.target.classList.add('visible');
-              }, index * 100);
-              testimonialObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
-        
-        testimonialCards.forEach(card => testimonialObserver.observe(card));
-      }
-      
+
       // ============================================
       // METRIC CARD ANIMATIONS
       // ============================================
       const metricCards = document.querySelectorAll('.metric-card');
-      
+
       if (metricCards.length > 0) {
         const metricObserver = new IntersectionObserver((entries) => {
           entries.forEach((entry, index) => {
@@ -893,27 +1249,27 @@
             }
           });
         }, { threshold: 0.2 });
-        
+
         metricCards.forEach(card => metricObserver.observe(card));
       }
-      
+
       // ============================================
       // INITIALIZE
       // ============================================
-      
+
       // Set current year in footer
       const yearElements = document.querySelectorAll('.footer-bottom p');
       if (yearElements.length > 0) {
         const currentYear = new Date().getFullYear();
         yearElements[0].textContent = yearElements[0].textContent.replace('2025', currentYear);
       }
-      
+
       // Add smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
           const href = this.getAttribute('href');
           if (href === '#') return;
-          
+
           if (href.startsWith('#')) {
             e.preventDefault();
             const target = document.querySelector(href);
@@ -926,11 +1282,17 @@
           }
         });
       });
-      
+
       // Show page content
       setTimeout(() => {
         document.getElementById('pageContent').classList.add('visible');
       }, 100);
+      
+      // Debug: Log initial counter values
+      console.log('Initial counter check:');
+      document.querySelectorAll('.stat-number, .metric-number, .count').forEach((counter, i) => {
+        console.log(`Counter ${i}: value="${counter.textContent}", data-count="${counter.getAttribute('data-count')}"`);
+      });
     });
   </script>
 </body>
